@@ -1,0 +1,13 @@
+# ===> The following configuration options are available for evince-2.32.0_2:
+# DVI=off (default) "Enable DVI viewer support"
+# T1LIB=off (default) "Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"
+# NAUTILUS=on (default) "Enable Nautilus plugin"
+# KEYRING=on (default) "Enable Gnome-Keyring without Nautilus"
+# DBUS=on (default) "Enable D-BUS support"
+# COMICS=on (default) "Enable comic book archives support"
+# IMPRESS=off (default) "Enable Impress presentations support"
+# DJVU=off (default) "Enable DJVU support"
+
+with="IMPRESS DJVU"
+without="NAUTILUS KEYRING DBUS"
+

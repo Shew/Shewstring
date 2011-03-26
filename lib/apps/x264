@@ -1,0 +1,11 @@
+# ===> The following configuration options are available for x264-0.110.1820:
+# ASM=On (default) "Assembly optimizations (devel/binutils)"
+# DEBUG=Off (default) "Enable Debugging"
+# PGO=Off (default) "Enable Profile-Guided Optimization"
+# GCC44=Off (default) "Use gcc 4.4+ (implies WITH_ASM)"
+# GPAC=On (default) "Enable MPEG-4 Output"
+# X11_OUTPUT=Off (default) "Enable X11 Output"
+
+with=""
+without=""
+

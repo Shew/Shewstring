@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for png-1.4.5:
+# APNG=Off (default) "Animated PNG support"
+
+with=""
+without=""
+

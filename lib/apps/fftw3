@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for fftw3-3.2.2_1:
+# OPTIMIZED_CFLAGS=off (default) "Enable optimized CFLAGS"
+
+with=""
+without=""
+

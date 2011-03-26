@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for orage-4.6.1_6:
+# BDB=off (default) "Enable BDB support"
+# ICAL=off (default) "Enable libical support"
+
+with=""
+without=""
+

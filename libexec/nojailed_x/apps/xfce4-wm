@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for xfce4-wm-4.6.2:
+# COMPOSITE=on (default) "Support the experimental X11 Composite extension"
+# STARTUP=on (default) "Enable startup notification support"
+# REVMOUSE=off (default) "Reverse mouse workspace changing direction"
+
+with=""
+without=""
+

@@ -1,0 +1,325 @@
+
+prompt='MAYBE'
+
+prompt_condition="
+	echo '
+Africa		America		America/Argentina		America/Indiana	America/Kentucky
+America/North_Dakota		Antarctica	Arctic		Asia		Atlantic
+Australia	Etc		Europe		Indian		Pacific' \
+	| grep \"${installers_shewstring_desktop__time_zone_file_1}\" \
+	> /dev/null
+"
+
+message="
+Please select a time zone for ${installers_shewstring_desktop__time_zone_file_1}:"
+
+exec_message="
+	case $installers_shewstring_desktop__time_zone_file_1 in
+		Africa )
+			echo '
+Abidjan		Accra		Addis_Ababa	Algiers		Asmara
+Bamako		Bangui		Banjul		Bissau		Blantyre
+Brazzaville	Bujumbura	Cairo		Casablanca	Ceuta
+Conakry		Dakar		Dar_es_Salaam	Djibouti	Douala
+El_Aaiun	Freetown	Gaborone	Harare		Johannesburg
+Kampala		Khartoum	Kigali		Kinshasa	Lagos
+Libreville	Lome		Luanda		Lubumbashi	Lusaka
+Malabo		Maputo		Maseru		Mbabane		Mogadishu
+Monrovia	Nairobi		Ndjamena	Niamey		Nouakchott
+Ouagadougou	Porto-Novo	Sao_Tome	Tripoli		Tunis
+Windhoek'
+		;;
+		America )
+			sleep 2
+				# The text below is long enough that message is cut off. This gives the user a chance
+				# to read it in case they dont know about scroll lock.
+
+			echo '
+Adak		Anchorage	Anguilla	Antigua		Araguaina
+Aruba		Asuncion	Atikokan	Bahia		Barbados
+Belem		Belize		Blanc-Sablon	Boa_Vista	Bogota
+Boise		Cambridge_Bay	Campo_Grande	Cancun		Caracas
+Cayenne		Cayman		Chicago		Chihuahua	Costa_Rica
+Cuiaba		Curacao		Danmarkshavn	Dawson		Dawson_Creek
+Denver		Detroit		Dominica	Edmonton	Eirunepe
+El_Salvador	Fortaleza	Glace_Bay	Godthab		Goose_Bay
+Grand_Turk	Grenada		Guadeloupe	Guatemala	Guayaquil
+Guyana		Halifax		Havana		Hermosillo	Inuvik
+Iqaluit		Jamaica		Juneau		La_Paz		Lima
+Los_Angeles	Maceio		Managua		Manaus		Marigot
+Martinique	Mazatlan	Menominee	Merida		Mexico_City
+Miquelon	Moncton		Monterrey	Montevideo	Montreal
+Montserrat	Nassau		New_York	Nipigon		Nome
+Noronha		Panama		Pangnirtung	Paramaribo	Phoenix
+Port-au-Prince	Port_of_Spain	Porto_Velho	Puerto_Rico	Rainy_River
+Rankin_Inlet	Recife		Regina		Resolute	Rio_Branco
+Santarem	Santiago	Santo_Domingo	Sao_Paulo	Scoresbysund
+Shiprock	St_Barthelemy	St_Johns	St_Kitts	St_Lucia
+St_Thomas	St_Vincent	Swift_Current	Tegucigalpa	Thule
+Thunder_Bay	Tijuana		Toronto		Tortola		Vancouver
+Whitehorse	Winnipeg	Yakutat		Yellowknife'
+		;;
+		America/Argentina )
+			echo '
+Buenos_Aires	Catamarca	Cordoba		Jujuy		La_Rioja
+Mendoza		Rio_Gallegos	Salta		San_Juan	San_Luis
+Tucuman		Ushuaia'
+		;;
+		America/Indiana )
+			echo '
+Indianapolis	Knox		Marengo		Petersburg	Tell_City
+Vevay		Vincennes	Winamac'
+		;;
+		America/Kentucky )
+			echo '
+Louisville	Monticello'
+		;;
+		America/North_Dakota )
+			echo '
+Center		New_Salem'
+		;;
+		Antarctica )
+			echo '
+Casey		Davis		DumontDUrville	Mawson		McMurdo
+Palmer		Rothera		South_Pole	Syowa		Vostok'
+		;;
+		Arctic )
+			echo '
+Longyearbyen'
+		;;
+		Asia )
+			echo '
+Aden		Almaty		Amman		Anadyr		Aqtau
+Aqtobe		Ashgabat	Baghdad		Bahrain		Baku
+Bangkok		Beirut		Bishkek		Brunei		Choibalsan
+Chongqing	Colombo		Damascus	Dhaka		Dili
+Dubai		Dushanbe	Gaza		Harbin		Ho_Chi_Minh
+Hong_Kong	Hovd		Irkutsk		Istanbul	Jakarta
+Jayapura	Jerusalem	Kabul		Kamchatka	Karachi
+Kashgar		Kathmandu	Kolkata		Krasnoyarsk	Kuala_Lumpur
+Kuching		Kuwait		Macau		Magadan		Makassar
+Manila		Muscat		Nicosia		Novosibirsk	Omsk
+Oral		Phnom_Penh	Pontianak	Pyongyang	Qatar
+Qyzylorda	Rangoon		Riyadh		Sakhalin	Samarkand
+Seoul		Shanghai	Singapore	Taipei		Tashkent
+Tbilisi		Tehran		Thimphu		Tokyo		Ulaanbaatar
+Urumqi		Vientiane	Vladivostok	Yakutsk		Yekaterinburg
+Yerevan'
+		;;
+		Atlantic )
+			echo '
+Azores		Bermuda		Canary		Cape_Verde	Faroe
+Madeira		Reykjavik	South_Georgia	St_Helena	Stanley'
+		;;
+		Australia )
+			echo '
+Adelaide	Brisbane	Broken_Hill	Currie		Darwin
+Eucla		Hobart		Lindeman	Lord_Howe	Melbourne
+Perth		Sydney'
+		;;
+		Etc )
+			echo '
+GMT		GMT+0		GMT+1		GMT+10		GMT+11
+GMT+12		GMT+2		GMT+3		GMT+4		GMT+5
+GMT+6		GMT+7		GMT+8		GMT+9		GMT-0
+GMT-1		GMT-10		GMT-11		GMT-12		GMT-13
+GMT-14		GMT-2		GMT-3		GMT-4		GMT-5
+GMT-6		GMT-7		GMT-8		GMT-9		GMT0
+Greenwich	UCT		UTC		Universal	Zulu'
+		;;
+		Europe )
+			echo '
+Amsterdam	Andorra		Athens		Belgrade	Berlin
+Bratislava	Brussels	Bucharest	Budapest	Chisinau
+Copenhagen	Dublin		Gibraltar	Guernsey	Helsinki
+Isle_of_Man	Istanbul	Jersey		Kaliningrad	Kiev
+Lisbon		Ljubljana	London		Luxembourg	Madrid
+Malta		Mariehamn	Minsk		Monaco		Moscow
+Nicosia		Oslo		Paris		Podgorica	Prague
+Riga		Rome		Samara		San_Marino	Sarajevo
+Simferopol	Skopje		Sofia		Stockholm	Tallinn
+Tirane		Uzhgorod	Vaduz		Vatican		Vienna
+Vilnius		Volgograd	Warsaw		Zagreb		Zaporozhye
+Zurich'
+		;;
+		Indian )
+			echo '
+Antananarivo	Chagos		Christmas	Cocos		Comoro
+Kerguelen	Mahe		Maldives	Mauritius	Mayotte
+Reunion'
+		;;
+		Pacific )
+			echo '
+Apia		Auckland	Chatham		Easter		Efate
+Enderbury	Fakaofo		Fiji		Funafuti	Galapagos
+Gambier		Guadalcanal	Guam		Honolulu	Johnston
+Kiritimati	Kosrae		Kwajalein	Majuro		Marquesas
+Midway		Nauru		Niue		Norfolk		Noumea
+Pago_Pago	Palau		Pitcairn	Ponape		Port_Moresby
+Rarotonga	Saipan		Tahiti		Tarawa		Tongatapu
+Truk		Wake		Wallis'
+		;;
+	esac
+"
+
+check="
+	case $installers_shewstring_desktop__time_zone_file_1 in
+		Africa )
+			echo '
+Abidjan		Accra		Addis_Ababa	Algiers		Asmara		Bamako
+Bangui		Banjul		Bissau		Blantyre	Brazzaville	Bujumbura
+Cairo		Casablanca	Ceuta		Conakry		Dakar		Dar_es_Salaam
+Djibouti	Douala		El_Aaiun	Freetown	Gaborone	Harare
+Johannesburg	Kampala		Khartoum	Kigali		Kinshasa	Lagos
+Libreville	Lome		Luanda		Lubumbashi	Lusaka		Malabo
+Maputo		Maseru		Mbabane		Mogadishu	Monrovia	Nairobi
+Ndjamena	Niamey		Nouakchott	Ouagadougou	Porto-Novo	Sao_Tome
+Tripoli		Tunis		Windhoek' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		America )
+			echo '
+Adak		Anchorage	Anguilla	Antigua		Araguaina	Aruba
+Asuncion	Atikokan	Bahia		Barbados	Belem		Belize
+Blanc-Sablon	Boa_Vista	Bogota		Boise		Cambridge_Bay	Campo_Grande
+Cancun		Caracas		Cayenne		Cayman		Chicago		Chihuahua
+Costa_Rica	Cuiaba		Curacao		Danmarkshavn	Dawson		Dawson_Creek
+Denver		Detroit		Dominica	Edmonton	Eirunepe	El_Salvador
+Fortaleza	Glace_Bay	Godthab		Goose_Bay	Grand_Turk	Grenada
+Guadeloupe	Guatemala	Guayaquil	Guyana		Halifax		Havana
+Hermosillo	Inuvik		Iqaluit		Jamaica		Juneau		La_Paz
+Lima		Los_Angeles	Maceio		Managua		Manaus		Marigot
+Martinique	Mazatlan	Menominee	Merida		Mexico_City	Miquelon
+Moncton		Monterrey	Montevideo	Montreal	Montserrat	Nassau
+New_York	Nipigon		Nome		Noronha		Panama		Pangnirtung
+Paramaribo	Phoenix		Port-au-Prince	Port_of_Spain	Porto_Velho	Puerto_Rico
+Rainy_River	Rankin_Inlet	Recife		Regina		Resolute	Rio_Branco
+Santarem	Santiago	Santo_Domingo	Sao_Paulo	Scoresbysund	Shiprock
+St_Barthelemy	St_Johns	St_Kitts	St_Lucia	St_Thomas	St_Vincent
+Swift_Current	Tegucigalpa	Thule		Thunder_Bay	Tijuana		Toronto
+Tortola		Vancouver	Whitehorse	Winnipeg	Yakutat		Yellowknife' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		America/Argentina )
+			echo '
+Buenos_Aires	Catamarca	Cordoba		Jujuy		La_Rioja	Mendoza
+Rio_Gallegos	Salta		San_Juan	San_Luis	Tucuman		Ushuaia' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		America/Indiana )
+			echo '
+Indianapolis	Knox		Marengo		Petersburg	Tell_City	Vevay
+Vincennes	Winamac' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		America/Kentucky )
+			echo '
+Louisville	Monticello' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		America/North_Dakota )
+			echo '
+Center		New_Salem' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Antarctica )
+			echo '
+Casey		Davis		DumontDUrville	Mawson		McMurdo		Palmer
+Rothera		South_Pole	Syowa		Vostok' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Arctic )
+			echo '
+Longyearbyen' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Asia )
+			echo '
+Aden		Almaty		Amman		Anadyr		Aqtau		Aqtobe
+Ashgabat	Baghdad		Bahrain		Baku		Bangkok		Beirut
+Bishkek		Brunei		Choibalsan	Chongqing	Colombo		Damascus
+Dhaka		Dili		Dubai		Dushanbe	Gaza		Harbin
+Ho_Chi_Minh	Hong_Kong	Hovd		Irkutsk		Istanbul	Jakarta
+Jayapura	Jerusalem	Kabul		Kamchatka	Karachi		Kashgar
+Kathmandu	Kolkata		Krasnoyarsk	Kuala_Lumpur	Kuching		Kuwait
+Macau		Magadan		Makassar	Manila		Muscat		Nicosia
+Novosibirsk	Omsk		Oral		Phnom_Penh	Pontianak	Pyongyang
+Qatar		Qyzylorda	Rangoon		Riyadh		Sakhalin	Samarkand
+Seoul		Shanghai	Singapore	Taipei		Tashkent	Tbilisi
+Tehran		Thimphu		Tokyo		Ulaanbaatar	Urumqi		Vientiane
+Vladivostok	Yakutsk		Yekaterinburg	Yerevan' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Atlantic )
+			echo '
+Azores		Bermuda		Canary		Cape_Verde	Faroe		Madeira
+Reykjavik	South_Georgia	St_Helena	Stanley' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Australia )
+			echo '
+Adelaide	Brisbane	Broken_Hill	Currie		Darwin		Eucla
+Hobart		Lindeman	Lord_Howe	Melbourne	Perth		Sydney' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Etc )
+			echo '
+GMT		GMT+0		GMT+1		GMT+10		GMT+11		GMT+12
+GMT+2		GMT+3		GMT+4		GMT+5		GMT+6		GMT+7
+GMT+8		GMT+9		GMT-0		GMT-1		GMT-10		GMT-11
+GMT-12		GMT-13		GMT-14		GMT-2		GMT-3		GMT-4
+GMT-5		GMT-6		GMT-7		GMT-8		GMT-9		GMT0
+Greenwich	UCT		UTC		Universal	Zulu' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Europe )
+			echo '
+Amsterdam	Andorra		Athens		Belgrade	Berlin		Bratislava
+Brussels	Bucharest	Budapest	Chisinau	Copenhagen	Dublin
+Gibraltar	Guernsey	Helsinki	Isle_of_Man	Istanbul	Jersey
+Kaliningrad	Kiev		Lisbon		Ljubljana	London		Luxembourg
+Madrid		Malta		Mariehamn	Minsk		Monaco		Moscow
+Nicosia		Oslo		Paris		Podgorica	Prague		Riga
+Rome		Samara		San_Marino	Sarajevo	Simferopol	Skopje
+Sofia		Stockholm	Tallinn		Tirane		Uzhgorod	Vaduz
+Vatican		Vienna		Vilnius		Volgograd	Warsaw		Zagreb
+Zaporozhye	Zurich' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Indian )
+			echo '
+Antananarivo	Chagos		Christmas	Cocos		Comoro		Kerguelen
+Mahe		Maldives	Mauritius	Mayotte		Reunion' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+		Pacific )
+			echo '
+Apia		Auckland	Chatham		Easter		Efate		Enderbury
+Fakaofo		Fiji		Funafuti	Galapagos	Gambier		Guadalcanal
+Guam		Honolulu	Johnston	Kiritimati	Kosrae		Kwajalein
+Majuro		Marquesas	Midway		Nauru		Niue		Norfolk
+Noumea		Pago_Pago	Palau		Pitcairn	Ponape		Port_Moresby
+Rarotonga	Saipan		Tahiti		Tarawa		Tongatapu	Truk
+Wake		Wallis' \
+				| grep \"\${line}\" \
+				> /dev/null
+		;;
+	esac
+"
+
+check_error_message='
+The time zone you chose does not exist, please choose another.'

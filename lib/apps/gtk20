@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gtk-2.22.1_1:
+# CUPS=on (default) "Enable cups printing support"
+
+with=""
+without=""
+

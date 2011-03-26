@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for xfce4-conf-4.6.2:
+# GTKDOC=off (default) "install the library documentation"
+# PERL=off (default) "Install Perl bindings"
+# NLS=on (default) "Enable Native Language Support"
+
+with=""
+without=""
+

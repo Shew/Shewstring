@@ -1,0 +1,10 @@
+# Device				Mountpoint		FStype	Options				Dump	Pass
+
+/dev/${hard_drive_device}.elia		/			ufs	ro				0	1
+/dev/${hard_drive_device}.elib.eli	none			swap	sw				0       0
+/dev/${hard_drive_device}.elid		/usr			ufs	ro				0	2
+/dev/${hard_drive_device}.elie		/usr/shew/sensitive	ufs	rw,noatime,noexec,nosuid	0	2
+/dev/${hard_drive_device}.elif		/usr/shew/data		ufs	rw,noatime,noexec,nosuid	0	2
+
+/dev/acd0				/media/dvd		cd9660	ro,noexec,nosuid,noauto		0	0
+/dev/da0s1				/media/usb		msdosfs	rw,noatime,noexec,nosuid,noauto	0	0

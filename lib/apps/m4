@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for m4-1.4.15,1:
+# LIBSIGSEGV=Off (default) "Use libsigsegv for better diagnostics"
+
+with=""
+without=""
+

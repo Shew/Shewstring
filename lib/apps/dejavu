@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for dejavu-2.32:
+# LINKS=off (default) "Install links of configuration files in conf.d"
+
+with=""
+without=""
+

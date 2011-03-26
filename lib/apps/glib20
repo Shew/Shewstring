@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for glib-2.26.1_1:
+# COLLATION_FIX=off (default) "fix string collation"
+
+with=""
+without=""
+

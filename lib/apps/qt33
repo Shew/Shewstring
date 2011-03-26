@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for qt-3.3.8_12:
+# CUPS=on (default) "Enable CUPS support"
+# KDE_PATCHES=off (default) "Apply KDE patches"
+# NAS=on (default) "Enable NAS support"
+# OPENGL=on (default) "Enable OpenGL support"
+# XFT=on (default) "Enable Xft support"
+
+with=""
+without="CUPS"
+

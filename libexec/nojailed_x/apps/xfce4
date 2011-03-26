@@ -1,0 +1,13 @@
+# ===> The following configuration options are available for xfce-4.6.2:
+# ICONS=on (default) "Install a full icon theme"
+# ORAGE=on (default) "Install the Xfce calendar application"
+# MOUSEPAD=on (default) "Install the Xfce text editor"
+# TERMINAL=on (default) "Install the Xfce terminal application"
+# APPFINDER=on (default) "Install the Xfce application finder"
+# MIXER=on (default) "Install the Xfce mixer application"
+# PRINT=on (default) "Install the Xfce printing helper"
+# GDM=off (default) "Install the login manager gdm"
+
+with=""
+without="ORAGE MOUSEPAD TERMINAL APPFINDER MIXER"
+

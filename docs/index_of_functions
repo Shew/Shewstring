@@ -1,0 +1,173 @@
+
+lib/jail_maint_utils.sh
+	jail_maint_utils__generate_unique_127ip
+	jail_maint_utils__return_jail_ip
+	jail_maint_utils__return_jail_jid
+	jail_maint_utils__create_jail
+	jail_maint_utils__create_data
+	jail_maint_utils__create_home
+	jail_maint_utils__create_permanent
+	jail_maint_utils__create_sensitive
+	jail_maint_utils__allow_telnet
+	jail_maint_utils__allow_x
+	jail_maint_utils__allow_sound
+	jail_maint_utils__setup_program_telnet
+	jail_maint_utils__setup_program_desktop
+	jail_maint_utils__lockdown_jail
+
+lib/menu_utils.sh
+	menu_utils__prompt_option
+	menu_utils__prompt_all
+	menu_utils__write_conf_file
+
+lib/misc_utils.sh
+	misc_utils__generate_unique_port
+	misc_utils__generate_unique_loopback
+	misc_utils__echo_var
+	misc_utils__change_var
+	misc_utils__add_clause
+	misc_utils__fetch
+	misc_utils__prompt_continue
+	misc_utils__condense_output_start
+	misc_utils__condense_output_end
+	misc_utils__echo_progress
+	misc_utils__save_progress
+	misc_utils__move_down_save_progress
+	misc_utils__move_up_save_progress
+
+lib/ports_pkgs_utils.sh
+	ports_pkgs_utils__check_port_made
+	ports_pkgs_utils__create_compile_jail
+	ports_pkgs_utils__configure_port
+	ports_pkgs_utils__compile_port
+	ports_pkgs_utils__install_pkg
+
+lib/user_maint_utils.sh
+	user_maint_utils__generate_unique_gid
+	user_maint_utils__generate_unique_uid
+	user_maint_utils__return_gid
+	user_maint_utils__return_uid
+	user_maint_utils__return_grouplist
+	user_maint_utils__add_group
+	user_maint_utils__add_user
+	user_maint_utils__add_jail_group
+	user_maint_utils__add_jail_user
+
+libexec/darknets
+	firefox.sh
+		darknets_firefox__firefox_control_i2p
+		darknets_firefox__firefox_control_freenet
+	freenet.sh
+		darknets_freenet__install_freenet
+		darknets_freenet__enable_fcp
+		darknets_freenet__enable_http
+		darknets_freenet__add_jail_freenet_http_rules
+	i2p.sh
+		darknets_i2p__install_i2p
+		darknets_i2p__enable_http_https
+		darknets_i2p__enable_socks
+		darknets_i2p__enable_irc
+		darknets_i2p__enable_pop_smtp
+		darknets_i2p__add_jail_i2p_http_https_rules
+		darknets_i2p__add_jail_i2p_socks_rules
+		darknets_i2p__add_jail_i2p_irc_rules
+		darknets_i2p__add_jail_i2p_pop_smtp_rules
+	java.sh
+		darknets_java__download_sun_jdk
+		darknets_java__compile_sun_jdk
+		darknets_java__install_openjdk
+	tor.sh
+		darknets_tor__patch_circuit_length
+		darknets_tor__patch_circuit_dirtiness
+		darknets_tor__install_tor
+		darknets_tor__configure_tor_normal
+		darknets_tor__configure_tor_two_hop
+		darknets_tor__configure_tor_zero_dirtiness
+		darknets_tor__enable_socks
+		darknets_tor__enable_transparent
+		darknets_tor__add_jail_tor_socks_rules
+		darknets_tor__add_jail_tor_transparent_rules
+	vidalia.sh
+		darknets_vidalia__install_vidalia
+		darknets_vidalia__configure_tor_normal_vidalia
+		darknets_vidalia__configure_tor_two_hop_vidalia
+		darknets_vidalia__configure_tor_zero_dirtiness_vidalia
+
+libexec/fixit/
+	geli.sh
+		fixit_geli__init
+		fixit_geli__attach
+	populate.sh
+		fixit_populate__base_man_ports
+		fixit_populate__misc_files
+	thumbdrive.sh
+		fixit_thumbdrive__setup
+
+libexec/host/
+	audit.sh
+		host_audit__install_audit
+	configure.sh
+		host_configure__misc_configuration
+		host_configure__add_special_folders
+		host_configure__configure_root_user
+		host_configure__configure_guest_user
+	dns.sh
+		host_dns__install_named
+		host_dns__add_jail_dns_rules
+	entropy.sh
+		host_entropy__install_entropy
+	network.sh
+		host_network__install_mac_changer
+		host_network__unblock_all_interfaces
+		host_network__bring_up_interface
+		host_network__add_jail_nat_rules
+	ntp.sh
+		host_ntp__install_ntpd
+
+libexec/jailed_nox/
+	privoxy.sh
+		jailed_nox_privoxy__enable_tor_socks
+		jailed_nox_privoxy__enable_i2p_socks
+		jailed_nox_privoxy__enable_i2p_http_https
+
+libexec/jailed_x/
+	firefox.sh
+		firefox__set_proxy_privoxy
+		firefox__install_gnash
+		firefox__install_adblock
+		firefox__install_https_everywhere
+		firefox__install_noscript
+		firefox__install_perspectives
+		firefox__install_taco
+	gnupg.sh
+		gnupg__install_gpa
+
+libexec/lockdown/
+	portaudit.sh
+		lockdown_portaudit__install_portaudit
+		lockdown_portaudit__print_full_audit
+	restrict_files.sh
+		lockdown_restrict_files__restrict_etc
+		lockdown_restrict_files__suid_sgid
+	securelevel.sh
+		lockdown_securelevel__boot_raise_securelevel
+	ttys.sh
+		lockdown_ttys__secure_ttys
+
+libexec/nojailed_nox/
+	sudo.sh
+		nojailed_nox_sudo__add_sudo_user
+		nojailed_nox_sudo__lock_sudoers
+
+libexec/nojailed_x/
+	sane.sh
+		nojailed_x_sane__install_netpbm
+
+libexec/x/
+	login.sh
+		x_login__install_login
+	xorg.sh
+		x_xorg__install_xorg
+		x_xorg__install_xterm
+		x_xorg__install_xkill
+		x_xorg__install_xdm

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xfburn-settings>
+	<setting name="clean-temporary-dir" type="boolean" value="true"/>
+	<setting name="fifo-size" type="int" value="4096"/>
+	<setting name="temporary-dir" type="string" value="/tmp"/>
+	<setting name="show-filebrowser" type="boolean" value="true"/>
+	<setting name="human-readable-units" type="boolean" value="true"/>
+	<setting name="show-toolbar" type="boolean" value="true"/>
+	<setting name="show-hidden-files" type="boolean" value="true"/>
+	<setting name="show-empty-speed-list-notice" type="boolean" value="true"/>
+</xfburn-settings>

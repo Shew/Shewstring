@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for tcl-8.5.9:
+# TCL85_MAN=off (default) "Install tcl 8.5 function manpages"
+# TZDATA=off (default) "Install tcl timezone data"
+# TCL_MODULES=on (default) "Install tcl common modules"
+
+with=""
+without=""
+

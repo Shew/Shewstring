@@ -1,0 +1,11 @@
+# ===> The following configuration options are available for tor-0.2.1.28_1:
+# BUFFREELISTS=on (default) "freelists for buffer RAM"
+# GEOIP=off (default) "track country data"
+# INSTR_DOWNLOADS=off (default) "instrument downloads for analysis"
+# TCMALLOC=off (default) "use the tcmalloc memory allocation library"
+# THREADS=on (default) "multi-threading support"
+# TRANSPARENT=on (default) "transparent proxy support"
+
+with=""
+without=""
+

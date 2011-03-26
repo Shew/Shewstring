@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for abiword-2.8.4_1:
+# DEBUG=off (default) "Enable debug"
+# BOOST=on (default) "Build with boost"
+# SPELLCHECK=on (default) "Enable spell checking support"
+# CLIPART=on (default) "Install clipart"
+# TEMPLATES=on (default) "Install additional templates"
+
+with=""
+without=""
+

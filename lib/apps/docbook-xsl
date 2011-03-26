@@ -1,0 +1,19 @@
+# ===> The following configuration options are available for docbook-xsl-1.75.2_1:
+# ECLIPSE=on (default) "Eclipse modules"
+# EPUB=on (default) "Epub modules"
+# EXTENSIONS=on (default) "Extensions"
+# HIGHLIGHTING=on (default) "highlighting modules"
+# HTMLHELP=on (default) "HTML Help modules"
+# JAVAHELP=on (default) "Java Help modules"
+# PROFILING=on (default) "Profiling modules"
+# ROUNDTRIP=on (default) "Roundtrip modules"
+# SLIDES=on (default) "Slides modules"
+# TEMPLATE=on (default) "Templates"
+# TESTS=on (default) "Test tools"
+# TOOLS=on (default) "Tools"
+# WEBSITE=on (default) "Website modules"
+# XHTML11=on (default) "XHTML 1.1 modules"
+
+with=""
+without=""
+

@@ -1,0 +1,48 @@
+
+I am not happy with the configuration of one of the programs; how do I change
+it?
+
+  There are several ways to do this.
+  Before installation:
+   * Edit Shewstring and/or the installer (quick and dirty).
+   * Set your own values in custom_variables.conf for variables that provide the
+     paths of configuration files and folders to some alternative you have provided
+     in the customization folder (recommended).
+  After installation, but before first boot:
+   * Just directly edit the files. You may need to do 'chflags noschg' on the ones
+     in the /usr/shew/sensitive folders, and set them back using 'chflags schg'
+     after you are done editing them.
+  After you start using the system:
+   * Reboot and start the system in 'Single user mode' (found on the
+     'Welcome to FreeBSD' screen while booting).
+     Log in as root.
+     Mount the filesystems using 'mount -a; mount -u -o rw /; mount -u -o rw /usr'
+     Make your changes.
+     Reboot the system using 'reboot'.
+     Do not remount the partitions while the system is booted in multiuser mode!
+     Some programs will overwrite their configuration files (e.g. Freenet) if the
+     system is made read-write.
+
+My installation has stopped on 'Making ...', what do I do?
+
+  Try restarting install.sh. If that doesn't work, you can look at the log for
+  make in /usr/shew/install/log. Sometimes make downloads a corrupted file and
+  does not handle deleting it properly, which you can try 'rm -R
+  /usr/shew/jails/compile/usr/ports/distfiles'. If it still gives you trouble,
+  you might try downloading a newer ports.tar.gz and start a new installation.
+
+My installation has stopped on some other part.
+
+  Try restarting install.sh. If that doesn't work, start install.sh with the
+  argument 'debug' and examine 'tail 100 /tmp/shewstring_log.txt' (WARNING: This
+  may log sensitive things like passwords). If you cannot figure out what the
+  problem is from the log, then you can post your log on the HackBB thread:
+  http://clsvtzwzdgzkjda7.onion/viewtopic.php?f=9&t=40
+
+My installation has stopped, but it gives a different error when restarting.
+
+  Most functions in Shewstring will try and detect if they have already been run
+  and skip without an error if they have. If an installation hits an error in
+  the middle of a function, it might have passed some code that it can't execute
+  properly twice. You can try putting comments in the code, but unless you know
+  what you're doing, it might be better to comment on the forum thread.

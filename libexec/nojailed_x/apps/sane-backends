@@ -1,0 +1,11 @@
+# ===> The following configuration options are available for sane-backends-1.0.21_2:
+# USB=on (default) "USB support"
+# NLS=on (default) "NLS support"
+# GPHOTO2=off (default) "gPhoto2 support"
+# AVAHI=off (default) "Avahi support"
+# IEEE1284=off (default) "libieee1284 support"
+# IPV6=off (default) "IPV6 support"
+
+with=""
+without=""
+

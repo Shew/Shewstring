@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for libxslt-1.1.26_2:
+# MEM_DEBUG=off (default) "Enable memory debugging"
+# CRYPTO=on (default) "Enable crypto support for exslt"
+
+with=""
+without=""
+

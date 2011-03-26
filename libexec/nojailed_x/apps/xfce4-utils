@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for xfce4-utils-4.6.2:
+# DBUS=on (default) "Enable D-BUS support"
+
+with=""
+without="DBUS"
+

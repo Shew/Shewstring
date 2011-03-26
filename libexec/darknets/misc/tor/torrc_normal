@@ -1,0 +1,7 @@
+
+DataDirectory /usr/shew/sensitive/tor_normal
+PidFile /home/tor_normal/tor.pid
+Log notice file /home/tor_normal/tor.log
+
+AutomapHostsOnResolve 1
+RunAsDaemon 1

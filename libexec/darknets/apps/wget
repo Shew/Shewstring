@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for wget-1.12_2:
+# GNUTLS=Off (default) "Support for SSL via GnuTLS"
+# IPV6=On (default) "Support for IPv6"
+# NLS=On (default) "Native Language Support with gettext"
+# OPENSSL=On (default) "Support for SSL via OpenSSL"
+
+with=""
+without=""
+

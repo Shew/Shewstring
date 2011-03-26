@@ -1,0 +1,54 @@
+--- src/compose.c
++++ src/compose.c
+@@ -4637,12 +4637,12 @@
+ 		}
+ 	}
+ 
+-	/* Message-ID */
+-	if (compose->account->gen_msgid) {
+-		compose_generate_msgid(compose, buf, sizeof(buf));
+-		fprintf(fp, "Message-Id: <%s>\n", buf);
+-		compose->msgid = g_strdup(buf);
+-	}
++//	/* Message-ID */
++//	if (compose->account->gen_msgid) {
++//		compose_generate_msgid(compose, buf, sizeof(buf));
++//		fprintf(fp, "Message-Id: <%s>\n", buf);
++//		compose->msgid = g_strdup(buf);
++//	}
+ 
+ 	/* In-Reply-To */
+ 	if (compose->inreplyto && compose->to_list)
+@@ -4703,19 +4703,19 @@
+ 		fprintf(fp, "Organization: %s\n", buf);
+ 	}
+ 
+-	/* Program version and system info */
+-	if (compose->to_list && !IS_IN_CUSTOM_HEADER("X-Mailer")) {
+-		fprintf(fp, "X-Mailer: %s (GTK+ %d.%d.%d; %s)\n",
+-			prog_version,
+-			gtk_major_version, gtk_minor_version, gtk_micro_version,
+-			TARGET_ALIAS);
+-	}
+-	if (compose->newsgroup_list && !IS_IN_CUSTOM_HEADER("X-Newsreader")) {
+-		fprintf(fp, "X-Newsreader: %s (GTK+ %d.%d.%d; %s)\n",
+-			prog_version,
+-			gtk_major_version, gtk_minor_version, gtk_micro_version,
+-			TARGET_ALIAS);
+-	}
++//	/* Program version and system info */
++//	if (compose->to_list && !IS_IN_CUSTOM_HEADER("X-Mailer")) {
++//		fprintf(fp, "X-Mailer: %s (GTK+ %d.%d.%d; %s)\n",
++//			prog_version,
++//			gtk_major_version, gtk_minor_version, gtk_micro_version,
++//			TARGET_ALIAS);
++//	}
++//	if (compose->newsgroup_list && !IS_IN_CUSTOM_HEADER("X-Newsreader")) {
++//		fprintf(fp, "X-Newsreader: %s (GTK+ %d.%d.%d; %s)\n",
++//			prog_version,
++//			gtk_major_version, gtk_minor_version, gtk_micro_version,
++//			TARGET_ALIAS);
++//	}
+ 
+ 	/* custom headers */
+ 	if (compose->account->add_customhdr) {

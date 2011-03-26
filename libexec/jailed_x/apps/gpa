@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gpa-0.9.0_8:
+# NLS=on (default) "Native language support"
+
+with=""
+without=""
+

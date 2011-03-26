@@ -1,0 +1,12 @@
+
+DataDirectory /usr/shew/sensitive/tor_z_dirt
+PidFile /home/tor_z_dirt/tor.pid
+Log notice file /home/tor_z_dirt/tor.log
+
+AutomapHostsOnResolve 1
+RunAsDaemon 1
+
+MaxCircuitDirtiness 0
+	# This generates a new circuit for every unique connection attempt.
+	# PLEASE BE CAREFUL, ONLY USE THIS SPARINGLY FOR INTERMITTENT CONNECTIONS LIKE EMAIL.
+	# Using this for something that generates many connections, e.g. web browsing, can DoS the tor network.

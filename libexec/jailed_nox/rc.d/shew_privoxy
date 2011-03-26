@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: shew_privoxy
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+
+# Add this to rc.conf to enable privoxy:
+#   shew_privoxy_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_privoxy'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+required_dirs='/usr/shew/permanent/privoxy'
+required_files='/usr/shew/permanent/privoxy/config'
+
+shew_privoxy_user='privoxy'
+
+command_args='--pidfile /home/privoxy/privoxy.pid /usr/shew/permanent/privoxy/config'
+command='/usr/local/sbin/privoxy'
+
+pidfile='/home/privoxy/privoxy.pid'
+
+: ${shew_privoxy_enable='NO'}
+
+run_rc_command "$1"

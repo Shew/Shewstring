@@ -1,0 +1,14 @@
+# ===> The following configuration options are available for perl-5.10.1_3:
+# DEBUGGING=off (default) "Build with debugging support"
+# GDBM=off (default) "Build GDBM_File extension"
+# PERL_MALLOC=off (default) "Use Perl malloc"
+# PERL_64BITINT=on (default) "Use 64 bit integers (on i386)"
+# THREADS=off (default) "Build threaded perl"
+# MULTIPLICITY=off (default) "Use multiplicity"
+# SUIDPERL=off (default) "Build set-user-id suidperl binary"
+# SITECUSTOMIZE=off (default) "Run-time customization of @INC"
+# USE_PERL=on (default) "Rewrite links in /usr/bin"
+
+with=""
+without=""
+

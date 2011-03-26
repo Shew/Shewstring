@@ -1,0 +1,15 @@
+# ===> The following configuration options are available for gnash-0.8.8:
+# PLUGIN=on (default) "Enable browser plugin"
+# CYGNAL=off (default) "Enable Cygnal media server"
+# GTK=on (default) "GUI: GTK (required for Mozilla/Firefox plugin)"
+# KDE=off (default) "GUI: KDE 3.x (required for Konqueror 3.x plugin)"
+# KDE4=off (default) "GUI: KDE 4.x (required for Konqueror 4.x plugin)"
+# AGG=on (default) "Renderer: AGG"
+# OPENGL=off (default) "Renderer: OpenGL (broken)"
+# CAIRO=off (default) "Renderer: Cairo (experimental)"
+# FFMPEG=on (default) "Media handler: ffmpeg (+SDL sound output)"
+# GSTREAMER=off (default) "Media handler: GStreamer"
+
+with=""
+without=""
+

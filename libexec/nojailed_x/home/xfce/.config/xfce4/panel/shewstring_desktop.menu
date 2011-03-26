@@ -1,0 +1,38 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN" "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+	<Name>Xfce</Name>
+    
+	<DefaultAppDirs/>
+	<DefaultDirectoryDirs/>
+
+	<Include>
+		<Filename>terminal.desktop</Filename>
+		<Filename>thunar.desktop</Filename>
+		<Filename>mousepad.desktop</Filename>
+		<Category>shew-applications</Category>
+	</Include>
+    
+	<Layout>
+		<Filename>terminal.desktop</Filename>
+		<Filename>thunar.desktop</Filename>
+		<Filename>mousepad.desktop</Filename>
+		<Separator/>
+		<Menuname>Elevated</Menuname>
+		<Separator/>
+		<Merge type="files"/>
+		<Separator/>
+		<Merge type="menus"/>
+	</Layout>
+
+	<Menu>
+		<Name>Elevated</Name>
+		<Directory>elevated.directory</Directory>
+
+		<Include>
+			<Category>elevated</Category>
+		</Include>
+	</Menu>
+
+	<!-- Additional Menus -->
+</Menu>

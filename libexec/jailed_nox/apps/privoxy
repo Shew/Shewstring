@@ -1,0 +1,11 @@
+# ===> The following configuration options are available for privoxy-3.0.17:
+# ACCEPT_FILTER=Off (default) "Enable support for accf_http(9)"
+# DEBUG=Off (default) "Build with debugging symbols"
+# EDITOR=On (default) "Allow to enable the webbased action editor"
+# FORCE=On (default) "Allows to optionally bypass blocks"
+# PRIVOXY_TOOLS=Off (default) "Install Privoxy-Log-Parser, uagen etc."
+# TOGGLE=On (default) "Support for remote toggling"
+
+with=""
+without="EDITOR TOGGLE"
+

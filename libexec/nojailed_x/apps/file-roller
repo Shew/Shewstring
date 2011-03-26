@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for file-roller-2.32.1,1:
+# NAUTILUS=on (default) "Enable Nautilus extension"
+
+with=""
+without="NAUTILUS"
+

@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for samba34-libsmbclient-3.4.9:
+# ADS=off (default) "With Active Directory support"
+# ADDNS=off (default) "Build the libaddns shared library"
+# NETAPI=off (default) "Build the libnetapi shared library"
+# SHAREMODES=off (default) "Build the libsharemodes shared library"
+
+with=""
+without=""
+

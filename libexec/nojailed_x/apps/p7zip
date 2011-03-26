@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for p7zip-9.13_1:
+# MINIMAL=off (default) "Support only .7z file format"
+# MODULES=on (default) "Build modules"
+
+with=""
+without=""
+

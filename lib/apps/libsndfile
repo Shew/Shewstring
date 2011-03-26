@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for libsndfile-1.0.23:
+# EXTERNAL=on (default) "Enable FLAC and Ogg Vorbis support"
+
+with=""
+without=""
+

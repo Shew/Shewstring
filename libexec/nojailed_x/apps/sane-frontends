@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for sane-frontends-1.0.14_7:
+# GTK1=off (default) "GTK1 support (Default is GTK2)"
+# GIMP=off (default) "also build xscanimage as a GIMP plug-in"
+
+with=""
+without=""
+

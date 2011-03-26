@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for jasper-1.900.1_9:
+# OPENGL=off (default) "OpenGL support"
+# UUID=off (default) "UUID support (required by GDAL)"
+
+with=""
+without=""
+

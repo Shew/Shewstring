@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for cairo-1.10.0_3,1:
+# GL=Off (default) "Enable OpenGL Support"
+# XCB=On (default) "Enable XCB (X C-language Binding) Support"
+
+with=""
+without=""
+

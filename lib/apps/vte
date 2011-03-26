@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for vte-0.26.2:
+# GLX=off (default) "Enable support for DRI/GLX rendering"
+
+with=""
+without=""
+

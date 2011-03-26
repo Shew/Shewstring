@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for libmng-1.0.10_2:
+# MNG_OPTIMIZE=off (default) "Use vendor's new optimization flags"
+
+with=""
+without=""
+

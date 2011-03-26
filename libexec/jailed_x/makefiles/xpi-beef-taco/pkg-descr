@@ -1,0 +1,7 @@
+Beef TACO (Targeted Advertising Cookie Opt-Out) is a plugin for the Mozilla
+and Firefox broswers to keep persistant user tracking opt-out cookies even
+when cookies are regularly cleared. Beef TACO is a fork of the TACO plugin and
+was forked to remove bloatware from the original plugin. Beef TACO supports
+over 100 tracking opt-out cookies.
+
+WWW: http://jmhobbs.github.com/beef-taco/

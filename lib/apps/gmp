@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gmp-5.0.1:
+# CPU_OPTS=off (default) "Enable assembly optimizations for your CPU"
+
+with=""
+without=""
+

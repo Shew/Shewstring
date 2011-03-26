@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for ca_root_nss-3.12.6:
+# ETCSYMLINK=off (default) "Add symlink to /etc/ssl/cert.pem"
+
+with=""
+without=""
+

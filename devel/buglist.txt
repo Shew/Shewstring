@@ -1,0 +1,27 @@
+
+Security problems:
+  Xorg can leak information between client programs, and it lacks proper authentication.
+  XDM and Xauth are broken!
+  Users cannot log in correctly if home is world readable (this is fairly minor).
+  Redirected 127.0.0.1 addresses in tor_normal jail does not work (e.g. FProxy).
+  Tor hidden services do not work with 127.192.0.0/10 addresses.
+  XFBurn does not detect CD/DVD devices.
+
+Non-Shewstring bugs:
+  Vidalia segfaults. Bug report:
+	https://trac.torproject.org/projects/tor/ticket/2287
+  GELI ignores pipe. The user gets the prompt anyway.
+  The GELI boot message is covered up by system messages.
+  Redirecting the output of an empty braced statement in sh results in a segmentation fault instead of an error, even when using 'sh -n':
+    { } > file
+  Mousepad search & search/replace breaks after first use.
+  Pinentry (for GPG) has a 'feature' which prevents passwords from being pasted into it.
+  Sylpheed does not delete emails from the IMAP cache/server correctly when the emails have been moved from the folders where they normally reside (e.g. moving them from the Inbox to some other folder breaks deletion).
+  The wrapper for Freenet does not download correctly.
+  Symbolic linking does not work properly with: GnuPG, Liferea, Pidgin, Sylpheed.
+  XFCE sometimes makes duplicate desktop items (when only one file exists).
+  I2P:
+    I2CP does not listen if an alternate port is set.
+    The wrapper requires legacy libraries (via compat4x).
+    The wrapper communicates via an undocumented TCP port?
+    B32 addresses dont work.

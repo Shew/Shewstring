@@ -1,0 +1,122 @@
+
+shewstringv*
+|	The root folder. The version takes the form major.minor.misc (for example:
+|	Shewstringv0.1.1). Major denotes a large change in the functioning of the
+|	install process. Minor denotes a change in the functioning of one or more of
+|	the installers. Misc. denotes a small change which does not change the
+|	behavior of any of the installers. The root folder contains files that are
+|	important for every user to look at.
+|
++ devel
+| |	Contains information important to developers.
+| |
+| + customization
+| |	Contains files for putting in installer customization folders that may be
+| |	useful to developers.
+| |
+| + scripts
+|	Contains scripts which are useful to use when doing various tasks in
+|	developing Shewstring, Shewstring installers, or preparing a release.
+|
++ docs
+|	Contains documentation for Shewstring itself. Systems installed by a
+|	Shewstring installer should provide their own documentation.
+|
++ installers
+| |	Contains folders for the installers and their associated files. An installer
+| |	calls the various scripts and functions in Shewstring to install a secure
+| |	FreeBSD distro. An installer may have its own folder hierarchy too.
+| |
+| + */customization
+| |	Contains scripts and files a user has added or modified. All scripts with a
+| |	name ending in '.sh' or with the first line containing '#!/bin/sh' will be ran
+| |	after the installer has finished. A script can simply be dropped into this
+| |	folder to add finishing touches to the installed distro.
+| |
+| + */query
+|	Contains query files. Each of these files defines a question which is asked to
+|	the user just before running the associated installer. See
+|	menu_utils__prompt_option in lib/menu_utils.sh for more detail.
+|
++ lib
+| |	Contains libraries (shell scripts containing functions only) which are used to
+| |	do general tasks in Shewstring or Freebsd, such as setting up jails, prompting
+| |	the user, or compiling programs.
+| |
+| + apps
+| |	Apps files for the lib scripts. These files are used to configure the build
+| |	options of the ports. See ports_pkgs_utils__configure_port in
+| |	lib/ports_pkgs_utils.sh for more detail.
+| |
+| + rc.d
+|	Contains scripts for starting programs that will be placed in '/etc/rc.d'. See
+|	'man rc' for more detail.
+|
++ libexec
+| |	Contains libraries and executeable scripts for setting up particular programs
+| |	or subsystems in FreeBSD.
+| |
+| + darknets
+| |	Contains scripts for setting up darknets (anonymity networks) and their
+| |	associated programs.
+| |
+| + fixit
+| |	Contains scripts used to set up FreeBSD in the fixit CLI live-filesystem
+| |	(which is provided with the FreeBSD installation media). Most other scripts
+| |	will be used in a post-boot system once the fixit scripts have been completed.
+| |	The fixit scripts do things like installing filesystems and the base FreeBSD
+| |	system.
+| |
+| + host
+| |	Contains scripts used to set up basic FreeBSD subsystems, like networking.
+| |
+| + jailed_nox
+| |	Contains scripts used to set up jailed programs that do not use X11. These are
+| |	probably mostly scripts to set up daemons.
+| |
+| + jailed_x
+| |	Contains scripts used to set up jailed programs that do use X11. These are
+| |	probably mostly scripts useful only to desktop systems. They can be reached by
+| |	logging into the jail via telnet. See x_login__install_login in
+| |	libexec/x/login.sh for more information.
+| |
+| + lockdown
+| |	Contains scripts to perform final system hardening before ending the
+| |	installation process.
+| |
+| + nojailed_nox
+| |	Contains scripts used to set up unjailed programs that do not use X11. These
+| |	are probably mostly CLI programs useful to the user.
+| |
+| + nojailed_x
+| |	Contains scripts used to set up unjailed programs that do use X11. These are
+| |	probably mostly desktop environments and their associated graphical
+| |	applications.
+| |
+| + x
+| |	Contains scripts used to set up X11 servers and their associated programs.
+| |
+| + */apps
+| |	Apps files for the libexec scripts. These files are used to configure the
+| |	build options of the ports. See ports_pkgs_utils__configure_port in
+| |	lib/ports_pkgs_utils.sh for more detail.
+| |
+| + */home
+| |	Contains home folder hierarchies. A folder will be associated with a script in
+| |	the parent directory, which will empty the hierarchy into the home folder of
+| |	the user it is setting up.
+| |
+| + */makefiles
+| |	Contains extra makefiles for Shewstring which are not found in the FreeBSD
+| |	ports system.
+| |
+| + */misc
+| |	Contains extra files associated with scripts in the parent directory.
+| |
+| + */rc.d
+|	Contains scripts for starting programs that will be placed in '/etc/rc.d'. See
+|	'man rc' for more detail.
+|
++ scripts
+	Contains scripts useful to the user for misc. tasks and the maintenance of the
+	FreeBSD distros in general.

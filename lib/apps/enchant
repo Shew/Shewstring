@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for enchant-1.6.0:
+# ASPELL=on (default) "Enable Aspell backend"
+# HSPELL=off (default) "Enable Hspell backend"
+# HUNSPELL=off (default) "Enable Hunspell backend"
+# ISPELL=off (default) "Enable Ispell backend"
+# ZEMBEREK=off (default) "Enable zemberek backend (requires DBUS)"
+
+with=""
+without=""
+

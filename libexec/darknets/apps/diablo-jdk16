@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for diablo-jdk-1.6.0.07.02_12:
+# POLICY=off (default) "Install the Unlimited Strength Policy Files"
+# TZUPDATE=on (default) "Update the time zone data"
+
+with=""
+without="TZUPDATE"
+

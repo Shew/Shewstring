@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: shew_ntpd
+# REQUIRE: LOGIN shew_named
+
+# Add this to rc.conf to enable ntpd:
+#   shew_ntpd_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_ntpd'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+required_files='/etc/ntp.conf'
+
+command_args='-c /etc/ntp.conf'
+command='/usr/sbin/ntpd'
+
+pidfile='/var/run/ntp.pid'
+
+: ${shew_ntpd_enable='NO'}
+
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for gpac-libgpac-0.4.5_4,1:
+# IPV6=on (default) "IPv6 support"
+# JPEG=on (default) "JPEG support"
+# OPENGL=on (default) "OpenGL support"
+# OPENSSL=on (default) "OpenSSL support"
+# PNG=on (default) "PNG support"
+
+with=""
+without=""
+

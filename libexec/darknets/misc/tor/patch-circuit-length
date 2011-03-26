@@ -1,0 +1,61 @@
+--- src/or/circuitbuild.c
++++ src/or/circuitbuild.c
+@@ -1081,10 +1081,12 @@
+ {
+   int num_acceptable_routers;
+   int routelen;
++  or_options_t *options = get_options();
+ 
+   tor_assert(routers);
+ 
+-  routelen = 3;
++ routelen = options->ClientCircuitLen;
++
+   if (exit &&
+       purpose != CIRCUIT_PURPOSE_TESTING &&
+       purpose != CIRCUIT_PURPOSE_S_ESTABLISH_INTRO)
+--- src/or/config.c
++++ src/or/config.c
+@@ -164,6 +164,7 @@
+   V(BridgeRelay,                 BOOL,     "0"),
+   V(CircuitBuildTimeout,         INTERVAL, "1 minute"),
+   V(CircuitIdleTimeout,          INTERVAL, "1 hour"),
++  V(ClientCircuitLen,            UINT,     "3"),
+   V(ClientDNSRejectInternalAddresses, BOOL,"1"),
+   V(ClientOnly,                  BOOL,     "0"),
+   V(ConnLimit,                   UINT,     "1000"),
+@@ -481,6 +482,8 @@
+   { "AllowNonRFC953Hostnames", "If set to 1, we don't automatically reject "
+     "hostnames for having invalid characters." },
+   /*  CircuitBuildTimeout, CircuitIdleTimeout */
++  { "ClientCircuitLen", "Sets the number of hops for client circuits "
++    "to 1, 2 or 3." },
+   { "ClientOnly", "If set to 1, Tor will under no circumstances run as a "
+     "server, even if ORPort is enabled." },
+   { "EntryNodes", "A list of preferred entry nodes to use for the first hop "
+@@ -3341,6 +3344,15 @@
+     options->CircuitBuildTimeout = MIN_CIRCUIT_BUILD_TIMEOUT;
+   }
+ 
++  if (options->ClientCircuitLen < 1)
++    REJECT("ClientCircuitLen cannot be less than one.");
++
++  if (options->ClientCircuitLen > 3)
++    REJECT("ClientCircuitLen cannot be more than three.");
++
++  if (options->ClientCircuitLen < 3)
++    log(LOG_WARN, LD_CONFIG, "ClientCircuitLen is lower than 3, this could have a severe impact on your anonymity.");
++
+   if (options->MaxCircuitDirtiness < MIN_MAX_CIRCUIT_DIRTINESS) {
+     log(LOG_WARN, LD_CONFIG, "MaxCircuitDirtiness option is too short; "
+       "raising to %d seconds.", MIN_MAX_CIRCUIT_DIRTINESS);
+--- src/or/or.h
++++ src/or/or.h
+@@ -2572,6 +2572,8 @@
+   /** If true, SIGHUP should reload the torrc. Sometimes controllers want
+    * to make this false. */
+   int ReloadTorrcOnSIGHUP;
++
++  int ClientCircuitLen; /* The number of hops for client circuits */
+
+ } or_options_t;

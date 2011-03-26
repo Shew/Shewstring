@@ -1,0 +1,11 @@
+--- src/or/config.c
++++ src/or/config.c
+@@ -2899,7 +2899,7 @@
+ 
+ /** Lowest allowable value for MaxCircuitDirtiness; if this is too low, Tor
+  * will generate too many circuits and potentially overload the network. */
+-#define MIN_MAX_CIRCUIT_DIRTINESS 10
++#define MIN_MAX_CIRCUIT_DIRTINESS 0
+ 
+ /** Return 0 if every setting in <b>options</b> is reasonable, and a
+  * permissible transition from <b>old_options</b>. Else return -1.

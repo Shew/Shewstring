@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: shew_tor_z_dirt
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add this to rc.conf to enable tor_z_dirt:
+#   shew_tor_z_dirt_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_tor_z_dirt'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_tor_z_dirt__fix_permissions() {
+	# This function fixes the permissions on Tor's files after it has changed them.
+
+	/bin/chmod 0750 /usr/shew/sensitive/tor_z_dirt
+}
+
+required_files='/usr/shew/permanent/tor_z_dirt/torrc'
+
+shew_tor_z_dirt_user='tor_z_dirt'
+
+command_args='-f /usr/shew/permanent/tor_z_dirt/torrc'
+command='/usr/local/bin/tor'
+
+start_postcmd='shew_tor_z_dirt__fix_permissions'
+
+pidfile='/home/tor_z_dirt/tor.pid'
+
+: ${shew_tor_z_dirt_enable='NO'}
+
+run_rc_command "$1"

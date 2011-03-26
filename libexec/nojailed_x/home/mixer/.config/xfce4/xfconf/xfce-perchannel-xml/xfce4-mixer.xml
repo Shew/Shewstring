@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-mixer" version="1.0">
+  <property name="sound-card" type="string" value="UnknownOSSMixer"/>
+  <property name="sound-cards" type="empty">
+    <property name="UnknownOSSMixer" type="array">
+      <value type="string" value="Volume"/>
+      <value type="string" value="Microphone"/>
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,33 @@
+
+prompt='YES'
+
+message='
+Please select a time zone for your area, or a category for your area (which
+contains more time zones):
+(NOTE: The jails all think the time zone is UTC, no matter what you put here)
+
+Categories:
+Africa		America		America/Argentina		America/Indiana
+America/Kentucky		America/North_Dakota		Antarctica
+Arctic		Asia		Atlantic	Australia	Etc
+Europe		Indian		Pacific
+
+Basic zones:
+CET		CST6CDT		EET		EST		EST5EDT
+Factory		GMT		HST		MET		MST
+MST7MDT		PST8PDT		WET'
+
+check='
+	echo "
+Africa		America		America/Argentina		America/Indiana	America/Kentucky
+America/North_Dakota		Antarctica	Arctic		Asia		Atlantic
+Australia	Etc		Europe		Indian		Pacific
+CET		CST6CDT		EET		EST		EST5EDT		Factory
+GMT		HST		MET		MST		MST7MDT		PST8PDT
+WET" \
+	| grep -e "^${line}	" -e "	${line}	" -e "	${line}$" \
+	> /dev/null
+'
+
+check_error_message='
+The time zone or category you chose does not exist, please choose another.'

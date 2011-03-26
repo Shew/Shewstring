@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for gstreamer-plugins-mp3-0.10.0_1:
+# MAD=On (default) "Use MAD Mp3"
+# FLUENDO=Off (default) "Use Fluendo Mp3"
+
+with=""
+without=""
+

@@ -1,0 +1,24 @@
+
+hostname localhost
+enable-remote-toggle  0
+enable-remote-http-toggle  0
+enable-edit-actions 0
+permit-access localhost
+forwarded-connect-retries 3
+keep-alive-timeout 300
+
+confdir /usr/shew/permanent/privoxy
+logdir /home/privoxy
+logfile privoxy.log
+
+listen-address
+
+## Route SOCKS:
+
+## Route HTTP:
+
+## Route Local:
+forward		192.168.*.*/		.
+forward		10.*.*.*/		.
+forward		127.*.*.*/		.
+forward		localhost/		.

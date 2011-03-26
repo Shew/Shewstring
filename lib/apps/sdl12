@@ -1,0 +1,16 @@
+# ===> The following configuration options are available for sdl-1.2.14_2,2:
+# AALIB=On (default) "ASCII art support"
+# ARTS=Off (default) "ARts sound system support"
+# ESD=Off (default) "Enlightenment sound system support"
+# GGI=Off (default) "General Graphics Interface support"
+# NAS=Off (default) "Network Audio System support"
+# OPENGL=On (default) "OpenGL 2D/3D graphics support"
+# OSS=On (default) "Open Sound System support"
+# PULSEAUDIO=Off (default) "PulseAudio sound system support"
+# SVGALIB=Off (default) "SVGA graphics support (i386 only)"
+# VGL=On (default) "Video Graphics Lib support"
+# XLIB=On (default) "XLib (xorg) graphics support"
+
+with=""
+without=""
+

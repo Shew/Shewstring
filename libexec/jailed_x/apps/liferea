@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for liferea-1.6.5_1:
+# LIBNOTIFY=on (default) "Enable libnotify support"
+
+with=""
+without=""
+

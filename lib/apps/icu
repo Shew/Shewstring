@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for icu-4.6:
+# THREADS=on (default) "Build thread-safe version of the library"
+
+with=""
+without=""
+

@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for webkit-gtk2-1.2.6:
+# VIDEO=on (default) "Enable video support"
+# DEBUG=off (default) "Build with debug support"
+# STATIC=off (default) "Enable building static library"
+
+with=""
+without="VIDEO"
+

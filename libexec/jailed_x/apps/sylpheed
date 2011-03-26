@@ -1,0 +1,12 @@
+# ===> The following configuration options are available for sylpheed-3.0.3:
+# GPGME=off (default) "Enable GnuPG support using GPGME."
+# COMPFACE=off (default) "Enable X-Face support."
+# JPILOT=off (default) "Enable JPilot support."
+# LDAP=off (default) "Enable LDAP support."
+# SSL=on (default) "Enable OpenSSL support."
+# GTKSPELL=on (default) "Enable Spell checking support"
+# ONIGURUMA=off (default) "Enable Oniguruma support"
+
+with="GPGME"
+without=""
+

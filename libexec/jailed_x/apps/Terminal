@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for Terminal-0.4.5:
+# DBUS=on (default) "Enable D-BUS support"
+# NLS=on (default) "Enable Native Language Support"
+
+with=""
+without="DBUS"
+

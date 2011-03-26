@@ -1,0 +1,2 @@
+Decrypt PGP Inline: *gpg --no-tty --command-fd 0 --passphrase-fd 0 -d %p |
+Decrypt PGP Attachment: *gpg --no-tty --command-fd 0 --passphrase-fd 0 -o /tmp/%u -d %p

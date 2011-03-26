@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: shew_freenet
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add this to rc.conf to enable freenet:
+#   shew_freenet_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_freenet'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_freenet__start() {
+	# This function will start Freenet and daemonize it.
+
+	export PATH='/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin'
+		# For some reason, this is not set for this rc.d file.
+
+	/usr/bin/su -m freenet -c \
+		'/home/freenet/freenet/run.sh start'
+}
+
+shew_freenet__write_pidfile() {
+	# This function will write a pidfile for Freenet.
+
+	pid="`
+		/bin/ps -ax \
+			| /usr/bin/grep 'freenet' \
+			| /usr/bin/grep 'java' \
+			| /usr/bin/tail -n 1 \
+			| /usr/bin/sed -E 's/ *([0-9]*).*/\1/'
+	`"
+
+	echo "$pid" \
+		> /home/freenet/freenet.pid
+}
+
+shew_freenet_nice='12'
+	# Freenet does not appear to control its resource usage very well without
+	# its wrapper working.
+
+start_cmd='shew_freenet__start'
+	# The function is put in cmd, because it does not do a check to see that
+	# the command is an executeable file.
+
+command='/usr/local/openjdk7/bin/java'
+
+start_postcmd='shew_freenet__write_pidfile'
+
+pidfile='/home/freenet/freenet.pid'
+
+: ${shew_freenet_enable='NO'}
+
+run_rc_command "$1"

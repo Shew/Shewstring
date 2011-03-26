@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for pinentry-0.8.1:
+# NCURSES=on (default) "Curses frontend"
+# GTK=on (default) "Gtk+1 frontend"
+# GTK2=on (default) "Gtk+2 frontend"
+# QT3=on (default) "Qt3 frontend"
+# QT4=on (default) "Qt4 frontend"
+
+with=""
+without="GTK QT3 QT4"
+

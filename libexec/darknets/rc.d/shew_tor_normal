@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: shew_tor_normal
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add this to rc.conf to enable tor_normal:
+#   shew_tor_normal_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_tor_normal'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_tor_normal__fix_permissions() {
+	# This function fixes the permissions on Tor's files after it has changed them.
+
+	/bin/chmod 0750 /usr/shew/sensitive/tor_normal
+}
+
+required_files='/usr/shew/permanent/tor_normal/torrc'
+
+shew_tor_normal_user='tor_normal'
+
+command_args='-f /usr/shew/permanent/tor_normal/torrc'
+command='/usr/local/bin/tor'
+
+start_postcmd='shew_tor_normal__fix_permissions'
+
+pidfile='/home/tor_normal/tor.pid'
+
+: ${shew_tor_normal_enable='NO'}
+
+run_rc_command "$1"

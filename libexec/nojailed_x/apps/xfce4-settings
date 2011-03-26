@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for xfce4-settings-4.6.5:
+# XKLAVIER=off (default) "Keyboard layout settings"
+# XCURSOR=on (default) "Enable cursor themes support"
+# XRANDR=on (default) "Enable Xrandr support"
+# NOTIFY=on (default) "Enable notification support"
+# NLS=on (default) "Enable Native Language Support"
+
+with=""
+without=""
+

@@ -1,0 +1,17 @@
+# ===> The following configuration options are available for xlockmore-5.31:
+# MESAGL=off (default) "Enable Mesa 3D (for GL modes)"
+# MB=off (default) "Enable Xmb function series"
+# SYSLOG=off (default) "Enable syslog logging"
+# DISABLE_ALLOW_ROOT=off (default) "Allows users to turn off allowroot"
+# NICE_ONLY=off (default) "Enable only low cpu modes"
+# BLANK_ONLY=off (default) "Enable blank mode only (boring)"
+# PAM=off (default) "Enable PAM authentication support"
+# BAD_PAM=off (default) "Xlock will ask PAM with root rights"
+# GTK2=off (default) "Build Gtk2 graphical shell"
+# XLOCK_GROUP=off (default) "Allow xlock group to logout"
+# TIME_BOMB=off (default) "Allow autologout"
+# CUSTOMIZATION=off (default) "Allow tune through resource file"
+
+with="BLANK_ONLY"
+without=""
+

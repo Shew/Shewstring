@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for py26-gtk-2.22.0_1:
+# NUMPY=off (default) "Enable numpy support (pulls in gcc44)"
+
+with=""
+without=""
+

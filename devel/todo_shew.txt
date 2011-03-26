@@ -1,0 +1,102 @@
+
+# This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
+
+Switch the default chat program(s) to Psi and Xchat:
+  Offer OTR for both of them.
+    http://public.tfh-berlin.de/~s30935/
+    http://irssi-otr.tuxfamily.org/
+
+Build a custom kernel that is more lightweight.
+
+Create a boot prompt framework:
+  Do not write to disk boot option.
+    Set /data to ro, and mount a mfs on top of /sensitive.
+  Randomize MAC option.
+  Don't start daemons option.
+  Don't start X option.
+  Don't start networking option.
+  Combinations of the above.
+
+Consider programs for use with I2P:
+  Non-browser GUI torrent client.
+  I2P-Bote.
+  Tahoe-LAFS.
+  I2P Messenger.
+
+Properly implement IPv6 support:
+  Install OnionCat and set it to route IPv6 traffic coming from jails:
+    Use an rc.d script to create a tun interface via ifconfig on the host.
+    Enable the /dev/tun* device file with permissions restricted to the OnionCat user in nat_darknets.
+    Run OnionCat with that device file/interface.
+    Use PF to allow a NAT between the jails and the tun* interface.
+
+Set up IPSec with OpenSwan or StrongSwan:
+  http://wiki.strongswan.org/wiki/strongswan/FreeBSD
+  Research opportunistic encryption, and better than nothing encryption, and see if they are used much.
+
+Research nice, and other ways to prioritize computer resources, such as PF's queueing:
+  http://www.openbsd.org/faq/pf/queueing.html
+
+Create a unified logging framework for the user:
+  Grok looks promising: http://code.google.com/p/semicomplete/wiki/Grok
+
+Add support for other installers:
+  Network install.
+  USB install.
+
+Set up CUPS:
+	Audit apps files for CUPS settings.
+
+Turn off the ability of the user to write input when it is not being asked of the user.
+
+Add passwords to any daemons (e.g. proxies) that support it.
+
+Submit bug reports.
+
+Make remixing installers easier:
+	Remove anything containing the installer name, and instead set those values via a variable containing the name.
+	Segregate installer jail sections and put them in a "jails" folder so they can be remixed by users.
+	Create a doc on how to build installers.
+
+Rewrite PF rules to use macros for the jail IP addresses and ports (so they are easier to read).
+
+Make a censorship circumvention mode:
+	Add Tor bridges, I2P hidden mode, Freenet darknet peers.
+	Move updates and Xorg so they are built after Tor is up.
+	Cache Tor build and run depends distfiles.
+	Build Tor and set the compile jail to use Tor transparent proxying.
+	Fetch all updates, distfiles, and downloads through Tor with bridges.
+
+Make documentation for Shewstring_Desktop.
+
+Create backup and restore scripts.
+
+Modify generate_app_files.sh so that it can use an alternate ports skeleton folder.
+
+Audit code so that it can restart more easily:
+	Place tasks that can be run multiple times first and tasks that cant after.
+	Do things in ways that can be repeated multiple times without harm.
+	Make checks to see if things have already been done.
+
+Document how the scripts call each other for the installation process.
+
+Add I2P hosts subscriptions.
+
+Consider other darknets to add:
+  FCON
+  GnuNet
+
+Find better software for:
+  Calandar.
+  NNTP.
+  VoIP.
+  Power meter.
+  Volume control.
+  DNSSEC.
+  NTPD.
+
+Create Shewstring installers:
+  Shewstring_Relays
+  Shewstring_Proxies
+  Shewstring_Personal_Servers
+  Shewstring_Zeroconf_Servers

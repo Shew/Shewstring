@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gconf2-2.32.0_2:
+# LDAP=off (default) "Enable LDAP support"
+
+with=""
+without=""
+

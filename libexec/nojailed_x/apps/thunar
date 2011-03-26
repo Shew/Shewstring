@@ -1,0 +1,18 @@
+# ===> The following configuration options are available for Thunar-1.0.2:
+# DBUS=on (default) "Enable D-BUS support"
+# JPEG=on (default) "Enable JPEG support"
+# FAM=on (default) "Enable FAM support"
+# HAL=on (default) "Enable HAL support"
+# GCONF=off (default) "Enable GCONF support"
+# STARTUP=on (default) "Enable startup notification support"
+# PLUG_APR=on (default) "Thunar Advanced Properties plugin"
+# PLUG_APR_EXIF=off (default) "Exif support for the APR plugin"
+# PLUG_SBR=on (default) "Thunar Simple Builtin Renamers plugin"
+# PLUG_SBR_PCRE=off (default) "Regular expression support for the SBR plugin"
+# PLUG_TPA=on (default) "Thunar Trash Panel Applet plugin"
+# PLUG_UCA=on (default) "Thunar User Customizable Actions plugin"
+# PLUG_WALL=on (default) "Thunar Wallpaper plugin"
+
+with="PLUG_APR_EXIF"
+without="DBUS HAL PLUG_UCA"
+

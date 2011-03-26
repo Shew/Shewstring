@@ -1,0 +1,9 @@
+
+DataDirectory /usr/shew/sensitive/tor_two_hop
+PidFile /home/tor_two_hop/tor.pid
+Log notice file /home/tor_two_hop/tor.log
+
+AutomapHostsOnResolve 1
+RunAsDaemon 1
+
+ClientCircuitLen 2

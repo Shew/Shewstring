@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for lynx-2.8.7.1_1,1:
+# SSL=on (default) "SSL support"
+# DEFAULT_COLORS=off (default) "Colors support"
+# IPV6=off (default) "IPv6 support"
+# NLS=on (default) "Native language support"
+
+with=""
+without=""
+

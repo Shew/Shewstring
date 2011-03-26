@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gamin-0.1.10_4:
+# GAM_POLLER=off (default) "Use gamin's poller instead of kqueue's"
+
+with=""
+without=""
+

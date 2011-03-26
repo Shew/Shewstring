@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for libxfce4menu-4.6.2:
+# GTKDOC=off (default) "install the library documentation"
+# NLS=on (default) "Enable Native Language Support"
+
+with=""
+without=""
+

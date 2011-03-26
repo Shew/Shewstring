@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for firefox-3.6.13,1:
+# DBUS=on (default) "Enable D-BUS support"
+# SMB=off (default) "Enable smb:// URI support using gnomevfs"
+# DEBUG=off (default) "Build a debugging image"
+# LOGGING=off (default) "Enable additional log messages"
+# OPTIMIZED_CFLAGS=off (default) "Enable some additional optimizations"
+
+with=""
+without="DBUS"
+

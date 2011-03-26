@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for gvfs-1.6.6:
+# FUSE=off (default) "Enable fuse"
+# SAMBA=on (default) "Enable Samba"
+# GPHOTO2=on (default) "Enable Gphoto 2 camera support"
+# CDDA=on (default) "Enable CDDA"
+
+with=""
+without=""
+

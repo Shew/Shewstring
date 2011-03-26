@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for libexo-0.3.107:
+# HAL=on (default) "Enable HAL support"
+# NOTIFY=on (default) "Enable notification support"
+# PYTHON=off (default) "Enable Python support"
+# NLS=on (default) "Enable Native Language Support"
+
+with=""
+without="HAL"
+

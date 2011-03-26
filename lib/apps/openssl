@@ -1,0 +1,16 @@
+# ===> The following configuration options are available for openssl-1.0.0_4:
+# I386=off (default) "Use optimized assembler for 80386"
+# SSE2=on (default) "Use runtime SSE2 detection"
+# ASM=on (default) "Build with optimized Assembler"
+# ZLIB=on (default) "Build with zlib compression"
+# MD2=off (default) "Build with MD2 hash (obsolete)"
+# RC5=off (default) "Build with RC5 chipher (patented)"
+# RFC3779=off (default) "Build with RFC3779 support"
+# DTLS_RENEGOTIATION=off (default) "Build with DTLS Abbr. renegotiations"
+# DTLS_HEARTBEAT=off (default) "Build with DTLS Heartbeat Extension"
+# TLS_EXTRACTOR=off (default) "Build with TLS key material extractor"
+# SCTP=off (default) "Build with SCTP support"
+
+with=""
+without=""
+

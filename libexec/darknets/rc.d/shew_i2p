@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: shew_i2p
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add this to rc.conf to enable i2p:
+#   shew_i2p_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_i2p'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_i2p_user='i2p'
+
+command='/home/i2p/i2p/runplain.sh'
+
+pidfile='/home/i2p/tmp/router.pid'
+
+: ${shew_i2p_enable='NO'}
+
+run_rc_command "$1"

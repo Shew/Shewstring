@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for jbig2dec-0.11:
+# PNG=On (default) "Enable png support"
+# TESTS=Off (default) "Download and use test-images for post-build testing"
+
+with=""
+without=""
+

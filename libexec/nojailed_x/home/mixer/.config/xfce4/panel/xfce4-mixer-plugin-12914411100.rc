@@ -1,0 +1,4 @@
+card=UnknownOSSMixer
+track=Volume
+command=xfce4-mixer
+

@@ -1,0 +1,5 @@
+HTTPS Everywhere is a plugin by the EFF for the Mozilla and Firefox broswers
+to automatically rewrite links and to redirect to HTTPS connection when a rule
+is available to rewrite that link.
+
+WWW: https://www.eff.org/https-everywhere/

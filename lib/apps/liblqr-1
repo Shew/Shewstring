@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for liblqr-1-0.4.1_2:
+# HTMLDOCS=off (default) "Build and install HTML documentation"
+
+with=""
+without=""
+

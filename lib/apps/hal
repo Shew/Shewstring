@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for hal-0.5.14_12:
+# FIXED_MOUNTPOINTS=off (default) "use fixed mountpoints"
+
+with=""
+without=""
+

@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for xorg-server-1.7.5,1:
+# AIGLX=on (default) "Compile with Accelerated Indirect GLX support"
+# SUID=on (default) "Install the Xorg server with setuid bit set"
+# HAL=on (default) "Compile with HAL config support"
+
+with=""
+without="SUID HAL"
+

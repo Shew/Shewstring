@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for lcms-1.19_1,1:
+# TIFFICC=off (default) "Build color profile applier for tiff"
+# JPEGICC=off (default) "Build color profile applier for JPEG"
+
+with=""
+without=""
+

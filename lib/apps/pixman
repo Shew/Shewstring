@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for pixman-0.18.4:
+# SIMD=off (default) "Enable autodection of SIMD features (MMX, SSE2, VMX)"
+
+with=""
+without=""
+

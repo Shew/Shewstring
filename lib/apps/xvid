@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for xvid-1.2.2_1,1:
+# OPTIMIZED_CFLAGS=off (default) "Use XviD's default optimizations"
+
+with=""
+without=""
+

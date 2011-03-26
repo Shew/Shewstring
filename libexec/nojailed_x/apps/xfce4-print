@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for xfce4-print-4.6.1_6:
+# LPR=on (default) "Use lpr as printing system"
+# CUPS=off (default) "Use cups as printing system"
+# LETTER=off (default) "Use letter paper format instead of A4"
+
+with=""
+without=""
+

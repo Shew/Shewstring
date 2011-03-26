@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="browser_id" mtime="1200000000" type="string">
+		<stringvalue>manual</stringvalue>
+	</entry>
+	<entry name="disable-javascript" mtime="1200000000" type="bool" value="true"/>
+	<entry name="browse-inside-application" mtime="1200000000" type="bool" value="true"/>
+	<entry name="folder-display-mode" mtime="1200000000" type="int" value="1"/>
+	<entry name="startup_feed_action" mtime="1200000000" type="int" value="2"/>
+	<entry name="trayicon" mtime="1200000000" type="bool" value="false"/>
+	<entry name="browser" mtime="1200000000" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="default-update-interval" mtime="1200000000" type="int" value="0"/>
+	<entry name="maxitemcount" mtime="1200000000" type="int" value="50"/>
+	<entry name="last-window-maximized" mtime="1200000000" type="bool" value="true"/>
+	<entry name="last-zoomlevel" mtime="1200000000" type="int" value="100"/>
+	<entry name="enable-plugins" mtime="1200000000" type="bool" value="false"/>
+	<entry name="reduced-feedlist" mtime="1200000000" type="bool" value="false"/>
+	<entry name="start-in-tray" mtime="1200000000" type="bool" value="false"/>
+	<entry name="enclosure-download-path" mtime="1200000000" type="string">
+		<stringvalue>/home/liferea</stringvalue>
+	</entry>
+</gconf>

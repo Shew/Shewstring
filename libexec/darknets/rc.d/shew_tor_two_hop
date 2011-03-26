@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: shew_tor_two_hop
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add this to rc.conf to enable tor_two_hop:
+#   shew_tor_two_hop_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_tor_two_hop'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_tor_two_hop__fix_permissions() {
+	# This function fixes the permissions on Tor's files after it has changed them.
+
+	/bin/chmod 0750 /usr/shew/sensitive/tor_two_hop
+}
+
+required_files='/usr/shew/permanent/tor_two_hop/torrc'
+
+shew_tor_two_hop_user='tor_two_hop'
+
+command_args='-f /usr/shew/permanent/tor_two_hop/torrc'
+command='/usr/local/bin/tor'
+
+start_postcmd='shew_tor_two_hop__fix_permissions'
+
+pidfile='/home/tor_two_hop/tor.pid'
+
+: ${shew_tor_two_hop_enable='NO'}
+
+run_rc_command "$1"

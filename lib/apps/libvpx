@@ -1,0 +1,10 @@
+# ===> The following configuration options are available for libvpx-0.9.5:
+# DEBUG=OFF (default) "Enable debugging"
+# POSTPROC=ON (default) "Enable postprocessing"
+# RUNTIME=ON (default) "Enable runtime CPU detection"
+# THREADS=ON (default) "Enable multithread"
+# SHARED=ON (default) "Enable shared-library support"
+
+with=""
+without=""
+

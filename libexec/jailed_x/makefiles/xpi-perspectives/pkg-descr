@@ -1,0 +1,8 @@
+Perspectives is a plugin for the Mozilla and Firefox browsers to offer another
+way of authenticating SSL certificates besides the certificate authority
+system. It uses a set of notaries which keep track of whether certificates
+have been seen before and how long they have been seen for. It can be used to
+protect against man in the middle attacks when using the certificate authority
+system or with self signed certificates.
+
+WWW: http://www.cs.cmu.edu/~perspectives/

@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for libao-1.0.0:
+# ARTS=off (default) "Enable the aRts module"
+# ESOUND=off (default) "Enable the EsounD module"
+# NAS=off (default) "Enable the Network Audio System module"
+# PULSEAUDIO=off (default) "Enable the PulseAudio module"
+
+with=""
+without=""
+

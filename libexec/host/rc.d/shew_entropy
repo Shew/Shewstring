@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: shew_entropy
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+
+# Add this to rc.conf to enable entropy:
+#   entropy_dir="$path"
+#   shew_entropy_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_entropy'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_entropy__start() {
+	/bin/sh -c '
+		while /bin/sleep 601; do
+			/usr/libexec/save-entropy
+		done
+	' &
+
+	echo "$!" \
+		> /var/run/entropy.pid
+}
+
+start_cmd='shew_entropy__start'
+	# The function is put in cmd, because it does not do a check to see that
+	# the command is an executeable file.
+
+command='/bin/sh'
+
+pidfile='/var/run/entropy.pid'
+
+: ${shew_entropy_enable='NO'}
+
+run_rc_command "$1"

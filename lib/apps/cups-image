@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for cups-image-1.4.6:
+# GNUTLS=on (default) "Build with GNUTLS library"
+
+with=""
+without=""
+

@@ -1,0 +1,21 @@
+# ===> The following configuration options are available for sqlite3-3.7.4:
+# FTS3=on (default) "Enable FTS3/4 (Full Text Search) module"
+# ICU=off (default) "Enable built with "ICU""
+# RTREE=off (default) "Enable R*Tree module"
+# RAMTABLE=off (default) "Store temporary tables in RAM = yes"
+# UPD_DEL_LIMIT=off (default) "ORDER BY and LIMIT on UPDATE and DELETE"
+# SOUNDEX=off (default) "Enables the soundex() SQL function"
+# METADATA=on (default) "Enable column metadata"
+# STAT2=off (default) "Help SQLite to chose a better query plan"
+# MEMMAN=off (default) "Allows it to release unused memory"
+# SECURE_DELETE=on (default) "Overwrite deleted information with zeros"
+# UNLOCK_NOTIFY=on (default) "Enable notification on unlocking"
+# THREADSAFE=on (default) "Build thread-safe library"
+# EXTENSION=on (default) "Allow loadable extensions"
+# TCLWRAPPER=off (default) "Enable TCL wrapper"
+# DEBUG=off (default) "Enable debugging & verbose explain"
+# GCOV=off (default) "Enable coverage testing using gcov (broken)"
+
+with=""
+without=""
+

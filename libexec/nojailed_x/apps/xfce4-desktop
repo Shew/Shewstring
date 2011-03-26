@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for xfce4-desktop-4.6.2:
+# FAM=on (default) "Enable FAM support"
+# THUNAR=on (default) "Enable thunar support"
+
+with=""
+without=""
+

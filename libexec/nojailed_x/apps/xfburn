@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for xfburn-0.4.1_8:
+# DBUS=on (default) "Enable dbus support"
+# HAL=on (default) "Enable hal support"
+# GSTREAMER=off (default) "Enable gstreamer for audio support"
+
+with=""
+without="DBUS HAL"
+

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: shew_wpa_supplicant
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+
+# Add this to rc.conf to enable wpa_supplicant:
+#   shew_wpa_supplicant_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_wpa_supplicant'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+required_files="/usr/shew/permanent/root/wpa_supplicant/wpa_supplicant.conf"
+
+command_args='-B -Dbsd -iwlan0 -P/var/run/wpa_supplicant.pid -c/usr/shew/permanent/root/wpa_supplicant/wpa_supplicant.conf'
+command='/usr/sbin/wpa_supplicant'
+
+pidfile='/var/run/wpa_supplicant.pid'
+
+: ${shew_wpa_supplicant_enable='NO'}
+
+run_rc_command "$1"

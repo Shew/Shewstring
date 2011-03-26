@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# PROVIDE: shew_named
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+
+# Add this to rc.conf to enable named:
+#   shew_named_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_named'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_named__mount() {
+	/sbin/mount -t devfs devfs /usr/shew/chroots/named/dev
+	/sbin/devfs -m /usr/shew/chroots/named/dev ruleset 1
+	/sbin/devfs -m /usr/shew/chroots/named/dev rule applyset
+	/sbin/devfs -m /usr/shew/chroots/named/dev ruleset 2
+	/sbin/devfs -m /usr/shew/chroots/named/dev rule applyset
+
+	/sbin/mdmfs -o rw,noatime,nosuid -p 1777 -s 4m md /usr/shew/chroots/named/tmp
+}
+
+shew_named__umount() {
+	/sbin/umount -f /usr/shew/chroots/named/tmp
+	/sbin/umount -f /usr/shew/chroots/named/dev
+}
+
+required_dirs='/usr/shew/chroots/named'
+required_files='/usr/shew/chroots/named/etc/namedb/named.conf'
+
+start_precmd='shew_named__mount'
+
+command_args='-c /etc/namedb/named.conf -t /usr/shew/chroots/named -u named'
+command='/usr/sbin/named'
+
+stop_postcmd='shew_named__umount'
+
+pidfile='/usr/shew/chroots/named/tmp/named.pid'
+
+: ${shew_named_enable='NO'}
+
+run_rc_command "$1"

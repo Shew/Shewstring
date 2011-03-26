@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for orc-0.4.11:
+# DOCS=off (default) "Include gtk-doc documentation"
+# EXAMPLES=off (default) "Install example files"
+
+with=""
+without=""
+

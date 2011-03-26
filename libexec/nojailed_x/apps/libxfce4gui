@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for libxfce4gui-4.6.4:
+# GTKDOC=off (default) "install the library documentation"
+# STARTUP=on (default) "use libstartup-notification"
+# GLADEUI=off (default) "glade interface designer"
+
+with=""
+without=""
+

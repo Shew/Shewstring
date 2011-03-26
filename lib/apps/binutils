@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for binutils-2.21:
+# NLS=off (default) "Enable National Language Support"
+
+with=""
+without=""
+

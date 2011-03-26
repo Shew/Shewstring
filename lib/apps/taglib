@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for taglib-1.6.3:
+# RCC=off (default) "Build with RusXMMS librcc patches (experimental)"
+
+with=""
+without=""
+

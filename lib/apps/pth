@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for pth-2.0.7:
+# OPTIMIZED_CFLAGS=on (default) "Build with optimized CFLAGS"
+
+with=""
+without=""
+

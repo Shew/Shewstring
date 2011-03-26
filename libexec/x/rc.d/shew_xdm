@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: shew_xdm
+# REQUIRE: LOGIN jail
+
+# Add this to rc.conf to enable xdm:
+#   shew_xdm_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_xdm'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+command='/usr/local/bin/xdm'
+
+pidfile='/var/run/xdm.pid'
+
+: ${shew_xdm_enable='NO'}
+
+run_rc_command "$1"

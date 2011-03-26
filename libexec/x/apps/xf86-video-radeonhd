@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for xf86-video-radeonhd-1.3.0_3:
+# UTILS=off (default) "Install rhd_conntest and rhd_dump utilities"
+
+with=""
+without="UTILS"
+

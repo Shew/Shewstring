@@ -1,0 +1,8 @@
+# ===> The following configuration options are available for gpgme-1.3.0_2:
+# GNUPG1=off (default) "Use GNUPG 1.x instead of GNUPG 2.x"
+# PTH=off (default) "Build alternate lib with GNU portable threads"
+# UISERVER=off (default) "Enable the GNUPG UI Server support"
+
+with=""
+without=""
+

@@ -1,0 +1,6 @@
+# ===> The following configuration options are available for gtk-engines2-2.20.2:
+# ANIMATION=off (default) "Enable experimental animated progressbars"
+
+with=""
+without=""
+

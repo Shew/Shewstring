@@ -1,0 +1,13 @@
+# ===> The following configuration options are available for python26-2.6.6:
+# THREADS=on (default) "Enable thread support"
+# HUGE_STACK_SIZE=off (default) "Use a larger thread stack"
+# SEM=off (default) "Use POSIX semaphores (experimental)"
+# PTH=off (default) "Use GNU Pth for threading/multiprocessing"
+# UCS4=on (default) "Use UCS4 for unicode support"
+# PYMALLOC=on (default) "Use python's internal malloc"
+# IPV6=on (default) "Enable IPv6 support"
+# FPECTL=off (default) "Enable floating point exception handling"
+
+with=""
+without=""
+

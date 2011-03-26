@@ -1,0 +1,28 @@
+
+prompt='YES'
+
+message='
+What is the FreeBSD device file for your thumb drive or partition?
+This is probably da followed by a number, if you are using a USB thumb drive.
+(Consult the FreeBSD documentation if you are unsure.)
+The following storage device files were found on your system:'
+
+exec_message='
+	ls /dev \
+		| grep \
+			-e "^ad[0-9]*" -e "^da[0-9]*" -e "^sa[0-9]*" -e "^ast[0-9]*" -e "^fla[0-9]*" -e "^aacd[0-9]*" \
+			-e "^mlxd[0-9]*" -e "^mlyd[0-9]*" -e "^amrd[0-9]*" -e "^idad[0-9]*" -e "^twed[0-9]*"
+'
+
+check='
+	ls /dev \
+		| grep \
+			-e "^ad[0-9]*" -e "^da[0-9]*" -e "^sa[0-9]*" -e "^ast[0-9]*" -e "^fla[0-9]*" -e "^aacd[0-9]*" \
+			-e "^mlxd[0-9]*" -e "^mlyd[0-9]*" -e "^amrd[0-9]*" -e "^idad[0-9]*" -e "^twed[0-9]*" \
+		| grep "$line" \
+		> /dev/null \
+		2> /dev/null
+'
+
+check_error_message='
+The device file you entered was not found in /dev, please try another file.'

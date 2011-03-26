@@ -1,0 +1,23 @@
+# ===> The following configuration options are available for docbook-1.4:
+# DB241=off (default) "DocBook SGML DTD 2.4.1"
+# DB30=off (default) "DocBook SGML DTD 3.0"
+# DB31=off (default) "DocBook SGML DTD 3.1"
+# DB40=off (default) "DocBook SGML DTD 4.0"
+# DB41=on (default) "DocBook SGML DTD 4.1"
+# DB42=on (default) "DocBook SGML DTD 4.2"
+# DB43=on (default) "DocBook SGML DTD 4.3"
+# DB44=on (default) "DocBook SGML DTD 4.4"
+# DB45=on (default) "DocBook SGML DTD 4.5"
+# DB41_XML=on (default) "DocBook XML DTD 4.1"
+# DB42_XML=on (default) "DocBook XML DTD 4.2"
+# DB43_XML=on (default) "DocBook XML DTD 4.3"
+# DB44_XML=on (default) "DocBook XML DTD 4.4"
+# DB45_XML=on (default) "DocBook XML DTD 4.5"
+# DB50_XML=on (default) "DocBook XML 5.0 distribution"
+# SDB_XML=off (default) "Simplified DocBook XML DTD"
+# SGMLCHARENT=on (default) "ISO 8879:1986 character entity sets (SGML)"
+# XMLCHARENT=on (default) "ISO 8879:1986 character entity sets (XML)"
+
+with=""
+without=""
+

@@ -1,0 +1,9 @@
+# ===> The following configuration options are available for boost-libs-1.45.0_1:
+# VERBOSE_BUILD=off (default) "Show compiler messages"
+# DEBUG=off (default) "Build debugging symbols"
+# ICU=on (default) "Boost.Regex with ICU unicode support"
+# OPTIMIZED_CFLAGS=off (default) "Enable -O3 optimization"
+
+with=""
+without=""
+

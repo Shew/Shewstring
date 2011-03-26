@@ -1,0 +1,62 @@
+
+# This todo file is for items that would be easier for anyone to contribute to.
+
+Come up with a process for compiling and using jbigi (Apparently both the FreeBSD I2P port, and the libjbigi port do not work).
+
+Get XDM and Xauth to work properly:
+  Authorization for a non-host client program should only be open for a short amount of time.
+  The server should not automatically authorize everyone!
+  Set up a good security policy for the X server, preferrably preventing client programs from seeing each other and/or being able to intercept each other's information.
+
+Add some way of differentiating between windows from different jails:
+  Try coloring the windows differently? Blue for host programs, green for the NAT jails, yellow tor_fast and tor_pseudonym_1, red for tor_normal and tor_pseudonym_2.
+
+Start chrooting all daemons (Even jailed ones) and non-telnet/login processes that are chrootable:
+  Tell make to statically link them to make this easier?
+
+Consider limiting users more:
+  http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/users-limiting.html
+
+Port systrace or equivalent (equivalent FreeBSD MAC module is not supported?):
+  Run all daemons under reduced privileges (Such as NTPD).
+
+Research compile time hardening, and see if it's something that can be enabled for most ports and/or the kernel:
+  --enable-gcc-hardening
+  --enable-linker-hardening
+
+Figure out how to compile Liferea with Mozilla instead of Webkit, so extensions can be used (especially Torbutton).
+
+Examine increasing jail virtualization, and if it has any security benefits:
+  Using the network stack virtualization in CURRENT may protect the MAC address, interfaces, etc. from being known by the jails.
+
+Figure out how to detect the correct sound device driver, and load less modules at boot.
+
+Change the login message to 'Welcome to Desktop.'
+
+Build OpenJDK from some package in the FreeBSD package system that is based on open software:
+  Build each dependency from ports.
+  Install OpenJDK package.
+  Use 'make' (without installation) to build the new OpenJDK.
+  Remove the OpenJDK package.
+  Use 'make package' to make the new OpenJDK package.
+  Update README to reflect the new architectures supported (because SunJDK was the restricting factor).
+
+Find a PF setup that works better with NAT/hole punching (e.g. STUN, UPnP).
+
+Fix Freenet plugins: They seem to only work if Freenet can download them itself, instead of being downloaded by 1run.sh.
+
+Find an exhaustive list of all network interface names, since some (many?) seem to be missing.
+
+Get the I2P wrapper to work:
+  Try allowing root users to use uname (for proper running of postinstall.sh).
+  The I2P wrapper (?) appears to communicate with I2P via an undocumented TCP port.
+
+Audit all apps files for lightening.
+
+Make Firefox properly recognize applications like Abiword, Evince, VLC, etc.
+
+Figure out some method of turning an installed system into a live CD/DVD:
+	This may require more room than the medium has for, e.g. Shewstring Desktop, but there could be a 'light' install.
+
+Figure out some method of lessening file duplication:
+	Unionfs will NOT work until its massive amounts of buggyness is solved.

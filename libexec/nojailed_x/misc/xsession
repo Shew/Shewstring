@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd /home/guest
+
+## Start misc. desktop programs here:
+
+
+/usr/local/bin/startxfce4

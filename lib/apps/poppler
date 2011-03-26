@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for poppler-0.14.5:
+# CAIRO=on (default) "Enable cairo output backend"
+# OPENJPEG=on (default) "Enable JPEG 2000 support"
+
+with=""
+without=""
+

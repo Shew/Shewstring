@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# PROVIDE: shew_mfs
+# REQUIRE: FILESYSTEMS
+# BEFORE: tmp var
+#
+# Add this to rc.conf to enable mfs:
+#   shew_mfs_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_mfs'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+shew_mfs__start() {
+	# This function will ensure proper functioning of the tmp, var and home mfs.
+
+	if [ ! -d /usr/shew/copy_to_mfs ]; then
+		echo 'shew_mfs__start was called, but /usr/shew/copy_to_mfs does not exist.'
+		return 1
+	elif [ ! -d /usr/shew/mfs ]; then
+		echo 'shew_mfs__start was called, but /usr/shew/mfs does not exist.'
+		return 1
+	fi
+
+	cp -af /usr/shew/copy_to_mfs/* /usr/shew/mfs \
+		> /dev/null \
+		2> /dev/null \
+		|| true
+}
+
+start_cmd='shew_mfs__start'
+	# The function is put in cmd, because it does not do a check to see that
+	# the command is an executeable file.
+
+command='/usr/bin/true'
+
+: ${shew_mfs_enable='NO'}
+
+run_rc_command "$1"

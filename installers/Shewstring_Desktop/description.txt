@@ -1,0 +1,70 @@
+
+Shewstring Desktop is an installation which provides a very secure desktop
+system with tools for encrypted and anonymized communications. It balances
+between the storing of no information (thus leaving few local traces of your
+activities) and storing information (enabling you to have better continuous
+communications). It does this by segregating all programs into different jails,
+and giving them each their own user, and then separating the programs' files
+into write-only files, temorary write files (changes are lost after shutting
+down), and a very few read-write files. In addition, programs are chosen
+carefully with security in mind and are further locked down in their
+configuration. Anonymity is preserved by forcing the programs with a firewall to
+only use the communications channels that are allowed for their jail (one jail
+may allow only non-anonymized communications, and another may allow ONLY
+anonymized communications).
+
+Host system features:
+  * Full disk encryption and authentication requiring both a key file (stored on
+    a thumb drive along with the boot code) ensures that no information or code
+    is exposed to an attacker's attempts to read or tamper with the information.
+  * A MAC changer ensures that your networking hardware's identification is not
+    known to the network, and uses realistic (but random) MAC addresses to
+    ensure that it is hard to detect that the address is spoofed. The spoofed
+    address expires after a random interval between one and two weeks long, and
+    then a new one is generated. Other networking tweaks make the system
+    resistant to fingerprinting (e.g. Nmap is unable to detect the computers
+    operating system)
+  * A restrictive firewall (PF) ensures that no unauthorized communications can
+    occur.
+  * A NTP server corrects the computer's clock, ensuring that the computer
+    cannot be fingerprinted because of an odd time setting.
+  * A local DNS server provides authentication of non-anonymized DNS resolutions
+    via the DNS Security Extensions, and bypasses ISP control of DNS.
+  * XFCE provides clean and light window management.
+  * Basic document, image, audio and video viewing, and other utilities.
+  * KeepassX provides an additional layer of encryption for your passwords.
+
+Anonymity networks:
+  * Tor is provided in three flavors:
+      tor_normal provides a vanilla configuration of Tor.
+      tor_two_hop provides a faster configuration of Tor, at the expense of
+      anonymity.
+      tor_zero_dirtiness ensures that tunnels are not reused, however it can
+      only be used with programs that make a very low number of connections
+      (like email). This provides resistance against the correlation of your
+      identities.
+  * I2P provides access to the I2P network.
+  * Freenet provides access to the Freenet network.
+  * Vidalia provides GUI access to Tor, and Firefox provides GUI access to I2P
+    and Freenet. [NOTE: Vidalia is currently broken on FreeBSD and is disabled.]
+
+Jails:
+  * nat_insecure jail provides tools for communicating non-anonymously.
+    Installed programs are: Firefox for browsing with Torbutton, Gnash (for
+    Flash viewing), Adblock, Beef TACO, HTTPS everywhere, Noscript, and
+    Perspectives. [NOTE: Gnash is broken with Youtube et al and is disabled.]
+  * nat_secure jail provides tools for maintaining identities non-anonymously.
+    Installed programs are: Sylpheed with GnuPG and GPA for end-to-end encrypted
+    emails; Pidgin with OTR for end-to-end encrypted chat messaging.
+  * tor_fast jail provides tools for communicating semi-anonymously. The jail
+    can only access the Internet through tor_two_hop. Firfox with Torbutton,
+    Adblock, Beef TACO, HTTPS everywhere, Noscript, and Perspectives; Liferea
+    for feed reading.
+  * tor_normal provides tools for communicating anonymously. The jail can only
+    access the Internet through tor_normal, but can also access I2P and Freenet
+    HTTP/S. Firefox with Torbutton, Noscript, and HTTPS Everywhere.
+  * tor_pseudonymous_1 jail provides tools for maintaining identities
+    anonymously. The jail can only access the Internet through
+    tor_zero_dirtiness. Sylpheed with GnuPG and GPA; Pidgin with OTR.
+  * tor_pseudonymous_2 jail provides the same tools as tor_pseudonymous_1, but
+    can also access I2P mail and I2P IRC.

@@ -1,0 +1,20 @@
+# ===> The following configuration options are available for curl-7.21.3:
+# CARES=off (default) "Asynchronous DNS resolution via c-ares"
+# CURL_DEBUG=off (default) "Enable curl diagnostic output"
+# GNUTLS=off (default) "Use GNU TLS if OPENSSL is OFF"
+# IPV6=on (default) "IPv6 support"
+# KERBEROS4=off (default) "Kerberos 4 authentication"
+# LDAP=off (default) "LDAP support"
+# LDAPS=off (default) "LDAPS support (requires LDAP and SSL)"
+# LIBIDN=off (default) "Internationalized Domain Names via libidn"
+# LIBSSH2=off (default) "SCP/SFTP support via libssh2"
+# NTLM=off (default) "NTLM authentication"
+# OPENSSL=on (default) "OpenSSL support"
+# CA_BUNDLE=on (default) "Install CA bundle for OpenSSL"
+# PROXY=on (default) "Proxy support"
+# RTMP=off (default) "RTMP streams support"
+# TRACKMEMORY=off (default) "Enable curl memory diagnostic output"
+
+with=""
+without=""
+

@@ -1,0 +1,17 @@
+
+Things to do before each release:
+	Update ports.tar.gz.
+	Update libexec/*/makefiles.
+	Update apps files.
+	Update I2P.
+	Check Firefox:
+		https://check.torproject.org/
+		https://torcheck.xenobite.eu/
+		https://panopticlick.eff.org/
+		http://www.samy.pl/evercookie/
+		http://www.samy.pl/mapxss/
+		http://decloak.net/
+
+Things to do before a release with a new version of FreeBSD:
+	Update wired and wireless interfaces in libexec/host/misc/mac_changer and libexec/host/network.sh.
+	Update the Sun JDK file (no longer updated?).

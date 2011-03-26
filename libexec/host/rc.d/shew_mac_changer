@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: shew_mac_changer
+# REQUIRE: FILESYSTEMS
+# BEFORE: NETWORKING netif netoptions network_ipv6
+
+# Add this to rc.conf to enable mac_changer:
+#   shew_mac_changer_enable="YES"
+
+. /etc/rc.subr
+
+name='shew_mac_changer'
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+required_dirs='/usr/shew/sensitive/host/root/mac_changer'
+required_files='/usr/shew/permanent/root/mac_changer/mac_changer.sh'
+
+command='/usr/shew/permanent/root/mac_changer/mac_changer.sh'
+
+: ${shew_mac_changer_enable='NO'}
+
+run_rc_command "$1"

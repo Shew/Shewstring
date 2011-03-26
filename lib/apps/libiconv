@@ -1,0 +1,7 @@
+# ===> The following configuration options are available for libiconv-1.13.1_1:
+# EXTRA_ENCODINGS=on (default) "Include extra character sets"
+# EXTRA_PATCHES=off (default) "Apply patches to fix CP932, add EUCJP-MS"
+
+with=""
+without=""
+

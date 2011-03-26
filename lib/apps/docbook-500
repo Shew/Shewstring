@@ -1,0 +1,12 @@
+# ===> The following configuration options are available for docbook-5.0_1:
+# DTD=on (default) "XML DTD"
+# SCHEMA=on (default) "W3C XML Schema"
+# RELAX_NG=on (default) "RELAX NG Schema"
+# SCHEMATRON=on (default) "Schematron constraints"
+# NVDL=on (default) "NVDL description"
+# TOOLS=on (default) "Tools for working with DocBook"
+# XMLCHARENT=on (default) "Install ISO 8879 XML entites"
+
+with=""
+without=""
+
