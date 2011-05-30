@@ -113,6 +113,15 @@ should be:
 		| sed "s/i2np.udp.port=/i2np.udp.port=${i2p_port}/" \
 		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/router.config
 
+	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp \
+		| sed 's|^I2P=".*"|I2P="/home/i2p/i2p"|' \
+		| sed 's|^I2PTEMP=".*"|I2PTEMP="/home/i2p/tmp"|' \
+		| sed 's|^JAVA=.*|JAVA="/usr/local/bin/java"|' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp
+
 	cp -f "$darknets_i2p__i2p_configs"/webapps.config \
 		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config
 
@@ -124,15 +133,6 @@ should be:
 	#	| sed 's|^I2PTEMP=".*"|I2PTEMP="/home/i2p/tmp"|' \
 	#	> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter
 	#rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp
-
-	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh \
-		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp
-	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp \
-		| sed 's|^I2P=".*"|I2P="/home/i2p/i2p"|' \
-		| sed 's|^I2PTEMP=".*"|I2PTEMP="/home/i2p/tmp"|' \
-		| sed 's|^JAVA=.*|JAVA="/usr/local/bin/java"|' \
-		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh
-	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp
 
 	# This is commented out because the wrapper does not work:
 	#cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config \
@@ -281,6 +281,33 @@ skipping."
 	i2p_port="`misc_utils__generate_unique_port`"
 	echo "i2p_http=\"${i2p_port}\"" \
 		>> /usr/shew/install/resources/ports
+
+	mkdir -p /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook
+	cat "$darknets_i2p__i2p_configs"/addressbook/config.txt \
+		| sed "s/proxy_port=/proxy_port=${i2p_port}/" \
+		| sed "s/proxy_host=/proxy_host=${i2p_ip}/" \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook/config.txt
+
+	cp -f "$darknets_i2p__i2p_configs"/addressbook/subscriptions.txt \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook/subscriptions.txt
+
+	chroot /usr/shew/jails/nat_darknets \
+		chown -R i2p:i2p /usr/shew/permanent/i2p/addressbook
+
+	mkdir -p /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
+	ln -s /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook/* \
+		/usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
+	chroot /usr/shew/jails/nat_darknets \
+		chown -R i2p:i2p /usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
+	chmod -h 0444 /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook/*
+	chflags -h schg /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook/*
+
+	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config.tmp \
+		| sed 's/webapps.addressbook.startOnLoad=false/webapps.addressbook.startOnLoad=true/' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config.tmp
 
 	echo "
 # Added by darknets_i2p__configure_http_https for http and https:

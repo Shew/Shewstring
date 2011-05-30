@@ -1,0 +1,13 @@
+
+should_publish=false
+etags=etags
+proxy_port=
+update_delay=12
+last_modified=last_modified
+last_fetched=last_fetched
+subscriptions=subscriptions.txt
+master_addressbook=../userhosts.txt
+router_addressbook=../hosts.txt
+published_addressbook=../eepsite/docroot/hosts.txt
+proxy_host=
+log=log.txt

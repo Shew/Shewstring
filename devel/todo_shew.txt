@@ -86,8 +86,6 @@ Audit code so that it can restart more easily:
 
 Document how the scripts call each other for the installation process.
 
-Add I2P hosts subscriptions.
-
 Consider other darknets to add:
   FCON.
   GnuNet.
