@@ -31,7 +31,7 @@ Examine increasing jail virtualization, and if it has any security benefits:
 
 Figure out how to detect the correct sound device driver, and load less modules at boot.
 
-Change the login message to 'Welcome to Desktop.'
+Change the login message to 'Welcome to your Secure Desktop.'
 
 Build OpenJDK from some package in the FreeBSD package system that is based on open software:
   Build each dependency from ports.

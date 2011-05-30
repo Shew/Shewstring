@@ -11,8 +11,8 @@
 #
 # ls shews_blog
 #	files/	lastup_shew@xqz3u5drneuzhaeo.onion	upload_ftp.sh
-# sudo cp -af shews_blog /usr/shew/jails/tor_normal/tmp
-# sudo chmod -R 0777 /usr/shew/jails/tor_normal/tmp/shews_blog
+# cp -af shews_blog /usr/shew/jails/tor_normal/tmp
+# chmod -R 0777 /usr/shew/jails/tor_normal/tmp/shews_blog
 #
 # Open tor_normal's Terminal.
 #

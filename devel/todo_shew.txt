@@ -1,7 +1,13 @@
 
 # This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
 
-Switch the default chat program(s) to Psi and Xchat:
+Consider removing Gnash completely in favor of HTML5.
+
+Check out: http://wiki.FreeBSD.org/BSDInstall
+
+Create a script that will upgrade installed packages.
+
+Consider switching the default chat program(s) to Psi and Xchat:
   Offer OTR for both of them.
     http://public.tfh-berlin.de/~s30935/
     http://irssi-otr.tuxfamily.org/
@@ -47,7 +53,7 @@ Add support for other installers:
 Set up CUPS:
 	Audit apps files for CUPS settings.
 
-Turn off the ability of the user to write input when it is not being asked of the user.
+Turn off the ability of the user to write input when it is not being asked of the user during installation.
 
 Add passwords to any daemons (e.g. proxies) that support it.
 
@@ -83,8 +89,9 @@ Document how the scripts call each other for the installation process.
 Add I2P hosts subscriptions.
 
 Consider other darknets to add:
-  FCON
-  GnuNet
+  FCON.
+  GnuNet.
+  Phantom.
 
 Find better software for:
   Calandar.
