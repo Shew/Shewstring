@@ -414,21 +414,20 @@ Installing Terminal for nat_darknets.'
 			. /usr/shew/install/shewstring/libexec/jailed_x/terminal.sh
 		}
 
-# Disabled because Vidalia is currently broken on FreeBSD:
-#	misc_utils__save_progress \
-#		&& {
-#			echo '
-#Installing and configuring an instance of Vidalia for each Tor install.'
-#			misc_utils__prompt_continue
-#
-#			echo
-#
-#			. /usr/shew/install/shewstring/libexec/darknets/vidalia.sh
-#			darknets_vidalia__install_vidalia
-#			darknets_vidalia__configure_tor_normal_vidalia
-#			darknets_vidalia__configure_tor_two_hop_vidalia
-#			darknets_vidalia__configure_tor_zero_dirtiness_vidalia
-#		}
+	misc_utils__save_progress \
+		&& {
+			echo '
+Installing and configuring an instance of Vidalia for each Tor install.'
+			misc_utils__prompt_continue
+
+			echo
+
+			. /usr/shew/install/shewstring/libexec/darknets/vidalia.sh
+			darknets_vidalia__install_vidalia
+			darknets_vidalia__configure_tor_normal_vidalia
+			darknets_vidalia__configure_tor_two_hop_vidalia
+			darknets_vidalia__configure_tor_zero_dirtiness_vidalia
+		}
 
 	misc_utils__save_progress \
 		&& {
