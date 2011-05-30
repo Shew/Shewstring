@@ -49,21 +49,18 @@ do
 
 		cd /usr/shew/sensitive/"$val"/"$username"
 
-		for val3 in \
-			`
-				find ./ \
-					| sed 's|^./||'
-			`
-		do
-			if !
-				echo "$val3" \
-					| grep -x -f /usr/shew/sensitive/"$val"/"$val2" \
-					> /dev/null
-			then
-				echo "	Removing unauthorized file: $val3"
+		find ./ \
+			| sed 's|^./||' \
+			| while read line; do
+				if !
+					echo "$line" \
+						| grep -x -f /usr/shew/sensitive/"$val"/"$val2" \
+						> /dev/null
+				then
+					echo "	Removing unauthorized file: $line"
 
-				rm -RPf /usr/shew/sensitive/"$val"/"$username"/"$val3"
-			fi
-		done
+					rm -RPf /usr/shew/sensitive/"$val"/"$username"/"$line"
+				fi
+			done
 	done
 done

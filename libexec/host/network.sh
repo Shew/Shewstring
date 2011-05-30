@@ -50,7 +50,7 @@ should be:
 
 	chflags noschg /usr/shew/sensitive/host/root.allow
 	echo 'mac_changer
-mac_changer/config_file' \
+mac_changer/config' \
 		>> /usr/shew/sensitive/host/root.allow
 	chflags schg /usr/shew/sensitive/host/root.allow
 
