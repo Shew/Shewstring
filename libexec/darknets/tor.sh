@@ -445,6 +445,7 @@ DNSPort $tor_dns
 	misc_utils__add_clause /etc/pf.conf '## Redirect Internal:' \
 		"# Added by darknets_tor_enable__transparent for ${tor_install}:\\
 		rdr pass on lo$loopback inet proto tcp from 127.0.0.0/8 to !127.0.0.0/8 -> $tor_ip port ${tor_transparent}\\
+		rdr pass on lo$loopback inet proto tcp from 127.0.0.0/8 to 127.192.0.0/10 -> $tor_ip port ${tor_transparent}\\
 		rdr pass on lo$loopback inet proto tcp from 127.0.0.0/8 to port 53 -> $tor_ip port ${tor_dns}\\
 		rdr pass on lo$loopback inet proto udp from 127.0.0.0/8 to port 53 -> $tor_ip port ${tor_dns}"
 	pfctl -f /etc/pf.conf
@@ -521,13 +522,10 @@ $tor_install but that installation's torrc file was not found."
 	port="`misc_utils__echo_var /usr/shew/install/resources/ports "tor_${tor_install}_transparent"`"
 	loopback="`misc_utils__echo_var /usr/shew/install/resources/loopbacks "tor_${tor_install}_transparent"`"
 
-	misc_utils__add_clause /etc/pf.conf '## Pass Jails:' \
-		"# Added by darknets_tor__add_jail_tor_transparent_rules for ${jail_name}:\\
-		pass quick inet proto tcp from $ip to 127.192.0.0/10"
-
 	misc_utils__add_clause /etc/pf.conf '## Route-to:' \
 		"# Added by darknets_tor__add_jail_tor_transparent_rules for ${jail_name}:\\
 		pass out route-to lo$loopback inet proto tcp from $ip to !127.0.0.0/8\\
+		pass out route-to lo$loopback inet proto tcp from $ip to 127.192.0.0/10\\
 		pass out route-to lo$loopback inet proto tcp from $ip to port 53\\
 		pass out route-to lo$loopback inet proto udp from $ip to port 53"
 	pfctl -f /etc/pf.conf

@@ -4,7 +4,6 @@ Security problems:
   XDM and Xauth are broken!
   Users cannot log in correctly if home is world readable (this is fairly minor).
   Redirected 127.0.0.1 addresses in tor_normal jail does not work (e.g. FProxy).
-  Tor hidden services do not work with 127.192.0.0/10 addresses.
   XFBurn does not detect CD/DVD devices.
 
 Non-Shewstring bugs:
