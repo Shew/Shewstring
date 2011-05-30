@@ -71,8 +71,8 @@ else
 		return 1
 	fi
 
-	ports_pkgs_utils__configure_port firefox "$jailed_x_firefox__apps_folder"
-	ports_pkgs_utils__install_pkg firefox /usr/shew/jails/"$jail_name"
+	ports_pkgs_utils__configure_port firefox36 "$jailed_x_firefox__apps_folder"
+	ports_pkgs_utils__install_pkg firefox36 /usr/shew/jails/"$jail_name"
 	ports_pkgs_utils__configure_port xpi-torbutton "$jailed_x_firefox__apps_folder"
 	ports_pkgs_utils__install_pkg xpi-torbutton /usr/shew/jails/"$jail_name"
 
