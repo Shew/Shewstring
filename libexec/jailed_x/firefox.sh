@@ -40,8 +40,8 @@
 								# The default firefox home folder.
   : ${jailed_x_firefox__gnash_home_folder='/usr/shew/install/shewstring/libexec/jailed_x/home/gnash'}
 								# The default Gnash home folder.
-  : ${jailed_x_firefox__adblock_home_folder='/usr/shew/install/shewstring/libexec/jailed_x/home/adblock'}
-								# The default Adblock home folder.
+  : ${jailed_x_firefox__adblock_configs='/usr/shew/install/shewstring/libexec/jailed_x/misc/adblock'}
+								# This file is the default Adblock folder for config files.
   : ${jailed_x_firefox__noscript_configs='/usr/shew/install/shewstring/libexec/jailed_x/misc/noscript'}
 								# This file is the default NoScript folder for config files.
 
@@ -304,9 +304,9 @@ does not exist."
 	return 1
 	fi
 
-	if [ ! -d "$jailed_x_firefox__adblock_home_folder" ]; then
+	if [ ! -d "$jailed_x_firefox__adblock_configs" ]; then
 		echo "firefox__install_adblock could not find a critical install file. It should be:
-	$jailed_x_firefox__adblock_home_folder"
+	$jailed_x_firefox__adblock_configs"
 		return 1
 	fi
 
@@ -319,11 +319,24 @@ does not exist."
 	ports_pkgs_utils__configure_port xpi-adblock_plus "$jailed_x_firefox__apps_folder"
 	ports_pkgs_utils__install_pkg xpi-adblock_plus /usr/shew/jails/"$jail_name"
 
-	cp -Rf "$jailed_x_firefox__adblock_home_folder" /usr/shew/jails/"$jail_name"/tmp/adblock
+	mkdir -p /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.mozilla/firefox/default/adblockplus
+	cp -Rf "$jailed_x_firefox__adblock_configs"/patterns.ini \
+		/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/patterns.ini
+	ln -s /usr/shew/sensitive/"$user"/patterns.ini \
+/usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.mozilla/firefox/default/adblockplus/patterns.ini
 	chroot /usr/shew/jails/"$jail_name" \
-		chown -R "${user}:$user" /tmp/adblock
-	cp -af /usr/shew/jails/"$jail_name"/tmp/adblock/ /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"
-	rm -Rf /usr/shew/jails/"$jail_name"/tmp/adblock
+		chown -R "${user}:$user" \
+			/usr/shew/sensitive/"$user"/patterns.ini \
+			/usr/shew/copy_to_mfs/home/"$user"/.mozilla/firefox/default/adblockplus
+	chmod -h 0444 \
+/usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.mozilla/firefox/default/adblockplus/patterns.ini
+	chflags -h schg \
+/usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.mozilla/firefox/default/adblockplus/patterns.ini
+
+	chflags noschg /usr/shew/sensitive/"$jail_name"/"${user}.allow"
+	echo 'patterns\.ini' \
+		>> /usr/shew/sensitive/"$jail_name"/"${user}.allow"
+	chflags schg /usr/shew/sensitive/"$jail_name"/"${user}.allow"
 
 	echo '
 // Added by firefox__install_adblock for Adblock:
