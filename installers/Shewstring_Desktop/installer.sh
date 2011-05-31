@@ -1059,6 +1059,15 @@ Installing Pidgin with Pidgin-OTR for tor_pseudonym_1.'
 			echo
 			arg_1='tor_pseudonym_1'
 			. /usr/shew/install/shewstring/libexec/jailed_x/pidgin.sh
+
+			chflags noschg /usr/shew/jails/tor_pseudonym_1/usr/shew/sensitive/pidgin/prefs.xml
+			misc_utils__add_clause \
+				/usr/shew/jails/tor_pseudonym_1/usr/shew/sensitive/pidgin/prefs.xml \
+				"<pref name='blist'>" \
+				"<pref name='x' type='int' value='250'/>"
+			chflags schg /usr/shew/jails/tor_pseudonym_1/usr/shew/sensitive/pidgin/prefs.xml
+
+			# Change the default location, so different Pidgin buddylists do not stack on top of each other.
 		}
 
 # Commands for tor_pseudonym_2:
@@ -1185,6 +1194,15 @@ Installing Pidgin with Pidgin-OTR for tor_pseudonym_2.'
 			echo
 			arg_1='tor_pseudonym_2'
 			. /usr/shew/install/shewstring/libexec/jailed_x/pidgin.sh
+
+			chflags noschg /usr/shew/jails/tor_pseudonym_2/usr/shew/sensitive/pidgin/prefs.xml
+			misc_utils__add_clause \
+				/usr/shew/jails/tor_pseudonym_2/usr/shew/sensitive/pidgin/prefs.xml \
+				"<pref name='blist'>" \
+				"<pref name='x' type='int' value='500'/>"
+			chflags schg /usr/shew/jails/tor_pseudonym_2/usr/shew/sensitive/pidgin/prefs.xml
+
+			# Change the default location, so different Pidgin buddylists do not stack on top of each other.
 		}
 
 # Other commands:
