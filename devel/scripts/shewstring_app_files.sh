@@ -5,7 +5,16 @@
 
 # Arguments:
   folder="${1:-/tmp/apps}"
-  directory="${2:-`dirname "$0"`/../..}"
+
+  if
+	dirname "$0" \
+		grep '^/' \
+		> /dev/null
+  then
+	directory="${2:-`dirname "$0"`/../..}"
+  else
+	directory="${2:-`pwd`/`dirname "$0"`/../..}"
+  fi
 
 # Execute:
 

@@ -24,7 +24,15 @@
 #
 
 # Arguments:
-  directory="${1:-`dirname "$0"`}"
+  if
+	dirname "$0" \
+		grep '^/' \
+		> /dev/null
+  then
+	directory="${1:-`dirname "$0"`}"
+  else
+	directory="${1:-`pwd`/`dirname "$0"`}"
+  fi
 
 # Execute:
 

@@ -15,7 +15,15 @@ else
 fi
 
 if [ "$shew__using_fixit" = YES ]; then
-	shew__fixit_shewstring_installer_dir="${1:-`dirname "$0"`/..}"
+	if
+		dirname "$0" \
+			grep '^/' \
+			> /dev/null
+	then
+		shew__fixit_shewstring_installer_dir="${1:-`dirname "$0"`/..}"
+	else
+		shew__fixit_shewstring_installer_dir="${1:-`pwd`/`dirname "$0"`/..}"
+	fi
 
 	if [ ! -f "$shew__fixit_shewstring_installer_dir"/install.sh ]; then
 		echo 'Installation files not detected in the specified install directory.'

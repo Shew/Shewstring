@@ -4,7 +4,16 @@
 # implement progress saving and recovering crashed installations.
 
 debug="${1:-nodebug}"
-: "${install_directory:=`dirname "$0"`}"
+
+if
+	dirname "$0" \
+		grep '^/' \
+		> /dev/null
+then
+	install_directory="`dirname "$0"`"
+else
+	install_directory="`pwd`/`dirname "$0"`"
+fi
 
 echo '
 Starting Shewstring. If the installer exits, you can restart it at the same
