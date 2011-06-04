@@ -75,8 +75,6 @@ Make a censorship circumvention mode:
 
 Make documentation for Shewstring_Desktop.
 
-Create backup and restore scripts.
-
 Modify generate_app_files.sh so that it can use an alternate ports skeleton folder.
 
 Audit code so that it can restart more easily:
