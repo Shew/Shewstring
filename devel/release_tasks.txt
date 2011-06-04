@@ -13,5 +13,6 @@ Things to do before each release:
 		http://decloak.net/
 
 Things to do before a release with a new version of FreeBSD:
-	Update wired and wireless interfaces in libexec/host/misc/mac_changer and libexec/host/network.sh.
+	Update wired and wireless interfaces in libexec/host/misc/network:
+		Use http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/conf/NOTES
 	Update the Sun JDK file (no longer updated?).

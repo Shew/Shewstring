@@ -8,14 +8,14 @@
 #		host_network__add_jail_nat_rules
 
 # Variable defaults:
-  : ${host_network__mac_changer="/usr/shew/install/shewstring/libexec/host/misc/mac_changer"}
-							# This file is the default mac_changer folder for config files.
+  : ${host_network__network="/usr/shew/install/shewstring/libexec/host/misc/network"}
+							# This file is the default network folder for config files.
   : ${host_network__rcd_mac_changer="/usr/shew/install/shewstring/libexec/host/rc.d/shew_mac_changer"}
 							# This file is the default mac_changer rc.d file.
 
 host_network__install_mac_changer() {
 	# This function will install and configure the MAC address changer. See
-	# mac_changer.sh in $host_network__mac_changer for an extensive description of
+	# mac_changer.sh in $host_network__network for an extensive description of
 	# what it does. If this task has already been done, the function complains and
 	# returns true.
 
@@ -25,10 +25,10 @@ skipping."
 		return 0
 	fi
 
-	if [ ! -d "$host_network__mac_changer" ]; then
+	if [ ! -d "$host_network__network" ]; then
 		echo "host_network__install_mac_changer could not find a critical install file. It
 should be:
-	$host_network__mac_changer"
+	$host_network__network"
 		return 1
 	fi
 
@@ -40,7 +40,7 @@ should be:
 	fi
 
 	mkdir -p /usr/shew/permanent/root/mac_changer
-	cp -Rf "$host_network__mac_changer"/ /usr/shew/permanent/root/mac_changer
+	cp -Rf "$host_network__network"/ /usr/shew/permanent/root/mac_changer
 	chmod 0500 /usr/shew/permanent/root/mac_changer
 	chmod 0400 /usr/shew/permanent/root/mac_changer/*
 	chmod 0500 /usr/shew/permanent/root/mac_changer/mac_changer.sh
@@ -82,6 +82,13 @@ skipping."
 		return 0
 	fi
 
+	if [ ! -d "$host_network__network" ]; then
+		echo "host_network__install_mac_changer could not find a critical install file. It
+should be:
+	$host_network__network"
+		return 1
+	fi
+
 	wlan_number='0'
 	interfaces=''
 	for val in \
@@ -91,17 +98,7 @@ skipping."
 	do
 		if
 			echo "$val" \
-				| grep -x \
-					-e 'age[0-9]*' -e 'alc[0-9]*' -e 'ale[0-9]*' -e 'aue[0-9]*' \
-					-e 'axe[0-9]*' -e 'bce[0-9]*' -e 'bfe[0-9]*' -e 'bge[0-9]*' \
-					-e 'cas[0-9]*' -e 'dc[0-9]*' -e 'ed[0-9]*' -e 'em[0-9]*' \
-					-e 'et[0-9]*' -e 'fxp[0-9]*' -e 'gem[0-9]*' -e 'hme[0-9]*' \
-					-e 'jme[0-9]*' -e 'lge[0-9]*' -e 'msk[0-9]*' -e 'nfe[0-9]*' \
-					-e 'nge[0-9]*' -e 'nve[0-9]*' -e 'pcn[0-9]*' -e 're[0-9]*' \
-					-e 'rl[0-9]*' -e 'rue[0-9]*' -e 'sf[0-9]*' -e 'sis[0-9]*' \
-					-e 'sk[0-9]*' -e 'ste[0-9]*' -e 'stge[0-9]*' -e 'tl[0-9]*' \
-					-e 'tx[0-9]*' -e 'udav[0-9]*' -e 'vge[0-9]*' -e 'vr[0-9]*' \
-					-e 'wb[0-9]*' -e 'xl[0-9]*' \
+				| grep -x -f "$host_network__network"/interface_wired \
 				> /dev/null
 		then
 			if [ -z "$interfaces" ]; then
@@ -113,11 +110,7 @@ skipping."
 
 		if
 			echo "$val" \
-				| grep -x \
-					-e 'an[0-9]*' -e 'ath[0-9]*' -e 'bwi[0-9]*' -e 'ipw[0-9]*' \
-					-e 'iwi[0-9]*' -e 'iwn[0-9]*' -e 'malo[0-9]*' -e 'ral[0-9]*' \
-					-e 'rum[0-9]*' -e 'uath[0-9]*' -e 'upgt[0-9]*' -e 'ural[0-9]*' \
-					-e 'urtw[0-9]*' -e 'wi[0-9]*' -e 'wpi[0-9]*' -e 'zyd[0-9]*' \
+				| grep -x -f "$host_network__network"/interface_wireless \
 				> /dev/null
 		then
 			if [ -z "$interfaces" ]; then
@@ -173,6 +166,13 @@ host_network__bring_up_interface() {
 	# will be prompted to connect one. Wireless is not supported by this method,
 	# since configuring a wireless interface is usually more involved.
 
+	if [ ! -d "$host_network__network" ]; then
+		echo "host_network__install_mac_changer could not find a critical install file. It
+should be:
+	$host_network__network"
+		return 1
+	fi
+
 	while true; do
 		for val in \
 			`
@@ -181,17 +181,7 @@ host_network__bring_up_interface() {
 		do
 			if
 				echo "$val" \
-					| grep -x \
-						-e 'age[0-9]*' -e 'alc[0-9]*' -e 'ale[0-9]*' -e 'aue[0-9]*' \
-						-e 'axe[0-9]*' -e 'bce[0-9]*' -e 'bfe[0-9]*' -e 'bge[0-9]*' \
-						-e 'cas[0-9]*' -e 'dc[0-9]*' -e 'ed[0-9]*' -e 'em[0-9]*' \
-						-e 'et[0-9]*' -e 'fxp[0-9]*' -e 'gem[0-9]*' -e 'hme[0-9]*' \
-						-e 'jme[0-9]*' -e 'lge[0-9]*' -e 'msk[0-9]*' -e 'nfe[0-9]*' \
-						-e 'nge[0-9]*' -e 'nve[0-9]*' -e 'pcn[0-9]*' -e 're[0-9]*' \
-						-e 'rl[0-9]*' -e 'rue[0-9]*' -e 'sf[0-9]*' -e 'sis[0-9]*' \
-						-e 'sk[0-9]*' -e 'ste[0-9]*' -e 'stge[0-9]*' -e 'tl[0-9]*' \
-						-e 'tx[0-9]*' -e 'udav[0-9]*' -e 'vge[0-9]*' -e 'vr[0-9]*' \
-						-e 'wb[0-9]*' -e 'xl[0-9]*' \
+					| grep -x  -f "$host_network__network"/interface_wired \
 					> /dev/null
 			then
 				if

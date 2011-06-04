@@ -45,8 +45,6 @@ Find a PF setup that works better with NAT/hole punching (e.g. STUN, UPnP).
 
 Fix Freenet plugins: They seem to only work if Freenet can download them itself, instead of being downloaded by 1run.sh.
 
-Find an exhaustive list of all network interface names, since some (many?) seem to be missing.
-
 Get the I2P wrapper to work:
   Try allowing root users to use uname (for proper running of postinstall.sh).
   The I2P wrapper (?) appears to communicate with I2P via an undocumented TCP port.
