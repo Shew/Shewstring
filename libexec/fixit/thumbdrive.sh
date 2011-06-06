@@ -25,6 +25,21 @@ that device does not exist."
 		return 1
 	fi
 
+	if
+		mount \
+			| grep "$thumbdrive_device" \
+			> /dev/null
+	then
+		mount_point="`
+			mount \
+			| grep "$thumbdrive_device" \
+			| sed 's/.* on //' \
+			| sed 's/ (.*)$//'
+		`"
+
+		umount -f "$mount_point"
+	fi
+
 	dd if=/dev/zero of=/dev/"$thumbdrive_device" bs=1M \
 		|| true
 	# This command is set to true because it always generates an error, due to how
