@@ -4,6 +4,7 @@ Things to do before each release:
 	Update libexec/*/makefiles.
 	Update apps files.
 	Update I2P.
+	Update Tor's ExcludeExitNodes.
 	Check Firefox:
 		https://check.torproject.org/
 		https://torcheck.xenobite.eu/
