@@ -83,6 +83,12 @@ be:
 	mkdir -p /encrypted/etc
 	chmod 0755 /encrypted/etc
 
+	mkdir -p /encrypted/etc/keys
+	cp -f /tmp/*.key /encrypted/etc/keys
+	chmod 0500 /encrypted/etc/keys
+	chmod 0400 /encrypted/etc/keys/*.key
+	chflags -R schg,opaque /encrypted/etc/keys
+
 	fstab_contents="`cat "$fixit_populate__fstab"`"
 
 	eval "echo \"$fstab_contents\"" \

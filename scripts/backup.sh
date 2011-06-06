@@ -25,6 +25,8 @@ if [ -d /usr/shew/data/host/root/"backup_$date" ]; then
 	rm -RPf /usr/shew/data/host/root/"backup_$date"
 else
 	mkdir -p /usr/shew/data/host/root/"backup_$date"
+	chmod 0700 /usr/shew/data/host/root/"backup_$date"
+	chflags opaque /usr/shew/data/host/root/"backup_$date"
 fi
 
 rm -Pf /usr/shew/data/host/root/"backup_$date".7z
@@ -103,6 +105,9 @@ for val in sensitive data; do
 		done
 	done
 done
+
+mkdir -p /usr/shew/data/host/root/"backup_$date"/keys
+cp -f /etc/keys/* /usr/shew/data/host/root/"backup_$date"/keys
 
 /usr/local/bin/7z a -mhe=on -p /usr/shew/data/host/root/"backup_$date".7z /usr/shew/data/host/root/"backup_$date"
 rm -RPf /usr/shew/data/host/root/"backup_$date"
