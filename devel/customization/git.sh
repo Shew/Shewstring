@@ -9,4 +9,4 @@
 
 ports_pkgs_utils__configure_port git
 ports_pkgs_utils__install_pkg git
-ports_pkgs_utils__install_pkg git /usr/shew/jails/tor_normal
+ports_pkgs_utils__install_pkg git /usr/shew/jails/tor_pseudonym_2
