@@ -5,7 +5,7 @@
 # Arguments:
   if
 	dirname "$0" \
-		grep '^/' \
+		| grep '^/' \
 		> /dev/null
   then
 	directory="${1:-`dirname "$0"`/../..}"

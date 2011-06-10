@@ -17,7 +17,7 @@ fi
 if [ "$shew__using_fixit" = YES ]; then
 	if
 		dirname "$0" \
-			grep '^/' \
+			| grep '^/' \
 			> /dev/null
 	then
 		shew__fixit_shewstring_installer_dir="${1:-`dirname "$0"`/..}"

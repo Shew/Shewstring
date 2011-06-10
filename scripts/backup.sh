@@ -35,7 +35,7 @@ echo 'For new users who are unfamiliar with the Shewstring directory layout, the
 recommended backup choice is to choose "y" for the "sensitive" folder (which
 mostly stores restricted application data, such as Firefox favorites), "c" for
 the data folder, "c" for the host folder in the data folder, and "y" for the
-guest user in the data folder (which stores the user's Desktop folder).
+guest user in the data folder (which stores the users Desktop folder).
 '
 
 for val in sensitive data; do

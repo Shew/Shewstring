@@ -7,7 +7,7 @@ debug="${1:-nodebug}"
 
 if
 	dirname "$0" \
-		grep '^/' \
+		| grep '^/' \
 		> /dev/null
 then
 	install_directory="`dirname "$0"`"

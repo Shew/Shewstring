@@ -8,7 +8,7 @@
 
   if
 	dirname "$0" \
-		grep '^/' \
+		| grep '^/' \
 		> /dev/null
   then
 	directory="${2:-`dirname "$0"`/../..}"

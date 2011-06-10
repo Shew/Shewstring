@@ -29,7 +29,7 @@ done
 
 if !
 	basename "$path" \
-		| grep '^backup_[0-9]*\.7z \
+		| grep '^backup_[0-9]*\.7z' \
 		> /dev/null
 then
 	echo 'That file does not look like a backup created by scripts/backup.sh, are
@@ -40,7 +40,7 @@ you sure you want to try and use it? y/n'
 		read answer
 	done
 
-	if [ "$answer" = n ]; do
+	if [ "$answer" = n ]; then
 		echo 'The user exited the script.'
 		exit 0
 	fi
