@@ -1,0 +1,5 @@
+installers/Shewstring_Desktop/.*
+lib/.*
+libexec/fixit/.*
+libexec/main_installer\.sh
+install\.sh

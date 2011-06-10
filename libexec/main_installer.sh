@@ -128,6 +128,45 @@ that installer.'
 
 	misc_utils__save_progress \
 		&& {
+			cd "$shew__fixit_shewstring_installer_dir"
+			find ./ \
+				| sed 's|^./||' \
+				| while read line; do
+					if
+						echo "$line" \
+							| grep -x -f \
+"$shew__fixit_shewstring_installer_dir"/installers/"$shew__shewstring_installer"/fixit_backup_files.txt \
+							> /dev/null
+					then
+						mkdir -p /tmp/shewstring/"`dirname line`"
+						cp -f "$line" /tmp/shewstring/"$line"
+					fi
+				done
+
+			misc_utils__save_progress \
+				|| true
+			# Normally misc_utils__save_progress is not used this way. What this statement
+			# will do is make the installer think it has started on the next step of the
+			# installation, when it actually has not. This is necessary because of the exit
+			# statement here.
+
+			if
+				echo "$-" \
+					| grep 'x' \
+					> /dev/null
+			then
+				sh /tmp/shewstring/install.sh debug \
+					&
+			else
+				sh /tmp/shewstring/install.sh \
+					&
+			fi
+
+			exit 0
+		}
+
+	misc_utils__save_progress \
+		&& {
 			echo '
 Searching for query files...'
 			misc_utils__prompt_continue
