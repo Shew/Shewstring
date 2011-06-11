@@ -24,16 +24,17 @@ if [ "$shew__using_fixit" = YES ]; then
 Starting fixit/exec.sh, which will encrypt the hard drive, install BSD, etc.'
 			misc_utils__prompt_continue
 
-			if [ -f "$shew__fixit_shewstring_installer_dir"/../ports.tar.gz ]; then
-				latest_ports="${shew__fixit_shewstring_installer_dir}/../ports.tar.gz"
+			if [ -f "`cat /tmp/thumbdrive_path`"/../ports.tar.gz ]; then
+				latest_ports="`cat /tmp/thumbdrive_path`/../ports.tar.gz"
 			else
-				for val in "$shew__fixit_shewstring_installer_dir"/../ports-*.tar.gz; do
+				for val in "`cat /tmp/thumbdrive_path`"/../ports-*.tar.gz; do
 					latest_ports="$val"
 				done
 			fi
 
 			if [ ! -f "$latest_ports" ]; then
-				echo "Please place ports.tar.gz or ports-YYYYMMDD.tar.gz (where YYYYMMDD is the build
+				echo "
+Please place ports.tar.gz or ports-YYYYMMDD.tar.gz (where YYYYMMDD is the build
 date of the tarball) into the same directory as Shewstring's folder."
 				return 1
 			fi

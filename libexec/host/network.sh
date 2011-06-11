@@ -98,7 +98,12 @@ should be:
 	do
 		if
 			echo "$val" \
-				| grep -x -f "$host_network__network"/interface_wired \
+				| grep \
+					`
+						cat "$host_network__network"/interface_wired \
+							| sed 's/^/ -e /' \
+							| sed 's/$/\[0-9\]\*/'
+					` \
 				> /dev/null
 		then
 			if [ -z "$interfaces" ]; then
@@ -110,7 +115,12 @@ should be:
 
 		if
 			echo "$val" \
-				| grep -x -f "$host_network__network"/interface_wireless \
+				| grep \
+					`
+						cat "$host_network__network"/interface_wireless \
+							| sed 's/^/ -e /' \
+							| sed 's/$/\[0-9\]\*/'
+					` \
 				> /dev/null
 		then
 			if [ -z "$interfaces" ]; then
@@ -181,7 +191,12 @@ should be:
 		do
 			if
 				echo "$val" \
-					| grep -x  -f "$host_network__network"/interface_wired \
+					| grep \
+						`
+							cat "$host_network__network"/interface_wired \
+								| sed 's/^/ -e /' \
+								| sed 's/$/\[0-9\]\*/'
+						` \
 					> /dev/null
 			then
 				if

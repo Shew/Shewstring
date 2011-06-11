@@ -128,6 +128,9 @@ that installer.'
 
 	misc_utils__save_progress \
 		&& {
+			echo '
+Backing up the Shewstring install files, so that they can be moved later.'
+
 			cd "$shew__fixit_shewstring_installer_dir"
 			find ./ \
 				| sed 's|^./||' \
@@ -138,10 +141,13 @@ that installer.'
 "$shew__fixit_shewstring_installer_dir"/installers/"$shew__shewstring_installer"/fixit_backup_files.txt \
 							> /dev/null
 					then
-						mkdir -p /tmp/shewstring/"`dirname line`"
-						cp -f "$line" /tmp/shewstring/"$line"
+						mkdir -p /tmp/shewstring/"`dirname "$line"`"
+						cp -Rf "$line" /tmp/shewstring/"$line"
 					fi
 				done
+
+			echo "$shew__fixit_shewstring_installer_dir" \
+				> /tmp/thumbdrive_path
 
 			misc_utils__save_progress \
 				|| true
@@ -155,14 +161,14 @@ that installer.'
 					| grep 'x' \
 					> /dev/null
 			then
+				mv /tmp/shewstring_log.txt /tmp/shewstring_log2.txt
+
 				sh /tmp/shewstring/install.sh debug \
-					&
+					&& exit 0 || exit 1
 			else
 				sh /tmp/shewstring/install.sh \
-					&
+					&& exit 0 || exit 1
 			fi
-
-			exit 0
 		}
 
 	misc_utils__save_progress \
@@ -244,6 +250,7 @@ Backing up log files.'
 				fi
 
 				cp -f /tmp/shewstring_log.txt /encrypted/usr/shew/install/log/shewstring_fixit_log
+				cp -f /tmp/shewstring_log2.txt /encrypted/usr/shew/install/log/shewstring_fixit2_log
 				echo 'y' \
 					| gzip -f /encrypted/usr/shew/install/log/shewstring_fixit_log
 			fi

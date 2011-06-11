@@ -12,10 +12,10 @@
 fixit_populate__base_man_ports() {
 	# This function will install the kernel, base system, man pages, and ports.
 
-	if [ -f "$shew__fixit_shewstring_installer_dir"/../ports.tar.gz ]; then
-		latest_ports="${shew__fixit_shewstring_installer_dir}/../ports.tar.gz"
+	if [ -f "`cat /tmp/thumbdrive_path`"/../ports.tar.gz ]; then
+		latest_ports="`cat /tmp/thumbdrive_path`/../ports.tar.gz"
 	else
-		for val in "$shew__fixit_shewstring_installer_dir"/../ports-*.tar.gz; do
+		for val in "`cat /tmp/thumbdrive_path`"/../ports-*.tar.gz; do
 			latest_ports="$val"
 		done
 	fi
@@ -23,7 +23,7 @@ fixit_populate__base_man_ports() {
 	if [ ! -f "$latest_ports" ]; then
 		echo "fixit_populate__base_man_ports could not find a critical install file. It
 should be:
-	${shew__fixit_shewstring_installer_dir}/../ports*.tar.gz"
+	`cat /tmp/thumbdrive_path`/../ports*.tar.gz"
 		return 1
 	fi
 
@@ -105,7 +105,7 @@ be:
 	chmod 0600 /encrypted/etc/rc.conf
 
 	mkdir -p /encrypted/usr/shew/install/shewstring
-	cp -R "$shew__fixit_shewstring_installer_dir"/ /encrypted/usr/shew/install/shewstring
+	cp -R "`cat /tmp/thumbdrive_path`"/ /encrypted/usr/shew/install/shewstring
 	chmod 0500 /encrypted/usr/shew/install/shewstring
 
 	echo 'block all' \

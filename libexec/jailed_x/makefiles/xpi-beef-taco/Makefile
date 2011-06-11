@@ -6,7 +6,7 @@ PORTNAME=       beef-taco
 PORTVERSION=    1.3.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=     www
-DISTFILES=	"beef_taco_targeted_advertising_cookie_opt-out-${PORTVERSION}${DISTVERSIONSUFFIX}.xpi"
+DISTFILES=	"beef_taco_targeted_advertising_cookie_opt_out-${PORTVERSION}${DISTVERSIONSUFFIX}.xpi"
 
 MAINTAINER=     shew09642@rambler.ru
 COMMENT=        Sets permanent opt-out cookies to stop behavioral advertising by 100+ different advertising networks
