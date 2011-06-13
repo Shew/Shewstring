@@ -106,8 +106,9 @@ for val in sensitive data; do
 	done
 done
 
-mkdir -p /usr/shew/data/host/root/"backup_$date"/keys
-cp -f /etc/keys/* /usr/shew/data/host/root/"backup_$date"/keys
+if [ -d /etc/keys ]; then
+	cp -Rf /etc/keys /usr/shew/data/host/root/"backup_$date"/keys
+fi
 
 /usr/local/bin/7z a -mhe=on -p /usr/shew/data/host/root/"backup_$date".7z /usr/shew/data/host/root/"backup_$date"
 rm -RPf /usr/shew/data/host/root/"backup_$date"

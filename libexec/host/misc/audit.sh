@@ -52,12 +52,23 @@ do
 		find ./ \
 			| sed 's|^./||' \
 			| while read line; do
+				if [ -z "$line" ]; then
+					continue
+				fi
+
+				if \
+[ "`stat -f %i /usr/shew/sensitive/"$val"/"$username"`" \
+-eq "`stat -f %i /usr/shew/sensitive/"$val"/"$username"/"$line"`" ]; then
+					# This check is to make sure that the whole sensitive folder isn't removed.
+					continue
+				fi
+
 				if !
 					echo "$line" \
 						| grep -x -f /usr/shew/sensitive/"$val"/"$val2" \
 						> /dev/null
 				then
-					echo "	Removing unauthorized file: $line"
+					echo "	Removing: $line"
 
 					rm -RPf /usr/shew/sensitive/"$val"/"$username"/"$line"
 				fi

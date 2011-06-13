@@ -36,6 +36,18 @@ fi
 ports_pkgs_utils__configure_port evince "$jailed_x_evince__apps_folder"
 ports_pkgs_utils__install_pkg evince /usr/shew/jails/"$jail_name"
 
+mv /usr/shew/jails/"$jail_name"/usr/local/bin/evince /usr/shew/jails/"$jail_name"/usr/local/bin/evince-bin
+echo '#!/bin/sh
+
+eval `dbus-launch --sh-syntax`
+
+/usr/local/bin/evince-bin $@
+
+kill "$DBUS_SESSION_BUS_PID"
+' > /usr/shew/jails/"$jail_name"/usr/local/bin/evince
+chmod 0555 /usr/shew/jails/"$jail_name"/usr/local/bin/evince
+	# evince fails without launching dbus first.
+
 if [ ! -d /usr/shew/install/done/"$jail_name" ]; then
 	mkdir -p /usr/shew/install/done/"$jail_name"
 	chmod 0700 /usr/shew/install/done/"$jail_name"

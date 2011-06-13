@@ -13,13 +13,12 @@ skipping."
 	fi
 
 	for val in \
-		/etc/auth.conf		/etc/devd.conf		/etc/devfs.conf		\
-		/etc/dhclient.conf	/etc/pf.conf		/etc/inetd.conf		\
-		/etc/rc.conf		/etc/sysctl.conf	/etc/mac.conf		\
-		/etc/syslog.conf	/etc/rc.sysctl		/etc/crontab		\
-		/etc/fstab		/etc/hosts.allow	/etc/login.access	\
-		/etc/master.passwd	/etc/periodic/		/etc/spwd.db		\
-		/etc/ttys
+		/etc/devd.conf		/etc/devfs.conf		/etc/dhclient.conf	\
+		/etc/pf.conf		/etc/inetd.conf		/etc/rc.conf		\
+		/etc/sysctl.conf	/etc/mac.conf		/etc/syslog.conf	\
+		/etc/rc.sysctl		/etc/crontab		/etc/fstab		\
+		/etc/hosts.allow	/etc/login.access	/etc/master.passwd	\
+		/etc/periodic/		/etc/spwd.db		/etc/ttys
 	do
 		chmod -R 0600 "$val" \
 			> /dev/null \
