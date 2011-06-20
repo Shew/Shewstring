@@ -173,6 +173,10 @@ if [ "$answer" = n ]; then
 	exit 1
 fi
 
+for val in ${file_list}; do
+	touch -acfhm -t "`date -ju +'%Y%m%d0000.00'`" "$val"
+done
+
 echo '
 Please enter your password.'
 
