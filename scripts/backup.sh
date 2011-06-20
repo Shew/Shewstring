@@ -53,7 +53,8 @@ for val in sensitive data; do
 	for val2 in \
 		`
 			ls -F /usr/shew/"$val" \
-				| grep '/$'
+				| grep '/$' \
+				| grep --invert-match '^\.'
 		`
 	do
 		if [ "$answer" = c ]; then
@@ -87,7 +88,7 @@ for val in sensitive data; do
 			`
 		do
 			if [ "$answer2" = c ]; then
-				echo "Store $val files for $val3 in ${val2}? y/n/c (custom)"
+				echo "Store $val files for $val3 user in ${val2}? y/n/c (custom)"
 				read answer3
 				while [ "$answer3" != y -a "$answer3" != n -a "$answer3" != c ]; do
 					echo 'Please answer: y/n/c'
@@ -97,6 +98,31 @@ for val in sensitive data; do
 				if [ "$answer3" = n ]; then
 					continue
 				fi
+			fi
+
+			if [ "/usr/shew/${val}/${val2}/${val3}" = "/usr/shew/data/host//root/" ]; then
+				# The extra slashes are not typos. They are because 'ls' is called with '-F'.
+
+				for val4 in \
+					`
+						ls
+					`
+				do
+					if !
+						echo "$val4" \
+							| grep \
+								-e "backup_$date" \
+								-e 'backup_[0-9]*\.7z' \
+							> /dev/null
+						# Do not backup backups.
+					then
+						mkdir -p /usr/shew/data/host/root/"backup_$date"/"$val"/"$val2"/"$val3"
+						cp -Rf /usr/shew/"$val"/"$val2"/"$val3"/"$val4" \
+							/usr/shew/data/host/root/"backup_$date"/"$val"/"$val2"/"$val3"
+					fi
+				done
+
+				continue
 			fi
 
 			mkdir -p /usr/shew/data/host/root/"backup_$date"/"$val"/"$val2"
@@ -111,4 +137,11 @@ if [ -d /etc/keys ]; then
 fi
 
 /usr/local/bin/7z a -mhe=on -p /usr/shew/data/host/root/"backup_$date".7z /usr/shew/data/host/root/"backup_$date"
+
+echo '
+Securely wiping temporary files.'
+
 rm -RPf /usr/shew/data/host/root/"backup_$date"
+
+echo '
+Finished!'
