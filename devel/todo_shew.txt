@@ -1,6 +1,11 @@
 
 # This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
 
+Make root scripts more secure:
+	Edit audit.sh so that it jails a subprocess to remove files.
+
+Create a script which runs at boot to scrub sensitive files of modification and access times.
+
 Consider removing Gnash completely in favor of HTML5.
 
 Check out: http://wiki.FreeBSD.org/BSDInstall
@@ -74,8 +79,6 @@ Make a censorship circumvention mode:
 	Fetch all updates, distfiles, and downloads through Tor with bridges.
 
 Make documentation for Shewstring_Desktop.
-
-Modify generate_app_files.sh so that it can use an alternate ports skeleton folder.
 
 Audit code so that it can restart more easily:
 	Place tasks that can be run multiple times first and tasks that cant after.
