@@ -4,7 +4,6 @@ Security problems:
   XDM and Xauth are broken!
   Users cannot log in correctly if home is not world readable (this is fairly minor).
   Redirected 127.0.0.1 addresses in tor_normal jail does not work, but other 127.0.0.0/8 addresses do (e.g. FProxy).
-  XFBurn does not detect CD/DVD devices.
 
 Non-Shewstring bugs:
   Perspectives asks the user if they want to authenticate a page if it contains mixed HTTP/HTTPS, even if the HTTPS certificate is correct.

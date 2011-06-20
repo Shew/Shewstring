@@ -346,7 +346,7 @@ XLock, and Mixer.'
 		&& {
 			echo '
 Installing desktop programs that require elevated privileges: Sane with NetPBM,
-WPA GUI, and Xfburn. These are configured to use the same password as your
+TkDVD, and WPA GUI. These are configured to use the same password as your
 unpriveleged user (guest). WPA GUI is only installed if you have a wireless
 interface.'
 			misc_utils__prompt_continue
@@ -357,6 +357,9 @@ interface.'
 			. /usr/shew/install/shewstring/libexec/nojailed_x/sane.sh
 			nojailed_x_sane__install_netpbm
 
+			arg_1="$user_password"
+			. /usr/shew/install/shewstring/libexec/nojailed_x/tkdvd.sh
+
 			if
 				cat /etc/rc.conf \
 					| grep 'wlans_.*="wlan0"' \
@@ -365,9 +368,6 @@ interface.'
 				arg_1="$user_password"
 				. /usr/shew/install/shewstring/libexec/nojailed_x/wpa_gui.sh
 			fi
-
-			arg_1="$user_password"
-			. /usr/shew/install/shewstring/libexec/nojailed_x/xfburn.sh
 		}
 
 	misc_utils__save_progress \
