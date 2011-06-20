@@ -75,3 +75,5 @@ do
 			done
 	done
 done
+
+rm -RPf /usr/shew/data/.Trash-*
