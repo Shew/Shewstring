@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script will perform a git commit with normalized (i.e. scrubbed) meta-data.
+
 # Arguments:
   commit_message="$1"
   date_override="${2-}"
