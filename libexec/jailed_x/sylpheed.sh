@@ -103,10 +103,16 @@ chflags schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.pro
 #chflags -h schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
 
 mkdir -p \
-	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/draft \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/inbox \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/junk \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/queue \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/outbox \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/trash \
 	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/sylpheed
 cp -f \
 	"$jailed_x_sylpheed__sylpheed_configs"/actionsrc \
+	"$jailed_x_sylpheed__sylpheed_configs"/folderlist.xml \
 	"$jailed_x_sylpheed__sylpheed_configs"/sylpheedrc \
 	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/sylpheed
 chroot /usr/shew/jails/"$jail_name" \

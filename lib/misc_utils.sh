@@ -257,8 +257,16 @@ misc_utils__prompt_continue() {
 	# script hierarchy is less than $misc_utils__prompt_level. If the user answers
 	# no, the script will exit (not return) false.
 
+	progress="`
+		echo "$misc_utils__progress" \
+			| sed 's/ 0$//'
+	`"
+	# This removes the last number if it is 0. If this is not done, the user will
+	# not get a prompt at the proper prompt level when
+	# misc_utils__move_down_save_progress has just been called.
+
 	i='0'
-	for val in $misc_utils__progress; do
+	for val in $progress; do
 		i="`expr "$i" + 1`"
 	done
 

@@ -92,10 +92,11 @@ install file. It should be:
 	chmod -h 0444 /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_normal/.vidalia/vidalia.conf
 	chflags -h schg /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_normal/.vidalia/vidalia.conf
 
+	jid="`jail_maint_utils__return_jail_jid nat_darknets`"
+
 	vidalia_hash="`
-		chroot /usr/shew/jails/nat_darknets \
-			tor --hash-password "$vidalia_password" \
-			| grep '16:'
+		jexec -U tor_normal "$jid" \
+			tor --quiet --hash-password "$vidalia_password"
 	`"
 
 	echo "
@@ -169,10 +170,11 @@ install file. It should be:
 	chmod -h 0444 /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_two_hop/.vidalia/vidalia.conf
 	chflags -h schg /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_two_hop/.vidalia/vidalia.conf
 
+	jid="`jail_maint_utils__return_jail_jid nat_darknets`"
+
 	vidalia_hash="`
-		chroot /usr/shew/jails/nat_darknets \
-			tor --hash-password "$vidalia_password" \
-			| grep '16:'
+		jexec -U tor_two_hop "$jid" \
+			tor --quiet --hash-password "$vidalia_password"
 	`"
 
 	echo "
@@ -247,10 +249,11 @@ critical install file. It should be:
 	chmod -h 0444 /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_z_dirt/.vidalia/vidalia.conf
 	chflags -h schg /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/vidalia_z_dirt/.vidalia/vidalia.conf
 
+	jid="`jail_maint_utils__return_jail_jid nat_darknets`"
+
 	vidalia_hash="`
-		chroot /usr/shew/jails/nat_darknets \
-			tor --hash-password "$vidalia_password" \
-			| grep '16:'
+		jexec -U tor_z_dirt "$jid" \
+			tor --quiet --hash-password "$vidalia_password"
 	`"
 
 	echo "

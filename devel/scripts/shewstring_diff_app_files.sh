@@ -17,7 +17,6 @@
   fi
 
 # Execute:
-
 mkdir -p /tmp/old_apps
 cp -f \
 	"$directory"/lib/apps/* \
@@ -30,7 +29,7 @@ fi
 
 mkdir -p /tmp/new_apps
 cp -f \
-	/tmp/apps/*/* \
+	/tmp/apps/*/*/* \
 	/tmp/new_apps
 
 diff \

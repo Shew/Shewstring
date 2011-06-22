@@ -61,6 +61,7 @@ Desktop.'
 snd_driver_load="YES"	# Sound driver.
 
 atapicam_load="YES"	# CD/DVD burner driver.
+hw.ata.ata_dma="1"
 hw.ata.atapi_dma="1"
 
 wlan_scan_ap_load="YES"	# Wireless drivers.
@@ -69,7 +70,7 @@ wlan_wep_load="YES"
 wlan_ccmp_load="YES"
 wlan_tkip_load="YES"
 
-autoboot_delay="5"	# Reduce boot delay to 3 seconds.
+autoboot_delay="5"	# Reduce boot delay to 5 seconds.
 ' >> /thumb/boot/loader.conf
 			chmod 0400 /thumb/boot/loader.conf
 

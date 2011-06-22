@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="rdhovto" sortColumn="time" viewMode="0" matchType="any" collapsed="true">
+      <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
+    </outline>
+  </body>
+</opml>

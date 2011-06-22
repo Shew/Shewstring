@@ -295,10 +295,10 @@ skipping."
 		chown -R i2p:i2p /usr/shew/permanent/i2p/addressbook
 
 	mkdir -p /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
-	ln -s /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook/* \
-		/usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
 	chroot /usr/shew/jails/nat_darknets \
-		chown -R i2p:i2p /usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
+		ln -s /usr/shew/permanent/i2p/addressbook/* /usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
+	chroot /usr/shew/jails/nat_darknets \
+		chown -Rh i2p:i2p /usr/shew/copy_to_mfs/home/i2p/i2p/addressbook
 	chmod -h 0444 /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook/*
 	chflags -h schg /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/i2p/i2p/addressbook/*
 

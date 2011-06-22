@@ -20,6 +20,8 @@
 								# The default jailed_x apps folder.
   : ${jailed_x_liferea__home_folder='/usr/shew/install/shewstring/libexec/jailed_x/home/liferea'}
 								# The default liferea home folder.
+  : ${jailed_x_liferea__liferea_configs='/usr/shew/install/shewstring/libexec/jailed_x/misc/liferea'}
+								# This file is the default liferea folder for config files.
 
 # Execute:
 
@@ -43,6 +45,12 @@ fi
 if [ ! -d "$jailed_x_liferea__home_folder" ]; then
 	echo "jailed_x/liferea.sh could not find a critical install file. It should be:
 	$jailed_x_liferea__home_folder"
+	return 1
+fi
+
+if [ ! -d "$jailed_x_liferea__liferea_configs" ]; then
+	echo "jailed_x/liferea.sh could not find a critical install file. It should be:
+	$jailed_x_liferea__liferea_configs"
 	return 1
 fi
 
@@ -73,6 +81,13 @@ chroot /usr/shew/jails/"$jail_name" \
 	chown -R "${user}:$user" /tmp/liferea
 cp -af /usr/shew/jails/"$jail_name"/tmp/liferea/ /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"
 rm -Rf /usr/shew/jails/"$jail_name"/tmp/liferea
+
+cp -f \
+	"$jailed_x_liferea__liferea_configs"/feedlist.opml \
+	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"
+chroot /usr/shew/jails/"$jail_name" \
+	chown "${user}:$user" \
+		/usr/shew/sensitive/"$user"/feedlist.opml
 
 ln -s /usr/shew/sensitive/"$user" /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.liferea_1.6
 chmod -h 0444 /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.liferea_1.6

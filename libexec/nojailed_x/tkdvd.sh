@@ -37,6 +37,10 @@ echo "$password" \
 	| pw useradd -d /home/guest -n disk_burner -u "$uid" -g guest -h 0
 # Adding this to the guest group will allow it to access guest's folders.
 
+mkdir -p /usr/shew/copy_to_mfs/home/guest/.tkdvd
+chown disk_burner:guest /usr/shew/copy_to_mfs/home/guest/.tkdvd
+	# TkDVD does not like not being able to write to its folder in its home location.
+
 misc_utils__add_clause /etc/devfs.rules '\[devfsrules_system=5\]' \
 	"# Added by nojailed_x/tkdvd.sh for tkdvd:\\
 	add path 'cd*' unhide mode 0600 user disk_burner\\
@@ -57,7 +61,7 @@ if [ ! -d /usr/local/share/applications ]; then
 fi
 
 echo "[Desktop Entry]
-Name=tkdvd
+Name=TkDVD
 Icon=drive-cdrom
 Exec=xterm -e \"echo 'Please enter the guest password.'; su disk_burner -c tkdvd\"
 Terminal=false

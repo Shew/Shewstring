@@ -101,8 +101,8 @@ should be:
 				| grep \
 					`
 						cat "$host_network__network"/interface_wired \
-							| sed 's/^/ -e /' \
-							| sed 's/$/\[0-9\]\*/'
+							| sed 's/^/ -e ^/' \
+							| sed 's/$/\[0-9\]\*$/'
 					` \
 				> /dev/null
 		then
@@ -118,8 +118,8 @@ should be:
 				| grep \
 					`
 						cat "$host_network__network"/interface_wireless \
-							| sed 's/^/ -e /' \
-							| sed 's/$/\[0-9\]\*/'
+							| sed 's/^/ -e ^/' \
+							| sed 's/$/\[0-9\]\*$/'
 					` \
 				> /dev/null
 		then
@@ -194,8 +194,8 @@ should be:
 					| grep \
 						`
 							cat "$host_network__network"/interface_wired \
-								| sed 's/^/ -e /' \
-								| sed 's/$/\[0-9\]\*/'
+								| sed 's/^/ -e ^/' \
+								| sed 's/$/\[0-9\]\*$/'
 						` \
 					> /dev/null
 			then
