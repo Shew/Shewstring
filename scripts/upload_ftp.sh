@@ -9,10 +9,10 @@
 #
 # Open a host Terminal.
 #
-# ls shews_blog
-#	files/	lastup_shew@xqz3u5drneuzhaeo.onion	upload_ftp.sh
-# cp -af shews_blog /usr/shew/jails/tor_normal/tmp
-# chmod -R 0777 /usr/shew/jails/tor_normal/tmp/shews_blog
+# ls blog
+#	files/	lastup_user@xqz3u5drneuzhaeo.onion	upload_ftp.sh
+# cp -af blog /usr/shew/jails/tor_normal/tmp
+# sudo chroot /usr/shew/jails/tor_normal chown -R terminal:terminal /tmp/blog
 #
 # Open tor_normal's Terminal.
 #
@@ -20,7 +20,7 @@
 #
 # Return to the host Terminal.
 #
-# cp -f /usr/shew/jails/tor_normal/tmp/shews_blog/lastup_shew@xqz3u5drneuzhaeo.onion shews_blog
+# cp -f /usr/shew/jails/tor_normal/tmp/blog/lastup_user@xqz3u5drneuzhaeo.onion blog
 #
 
 # Arguments:
