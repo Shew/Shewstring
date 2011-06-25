@@ -1,5 +1,6 @@
-# ===> The following configuration options are available for firefox-3.6.13,1:
+# ===> The following configuration options are available for firefox-4.0.1,1:
 # DBUS=on (default) "Enable D-BUS support"
+# PGO=off (default) "Enable Profile-Guided Optimization"
 # SMB=off (default) "Enable smb:// URI support using gnomevfs"
 # DEBUG=off (default) "Build a debugging image"
 # LOGGING=off (default) "Enable additional log messages"

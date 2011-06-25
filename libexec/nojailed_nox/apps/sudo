@@ -1,10 +1,11 @@
-# ===> The following configuration options are available for sudo-1.7.4.5:
+# ===> The following configuration options are available for sudo-1.8.1_5:
 # LDAP=off (default) "With LDAP support"
 # INSULTS=off (default) "With all insults"
 # DISABLE_ROOT_SUDO=off (default) "Disable root sudo"
 # DISABLE_AUTH=off (default) "Disable authentication"
 # NOARGS_SHELL=off (default) "Enable no arguments shell"
+# AUDIT=on (default) "Enable BSM audit support"
 
 with=""
-without=""
+without="AUDIT"
 

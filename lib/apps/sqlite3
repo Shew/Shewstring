@@ -1,6 +1,6 @@
-# ===> The following configuration options are available for sqlite3-3.7.4:
+# ===> The following configuration options are available for sqlite3-3.7.6.3:
 # FTS3=on (default) "Enable FTS3/4 (Full Text Search) module"
-# ICU=off (default) "Enable built with "ICU""
+# ICU=off (default) "Enable built with ICU"
 # RTREE=off (default) "Enable R*Tree module"
 # RAMTABLE=off (default) "Store temporary tables in RAM = yes"
 # UPD_DEL_LIMIT=off (default) "ORDER BY and LIMIT on UPDATE and DELETE"
@@ -13,8 +13,6 @@
 # THREADSAFE=on (default) "Build thread-safe library"
 # EXTENSION=on (default) "Allow loadable extensions"
 # TCLWRAPPER=off (default) "Enable TCL wrapper"
-# DEBUG=off (default) "Enable debugging & verbose explain"
-# GCOV=off (default) "Enable coverage testing using gcov (broken)"
 
 with=""
 without=""

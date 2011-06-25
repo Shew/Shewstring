@@ -11,6 +11,14 @@
 
 # Execute:
 
+if !
+	jls \
+		| grep '/usr/shew/jails/compile' \
+		> /dev/null
+then
+	/etc/rc.d/jail start compile
+fi
+
 mkdir -p "$folder"
 
 for val in $programs; do

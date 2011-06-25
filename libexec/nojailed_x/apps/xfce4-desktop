@@ -1,6 +1,6 @@
-# ===> The following configuration options are available for xfce4-desktop-4.6.2:
-# FAM=on (default) "Enable FAM support"
+# ===> The following configuration options are available for xfce4-desktop-4.8.2_2:
 # THUNAR=on (default) "Enable thunar support"
+# NLS=on (default) "Enable Native Language Support"
 
 with=""
 without=""

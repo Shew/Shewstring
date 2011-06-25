@@ -1,5 +1,6 @@
-# ===> The following configuration options are available for xfce4-utils-4.6.2:
+# ===> The following configuration options are available for xfce4-utils-4.8.1_1:
 # DBUS=on (default) "Enable D-BUS support"
+# NLS=on (default) "Enable Native Language Support"
 
 with=""
 without="DBUS"

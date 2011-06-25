@@ -1,8 +1,10 @@
-# ===> The following configuration options are available for gvfs-1.6.6:
+# ===> The following configuration options are available for gvfs-1.6.6_1:
 # FUSE=off (default) "Enable fuse"
+# AVAHI=on (default) "Enable AVAHI"
 # SAMBA=on (default) "Enable Samba"
-# GPHOTO2=on (default) "Enable Gphoto 2 camera support"
-# CDDA=on (default) "Enable CDDA"
+# GPHOTO2=on (default) "Enable Gphoto 2 camera support (required HAL)"
+# CDDA=on (default) "Enable CDDA (required HAL)"
+# HAL=on (default) "Enable HAL"
 
 with=""
 without=""

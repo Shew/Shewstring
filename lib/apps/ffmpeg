@@ -1,4 +1,4 @@
-# ===> The following configuration options are available for ffmpeg-0.6.1_3,1:
+# ===> The following configuration options are available for ffmpeg-0.6.3_1,1:
 # ALSA=off (default) "Enable alsa input/output device"
 # AMR_NB=off (default) "AMR Narrow Band encoder (opencore)"
 # AMR_WB=off (default) "AMR Wide Band encoder (opencore)"
@@ -14,8 +14,9 @@
 # SCHROEDINGER=on (default) "Dirac codec via libschroedinger"
 # SDL=off (default) "SDL support (build ffplay)"
 # SPEEX=off (default) "Speex audio decoder"
-# SSSE3=on (default) "Enable ssse3 support"
+# SSSE3=on (default) "Use binutils from ports (SSSE3 support)"
 # THEORA=on (default) "Theora encoder (implies OGG)"
+# VAAPI=off (default) "VAAPI decoder support"
 # VDPAU=off (default) "Nvidia vdpau support"
 # VORBIS=on (default) "Vorbis encoder via libvorbis (implies OGG)"
 # VP8=on (default) "VP8 codec via libvpx"

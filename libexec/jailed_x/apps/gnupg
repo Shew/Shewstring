@@ -1,9 +1,8 @@
-# ===> The following configuration options are available for gnupg-2.0.16_5:
+# ===> The following configuration options are available for gnupg-2.0.17_1:
 # LDAP=off (default) "LDAP keyserver interface"
 # SCDAEMON=off (default) "Enable Smartcard daemon (with libusb)"
 # CURL=on (default) "Use the real curl library (worked around if no)"
-# GPGSM=off (default) "Enable GPGSM (require LDAP)"
-# CAMELLIA=on (default) "Enable Camellia algorithm"
+# GPGSM=off (default) "Enable GPGSM (requires LDAP)"
 # KDNS=off (default) "Use DNS CERT helper"
 # STD_SOCKET=off (default) "Use standard socket for agent"
 # NLS=off (default) "National Language Support"

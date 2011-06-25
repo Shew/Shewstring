@@ -1,4 +1,4 @@
-# ===> The following configuration options are available for ImageMagick-6.6.6.10:
+# ===> The following configuration options are available for ImageMagick-6.7.0.2:
 # IMAGEMAGICK_16BIT_PIXEL=on (default) "16bit pixel support"
 # IMAGEMAGICK_BZLIB=on (default) "Bzlib support"
 # IMAGEMAGICK_DJVU=off (default) "DJVU format support (needs threads)"
@@ -11,6 +11,7 @@
 # IMAGEMAGICK_JPEG=on (default) "JPG format support"
 # IMAGEMAGICK_JPEG2000=on (default) "JPEG2000 format support"
 # IMAGEMAGICK_LCMS=on (default) "LCMS support"
+# IMAGEMAGICK_LZMA=on (default) "LZMA support"
 # IMAGEMAGICK_LQR=on (default) "Liquid Rescale support"
 # IMAGEMAGICK_MODULES=on (default) "Modules support"
 # IMAGEMAGICK_OPENEXR=off (default) "OpenEXR support (needs threads)"
@@ -18,7 +19,7 @@
 # IMAGEMAGICK_PDF=on (default) "PDF format support"
 # IMAGEMAGICK_PERL=on (default) "Perl support"
 # IMAGEMAGICK_PNG=on (default) "PNG format support"
-# IMAGEMAGICK_SVG=off (default) "SVG format support"
+# IMAGEMAGICK_SVG=on (default) "SVG format support (requires X11)"
 # IMAGEMAGICK_TESTS=on (default) "Run bundled self-tests after build"
 # IMAGEMAGICK_TIFF=on (default) "TIFF format support"
 # IMAGEMAGICK_TTF=on (default) "Freetype support"

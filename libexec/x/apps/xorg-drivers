@@ -1,4 +1,4 @@
-# ===> The following configuration options are available for xorg-drivers-7.5:
+# ===> The following configuration options are available for xorg-drivers-7.5.1:
 # MOUSE=on (default) "Install mouse input driver"
 # KEYBOARD=on (default) "Install keyboard input driver"
 # ATI=on (default) "Install ati video driver"
@@ -16,7 +16,6 @@
 # HYPERPEN=off (default) "Install hyperpen input driver"
 # JOYSTICK=off (default) "Install joystick input driver"
 # MAGICTOUCH=off (default) "Install magictouch input driver"
-# MICROTOUCH=off (default) "Install microtouch input driver"
 # MUTOUCH=off (default) "Install mutouch input driver"
 # PENMOUNT=off (default) "Install penmount input driver"
 # SYNAPTICS=off (default) "Install synaptics input driver"
@@ -36,7 +35,6 @@
 # MGA=off (default) "Install mga video driver"
 # NEOMAGIC=off (default) "Install neomagic video driver"
 # NEWPORT=off (default) "Install newport video driver"
-# NSC=off (default) "Install nsc video driver"
 # RENDITION=off (default) "Install rendition video driver"
 # S3=off (default) "Install s3 video driver"
 # S3VIRGE=off (default) "Install s3virge video driver"

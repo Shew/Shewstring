@@ -1,7 +1,6 @@
-# ===> The following configuration options are available for xfce4-panel-4.6.4:
-# GTKDOC=off (default) "install the library documentation"
-# STARTUP=on (default) "Enable startup notification support"
+# ===> The following configuration options are available for xfce4-panel-4.8.3_1:
 # NLS=on (default) "Enable Native Language Support"
+# APIDOCS=off (default) "Install api documentation"
 
 with=""
 without=""

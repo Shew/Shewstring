@@ -36,7 +36,8 @@ diff \
 	-r --unified=0 \
 	--ignore-space-change --ignore-blank-lines --suppress-common-lines --minimal \
 	/tmp/old_apps /tmp/new_apps \
-	| grep '^[+-]#' \
-	| grep --invert-match '^[+-]# ===>'
+	| grep -e '^+++' -e '^---' -e '^[+-]#' \
+	| grep --invert-match '^[+-]# ===>' \
+	| less
 
 rm -Rf /tmp/old_apps /tmp/new_apps

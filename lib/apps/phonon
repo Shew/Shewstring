@@ -1,5 +1,5 @@
-# ===> The following configuration options are available for phonon-4.4.2:
-# PULSEAUDIO=off (default) "Phonon support for PulseAudio"
+# ===> The following configuration options are available for phonon-4.5.0:
+# PULSEAUDIO=off (default) "Support playback via PulseAudio"
 
 with=""
 without=""

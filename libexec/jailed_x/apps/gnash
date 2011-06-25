@@ -1,4 +1,4 @@
-# ===> The following configuration options are available for gnash-0.8.8:
+# ===> The following configuration options are available for gnash-0.8.8_1:
 # PLUGIN=on (default) "Enable browser plugin"
 # CYGNAL=off (default) "Enable Cygnal media server"
 # GTK=on (default) "GUI: GTK (required for Mozilla/Firefox plugin)"
@@ -7,6 +7,7 @@
 # AGG=on (default) "Renderer: AGG"
 # OPENGL=off (default) "Renderer: OpenGL (broken)"
 # CAIRO=off (default) "Renderer: Cairo (experimental)"
+# VAAPI=off (default) "Enable VAAPI support (requres FFMPEG)"
 # FFMPEG=on (default) "Media handler: ffmpeg (+SDL sound output)"
 # GSTREAMER=off (default) "Media handler: GStreamer"
 
