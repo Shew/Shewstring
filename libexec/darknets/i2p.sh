@@ -96,7 +96,9 @@ should be:
 	echo "i2p_external=\"${i2p_port}\"" \
 		>> /usr/shew/install/resources/ports
 
-	i2p_i2cp="`misc_utils__generate_unique_port`"
+	i2p_i2cp='7654'
+	#i2p_i2cp="`misc_utils__generate_unique_port`"
+		# There is a service that seems to require the default I2CP port, see devel/buglist.txt
 	echo "i2p_i2cp=\"${i2p_i2cp}\"" \
 		>> /usr/shew/install/resources/ports
 
@@ -214,7 +216,7 @@ keyBackup/.*\.key
 netDb
 netDb/routerInfo-.*\.dat
 peerProfiles
-peerProfiles/profile-.*\.dat
+peerProfiles/profile-.*\.txt\.gz
 prngseed\.rnd
 router\.info
 router\.keys' \
@@ -282,6 +284,8 @@ skipping."
 	echo "i2p_http=\"${i2p_port}\"" \
 		>> /usr/shew/install/resources/ports
 
+	i2p_i2cp="`misc_utils__echo_var /usr/shew/install/resources/ports i2p_i2cp`"
+
 	mkdir -p /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/addressbook
 	cat "$darknets_i2p__i2p_configs"/addressbook/config.txt \
 		| sed "s/proxy_port=/proxy_port=${i2p_port}/" \
@@ -314,10 +318,19 @@ skipping."
 
 tunnel.${tunnel_id}.name=I2P HTTP Proxy
 tunnel.${tunnel_id}.description=HTTP Proxy
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$i2p_ip
 tunnel.${tunnel_id}.listenPort=$i2p_port
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=900000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=HTTP Proxy
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=HTTP Proxy
 tunnel.${tunnel_id}.sharedClient=false
 tunnel.${tunnel_id}.startOnLoad=true
@@ -333,10 +346,19 @@ tunnel.${tunnel_id}.type=httpclient" \
 	echo "
 tunnel.${tunnel_id}.name=I2P HTTPS Proxy
 tunnel.${tunnel_id}.description=HTTPS Proxy
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$i2p_ip
 tunnel.${tunnel_id}.listenPort=$i2p_port
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=900000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=HTTPS Proxy
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=HTTPS Proxy
 tunnel.${tunnel_id}.sharedClient=false
 tunnel.${tunnel_id}.startOnLoad=true
@@ -383,14 +405,25 @@ darknets_i2p__enable_socks() {
 	echo "i2p_socks=\"${i2p_port}\"" \
 		>> /usr/shew/install/resources/ports
 
+	i2p_i2cp="`misc_utils__echo_var /usr/shew/install/resources/ports i2p_i2cp`"
+
 	echo "
 # Added by darknets_i2p__configure_socks for socks:
 tunnel.${tunnel_id}.name=I2P SOCKS Proxy
 tunnel.${tunnel_id}.description=SOCKS Proxy
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$i2p_ip
 tunnel.${tunnel_id}.listenPort=$i2p_port
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=900000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=SOCKS Proxy
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=SOCKS Proxy
 tunnel.${tunnel_id}.sharedClient=false
 tunnel.${tunnel_id}.startOnLoad=true
@@ -440,14 +473,30 @@ darknets_i2p__enable_irc() {
 	echo "i2p_irc=\"${port}\"" \
 		>> /usr/shew/install/resources/ports
 
+	i2p_i2cp="`misc_utils__echo_var /usr/shew/install/resources/ports i2p_i2cp`"
+
 	echo "
 # Added by darknets_i2p__configure_irc for irc:
 tunnel.${tunnel_id}.name=I2P IRC Proxy
 tunnel.${tunnel_id}.description=IRC Proxy to irc.postman.i2p and irc.freshcoffee.i2p
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$ip
 tunnel.${tunnel_id}.listenPort=$port
+tunnel.${tunnel_id}.option.i2cp.closeIdleTime=1200000
+tunnel.${tunnel_id}.option.i2cp.closeOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.delayOpen=true
+tunnel.${tunnel_id}.option.i2cp.newDestOnResume=false
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=600000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.i2p.streaming.maxWindowSize=16
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=Client Proxies
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=Client Proxies
 tunnel.${tunnel_id}.sharedClient=true
 tunnel.${tunnel_id}.startOnLoad=true
@@ -517,15 +566,26 @@ darknets_i2p__enable_pop_smtp() {
 	echo "i2p_pop=\"${pop_port}\"" \
 		>> /usr/shew/install/resources/ports
 
+	i2p_i2cp="`misc_utils__echo_var /usr/shew/install/resources/ports i2p_i2cp`"
+
 	echo "
 # Added by darknets_i2p__configure_pop_smtp for pop and smtp:
 
 tunnel.${tunnel_id}.name=I2P POP3 Proxy
 tunnel.${tunnel_id}.description=POP3 Proxy to pop3.postman.i2p
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$ip
 tunnel.${tunnel_id}.listenPort=$pop_port
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=900000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=Client Proxies
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=Client Proxies
 tunnel.${tunnel_id}.sharedClient=true
 tunnel.${tunnel_id}.startOnLoad=true
@@ -542,10 +602,19 @@ tunnel.${tunnel_id}.type=client" \
 	echo "
 tunnel.${tunnel_id}.name=I2P SMTP Proxy
 tunnel.${tunnel_id}.description=SMTP Proxy to smtp.postman.i2p
+tunnel.${tunnel_id}.i2cpHost=$i2p_ip
+tunnel.${tunnel_id}.i2cpPort=$i2p_i2cp
 tunnel.${tunnel_id}.interface=$ip
 tunnel.${tunnel_id}.listenPort=$smtp_port
+tunnel.${tunnel_id}.option.i2cp.reduceIdleTime=900000
+tunnel.${tunnel_id}.option.i2cp.reduceOnIdle=true
+tunnel.${tunnel_id}.option.i2cp.reduceQuantity=1
 tunnel.${tunnel_id}.option.i2p.streaming.connectDelay=1000
+tunnel.${tunnel_id}.option.inbound.length=3
+tunnel.${tunnel_id}.option.inbound.lengthVariance=0
 tunnel.${tunnel_id}.option.inbound.nickname=Client Proxies
+tunnel.${tunnel_id}.option.outbound.length=3
+tunnel.${tunnel_id}.option.outbound.lengthVariance=0
 tunnel.${tunnel_id}.option.outbound.nickname=Client Proxies
 tunnel.${tunnel_id}.sharedClient=true
 tunnel.${tunnel_id}.startOnLoad=true
