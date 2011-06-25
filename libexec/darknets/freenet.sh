@@ -48,6 +48,15 @@ should be:
 		return 1
 	fi
 
+	cp -f /etc/fstab \
+		/etc/fstab.tmp
+	cat /etc/fstab.tmp \
+		| sed -E 's|^md */usr/shew/jails/nat_darknets(.*)noexec,(.*)|md /usr/shew/jails/nat_darknets\1\2|' \
+		> /etc/fstab
+	rm -f /etc/fstab.tmp
+		# This removes noexec from the nat_darknets jail entry, see devel/buglist.txt
+		# for more information.
+
 	user_maint_utils__add_jail_user nat_darknets freenet none home permanent sensitive data
 	chroot /usr/shew/jails/nat_darknets \
 		pw usermod -n freenet -s /sbin/nologin
