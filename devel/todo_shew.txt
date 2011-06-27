@@ -1,6 +1,8 @@
 
 # This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
 
+Ask the user if they want to be able to burn disks, and if not raise the securelevel to 3 instead of 1.
+
 Phase out Firefox 3.x for Firefox 4 as soon as Torbutton is updated:
 	Set webgl.disabled to true.
 

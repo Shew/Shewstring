@@ -12,7 +12,7 @@ name='shew_securelevel'
 rcvar="${name}_enable"
 load_rc_config "${name}"
 
-start_cmd='sleep 60 && /sbin/sysctl kern.securelevel=3 &'
+start_cmd='sleep 60 && /sbin/sysctl kern.securelevel=1 &'
 	# There must be a sleep here, or securelevel will crash Xorg.
 
 : ${shew_securelevel_enable='NO'}
