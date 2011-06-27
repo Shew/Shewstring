@@ -4,9 +4,9 @@ Security problems:
   XDM and Xauth are broken!
   Users cannot log in correctly if home is not world readable (this is fairly minor).
   Redirected 127.0.0.1 addresses in tor_normal jail does not work, but other 127.0.0.0/8 addresses do (e.g. FProxy).
+  Host (but not jailed) Abiword does not load documents correctly: the letters are all jumbled together in a small space.
 
 Non-Shewstring bugs:
-  Perspectives asks the user if they want to authenticate a page if it contains mixed HTTP/HTTPS, even if the HTTPS certificate is correct.
   GELI ignores pipe. The user gets the prompt anyway.
   The GELI boot message is covered up by system messages.
   Redirecting the output of an empty braced statement in sh results in a segmentation fault instead of an error, even when using 'sh -n':
@@ -17,11 +17,10 @@ Non-Shewstring bugs:
   Symbolic linking does not work properly with: GnuPG, Liferea, Pidgin, Sylpheed.
   XFCE sometimes makes duplicate desktop items (when only one file exists).
   I2P:
-    I2CP does not work with everything if set to a non-default port. It fails with this error:
+    I2CP does not work with everything if set to a non-default port or non 0.0.0.0 IP. It fails with this error:
 	PM ERROR [rtup tunnels] .i2ptunnel.I2PTunnelClientBase: Unable to connect to the router at 127.0.0.1:7654 and build tunnels for the cleint, retrying in 20 seconds
     The wrapper requires legacy libraries (via compat4x).
     The wrapper communicates via an undocumented TCP port?
-    B32 addresses dont work.
   Freenet:
     Freenet requires /var/tmp to be mounted allowing execution.
-    The Freenet wrapper for Freenet does not download correctly.
+    The FreeBSD wrapper for Freenet does not download correctly.

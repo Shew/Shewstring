@@ -39,15 +39,17 @@ Build OpenJDK from some package in the FreeBSD package system that is based on o
   Use 'make' (without installation) to build the new OpenJDK.
   Remove the OpenJDK package.
   Use 'make package' to make the new OpenJDK package.
-  Update README to reflect the new architectures supported (because SunJDK was the restricting factor).
 
-Find a PF setup that works better with NAT/hole punching (e.g. STUN, UPnP).
+Find a PF setup that works better with NAT/hole punching (e.g. STUN, TURN, ICE, and UPnP).
 
 Fix Freenet plugins: They seem to only work if Freenet can download them itself, instead of being downloaded by 1run.sh.
 
 Get the I2P wrapper to work:
   Try allowing root users to use uname (for proper running of postinstall.sh).
   The I2P wrapper (?) appears to communicate with I2P via an undocumented TCP port.
+  See also:
+    http://zzz.i2p/topics/927
+    http://zzz.i2p/topics/929
 
 Audit all apps files for lightening.
 

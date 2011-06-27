@@ -109,11 +109,12 @@ should be:
 		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2ptunnel.config
 
 	cat "$darknets_i2p__i2p_configs"/router.config \
-		| sed "s/i2cp.tcp.host=/i2cp.tcp.host=${i2p_ip}/" \
 		| sed "s/i2cp.tcp.port=/i2cp.tcp.port=${i2p_i2cp}/" \
 		| sed "s/i2np.udp.internalPort=/i2np.udp.internalPort=${i2p_port}/" \
 		| sed "s/i2np.udp.port=/i2np.udp.port=${i2p_port}/" \
 		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/router.config
+	# This option was set to 0.0.0.0, due to it not working correctly. See devel/buglist.txt
+	#	| sed "s/i2cp.tcp.host=/i2cp.tcp.host=${i2p_ip}/" \
 
 	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh \
 		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp

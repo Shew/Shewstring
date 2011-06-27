@@ -36,8 +36,7 @@ My installation has stopped on some other part.
   Try restarting install.sh. If that doesn't work, start install.sh with the
   argument 'debug' and examine 'tail 100 /tmp/shewstring_log.txt' (WARNING: This
   may log sensitive things like passwords). If you cannot figure out what the
-  problem is from the log, then you can post your log on the HackBB thread:
-  http://clsvtzwzdgzkjda7.onion/viewtopic.php?f=9&t=40
+  problem is from the log, then you can send Shew an email.
 
 My installation has stopped, but it gives a different error when restarting.
 
@@ -45,4 +44,4 @@ My installation has stopped, but it gives a different error when restarting.
   and skip without an error if they have. If an installation hits an error in
   the middle of a function, it might have passed some code that it can't execute
   properly twice. You can try putting comments in the code, but unless you know
-  what you're doing, it might be better to comment on the forum thread.
+  what you're doing, it might be better to send Shew an email.

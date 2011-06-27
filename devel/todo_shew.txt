@@ -1,6 +1,9 @@
 
 # This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
 
+Phase out Firefox 3.x for Firefox 4 as soon as Torbutton is updated:
+	Set webgl.disabled to true.
+
 Make root scripts more secure:
 	Edit audit.sh so that it jails a subprocess to remove files.
 
