@@ -54,7 +54,8 @@ for val in sensitive data; do
 		`
 			ls -F /usr/shew/"$val" \
 				| grep '/$' \
-				| grep --invert-match '^\.'
+				| grep --invert-match '^\.' \
+				| sed 's|/$||'
 		`
 	do
 		if [ "$answer" = c ]; then
@@ -84,7 +85,8 @@ for val in sensitive data; do
 		for val3 in \
 			`
 				ls -F /usr/shew/"$val"/"$val2" \
-					| grep '/$'
+					| grep '/$' \
+					| sed 's|/$||'
 			`
 		do
 			if [ "$answer2" = c ]; then
@@ -100,9 +102,7 @@ for val in sensitive data; do
 				fi
 			fi
 
-			if [ "/usr/shew/${val}/${val2}/${val3}" = "/usr/shew/data/host//root/" ]; then
-				# The extra slashes are not typos. They are because 'ls' is called with '-F'.
-
+			if [ "/usr/shew/${val}/${val2}/${val3}" = "/usr/shew/data/host/root" ]; then
 				for val4 in \
 					`
 						ls
@@ -116,9 +116,9 @@ for val in sensitive data; do
 							> /dev/null
 						# Do not backup backups.
 					then
-						mkdir -p /usr/shew/data/host/root/"backup_$date"/"$val"/"$val2"/"$val3"
-						cp -Rf /usr/shew/"$val"/"$val2"/"$val3"/"$val4" \
-							/usr/shew/data/host/root/"backup_$date"/"$val"/"$val2"/"$val3"
+						mkdir -p /usr/shew/data/host/root/"backup_$date"/data/host/root
+						cp -Rf /usr/shew/data/host/root/"$val4" \
+							/usr/shew/data/host/root/"backup_$date"/data/host/root
 					fi
 				done
 

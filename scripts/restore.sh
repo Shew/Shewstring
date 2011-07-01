@@ -50,14 +50,13 @@ cd /usr/shew/data/host/root
 7z x "$path"
 cd ./backup_*/
 
-echo */*/* \
-	| while read line; do
-		uid="`stat -f %u /usr/shew/"$line"`"
-		gid="`stat -f %g /usr/shew/"$line"`"
+for val in */*/*; do
+	uid="`stat -f %u /usr/shew/"$val"`"
+	gid="`stat -f %g /usr/shew/"$val"`"
 
-		chown -R "$uid":"$gid" ./"$line"
+	chown -R "$uid":"$gid" ./"$val"
 
-		cp -af ./"$line"/* /usr/shew/"$line"
-	done
+	cp -af ./"$val"/* /usr/shew/"$val"
+done
 
-rm -RPf ./
+rm -RPf "`pwd`"
