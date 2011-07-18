@@ -13,7 +13,6 @@ Non-Shewstring bugs:
     { } > file
   Mousepad search & search/replace breaks after first use.
   Pinentry (for GPG) has a 'feature' which prevents passwords from being pasted into it.
-  Sylpheed does not delete emails from the IMAP cache/server correctly when the emails have been moved from the folders where they normally reside (e.g. moving them from the Inbox to some other folder breaks deletion).
   Symbolic linking does not work properly with: GnuPG, Liferea, Pidgin, Sylpheed.
   XFCE sometimes makes duplicate desktop items (when only one file exists).
   I2P:

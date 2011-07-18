@@ -16,7 +16,7 @@
 #
 # Open tor_normal's Terminal.
 #
-# sh /tmp/shews_blog/upload_ftp.sh
+# sh /tmp/blog/upload_ftp.sh
 #
 # Return to the host Terminal.
 #
