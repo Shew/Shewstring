@@ -19,8 +19,8 @@
   : ${darknets_i2p__apps_folder='/usr/shew/install/shewstring/libexec/darknets/apps'}
 								# The default darknets apps folder.
   : ${darknets_i2p__i2p_websites='http://mirror.i2p2.de/'}	# The website(s) hosting the i2p installer.
-  : ${darknets_i2p__i2p_file='i2pinstall_0.8.6.exe'}		# The filename of the i2p installer.
-  : ${darknets_i2p__i2p_sha256='0bd9927d607d2ac9986732b29b1c4b15a0fbb3521b2fa14dded10d5a57333efc'}
+  : ${darknets_i2p__i2p_file='i2pinstall_0.8.7.exe'}		# The filename of the i2p installer.
+  : ${darknets_i2p__i2p_sha256='9f0b1d565e0250cefe3998e1ccabda062d057f794ccb976c147608f005a022c4'}
 								# The sha256 hash of the i2p installer.
   : ${darknets_i2p__i2p_configs='/usr/shew/install/shewstring/libexec/darknets/misc/i2p'}
 								# This file is the default i2p folder for config files.
@@ -96,9 +96,7 @@ should be:
 	echo "i2p_external=\"${i2p_port}\"" \
 		>> /usr/shew/install/resources/ports
 
-	i2p_i2cp='7654'
-	#i2p_i2cp="`misc_utils__generate_unique_port`"
-		# There is a service that seems to require the default I2CP port, see devel/buglist.txt
+	i2p_i2cp="`misc_utils__generate_unique_port`"
 	echo "i2p_i2cp=\"${i2p_i2cp}\"" \
 		>> /usr/shew/install/resources/ports
 
@@ -109,12 +107,11 @@ should be:
 		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2ptunnel.config
 
 	cat "$darknets_i2p__i2p_configs"/router.config \
+		| sed "s/i2cp.tcp.host=/i2cp.tcp.host=${i2p_ip}/" \
 		| sed "s/i2cp.tcp.port=/i2cp.tcp.port=${i2p_i2cp}/" \
 		| sed "s/i2np.udp.internalPort=/i2np.udp.internalPort=${i2p_port}/" \
 		| sed "s/i2np.udp.port=/i2np.udp.port=${i2p_port}/" \
 		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/router.config
-	# This option was set to 0.0.0.0, due to it not working correctly. See devel/buglist.txt
-	#	| sed "s/i2cp.tcp.host=/i2cp.tcp.host=${i2p_ip}/" \
 
 	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh \
 		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/runplain.sh.tmp
@@ -128,26 +125,24 @@ should be:
 	cp -f "$darknets_i2p__i2p_configs"/webapps.config \
 		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/webapps.config
 
-	# This is commented out because the wrapper does not work:
-	#cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter \
-	#	/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp
-	#cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp \
-	#	| sed 's|^I2P=".*"|I2P="/home/i2p/i2p"|' \
-	#	| sed 's|^I2PTEMP=".*"|I2PTEMP="/home/i2p/tmp"|' \
-	#	> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter
-	#rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp
+	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp \
+		| sed 's|^I2P=".*"|I2P="/home/i2p/i2p"|' \
+		| sed 's|^I2PTEMP=".*"|I2PTEMP="/home/i2p/tmp"|' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/i2prouter.tmp
 
-	# This is commented out because the wrapper does not work:
-	#cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config \
-	#	/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp
-	#cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp \
-	#| sed 's|^wrapper.java.additional.4=-Di2p.dir.base=.*|wrapper.java.additional.4=-Di2p.dir.base="/home/i2p/i2p"|' \
-	#	| sed 's|^wrapper.java.command=.*|wrapper.java.command=/usr/local/bin/java|' \
-	#	| sed 's|^wrapper.java.pidfile=.*|wrapper.java.pidfile=/home/i2p/tmp/routerjvm.pid|' \
-	#	| sed 's|^wrapper.logfile=.*|wrapper.logfile=/home/i2p/logs/wrapper.log|' \
-	#	| sed 's|^wrapper.pidfile=.*|wrapper.pidfile=/home/i2p/tmp/i2p.pid|' \
-	#	> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config
-	#rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp
+	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp \
+	| sed 's|^wrapper.java.additional.4=-Di2p.dir.base=.*|wrapper.java.additional.4=-Di2p.dir.base="/home/i2p/i2p"|' \
+		| sed 's|^wrapper.java.command=.*|wrapper.java.command=/usr/local/bin/java|' \
+		| sed 's|^wrapper.java.pidfile=.*|wrapper.java.pidfile=/home/i2p/tmp/routerjvm.pid|' \
+		| sed 's|^wrapper.logfile=.*|wrapper.logfile=/home/i2p/logs/wrapper.log|' \
+		| sed 's|^wrapper.pidfile=.*|wrapper.pidfile=/home/i2p/tmp/i2p.pid|' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/wrapper.config.tmp
 
 	if
 		ls /usr/shew/jails/nat_darknets/usr/shew/permanent/i2p/docs/*-header.ht \
@@ -226,6 +221,7 @@ router\.keys' \
 
 	misc_utils__add_clause /etc/pf.conf '## Pass Jails:' \
 		"# Added by darknets_i2p__install_i2p for i2p:\\
+		pass quick inet proto tcp from $i2p_ip to $i2p_ip port 32000\\
 		pass quick inet proto tcp from $i2p_ip to $i2p_ip port $i2p_i2cp"
 
 	misc_utils__add_clause /etc/pf.conf '## Redirect External:' \

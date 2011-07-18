@@ -856,8 +856,8 @@ jail does not exist."
 		fstat		gcore		kdump		kgdb		ktrace		\
 		ktrdump		last		lastcomm	lock		lpq		\
 		lpr		lprm		netstat		opieinfo	opiepasswd	\
-		truss		uname		usbhidaction					\
-		usbhidctl	wall		users		write				\
+		truss		usbhidaction	usbhidctl	wall		users		\
+		write		\
 		\
 		IPXrouted	acpiconf	acpidb		acpidump	amd		\
 		amq		ancontrol	apm		apmd		arp		\
@@ -913,7 +913,8 @@ return 0
 	done
 
 	for val in \
-		/usr/shew/jails/"$jail_name"/sbin/sysctl
+		/usr/shew/jails/"$jail_name"/sbin/sysctl \
+		/usr/shew/jails/"$jail_name"/usr/bin/uname
 	do
 		chflags noschg "$val"
 		chmod 0500 "$val"

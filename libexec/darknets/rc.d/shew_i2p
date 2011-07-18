@@ -16,7 +16,7 @@ load_rc_config "${name}"
 
 shew_i2p_user='i2p'
 
-command='/home/i2p/i2p/runplain.sh'
+command='/home/i2p/i2p/i2prouter start'
 
 pidfile='/home/i2p/tmp/router.pid'
 
