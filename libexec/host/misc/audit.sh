@@ -56,6 +56,13 @@ do
 					continue
 				fi
 
+				if [ ! -e /usr/shew/sensitive/"$val"/"$username"/"$line" ]; then
+					# If a folder has been removed by an earlier iteration of this loop, the file
+					# listing from 'find' will still contain entries for files that no longer exist,
+					# which would create errors with the following lines.
+					continue
+				fi
+
 				if \
 [ "`stat -f %i /usr/shew/sensitive/"$val"/"$username"`" \
 -eq "`stat -f %i /usr/shew/sensitive/"$val"/"$username"/"$line"`" ]; then
