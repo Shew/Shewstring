@@ -123,12 +123,6 @@ should be:
 					` \
 				> /dev/null
 		then
-			if [ -z "$interfaces" ]; then
-				interfaces="$val"
-			else
-				interfaces="${interfaces}, $val"
-			fi
-
 			if !
 				cat /etc/rc.conf \
 					| grep '# Added by host_network__unblock_all_interfaces for wlan:' \
@@ -141,6 +135,12 @@ should be:
 
 			echo "wlans_${val}=\"wlan${wlan_number}\"" \
 				>> /etc/rc.conf
+
+			if [ -z "$interfaces" ]; then
+				interfaces="wlan${wlan_number}"
+			else
+				interfaces="${interfaces}, wlan${wlan_number}"
+			fi
 
 			wlan_number="`expr "$wlan_number" + 1`"
 		fi
