@@ -62,7 +62,7 @@ echo '#!/bin/sh
 
 eval `dbus-launch --sh-syntax`
 
-/usr/local/bin/liferea-bin $@
+/usr/local/bin/liferea-bin "$@"
 
 kill "$DBUS_SESSION_BUS_PID"
 ' > /usr/shew/jails/"$jail_name"/usr/local/bin/liferea

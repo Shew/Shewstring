@@ -188,7 +188,7 @@ misc_utils__fetch() {
 
 	file="$1"
 	shift
-	websites="$@"
+	websites="$*"
 
 	echo 'pass quick inet proto tcp from !127.0.0.0/8 to !127.0.0.0/8 port { 20, 21, 80 }' \
 		| pfctl -m -f -

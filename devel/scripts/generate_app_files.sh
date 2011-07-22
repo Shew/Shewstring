@@ -7,7 +7,7 @@
 # Arguments:
   folder="$1"
   shift 1
-  programs="$@"
+  programs="$*"
 
 # Execute:
 

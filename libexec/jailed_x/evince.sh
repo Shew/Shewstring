@@ -41,7 +41,7 @@ echo '#!/bin/sh
 
 eval `dbus-launch --sh-syntax`
 
-/usr/local/bin/evince-bin $@
+/usr/local/bin/evince-bin "$@"
 
 kill "$DBUS_SESSION_BUS_PID"
 ' > /usr/shew/jails/"$jail_name"/usr/local/bin/evince
