@@ -74,6 +74,7 @@ echo 'certificates
 certificates/.*
 accounts\.xml
 blist\.xml
+pounces\.xml
 prefs\.xml
 otr\.fingerprints
 otr\.private_key' \
