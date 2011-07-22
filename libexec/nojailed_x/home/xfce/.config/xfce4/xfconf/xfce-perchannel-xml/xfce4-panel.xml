@@ -26,6 +26,7 @@
       <property name="position" type="string" value="p=10;x=0;y=995"/>
       <property name="leave-opacity" type="uint" value="20"/>
       <property name="enter-opacity" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -58,7 +59,7 @@
       <property name="grouping" type="uint" value="0"/>
       <property name="include-all-workspaces" type="bool" value="false"/>
       <property name="flat-buttons" type="bool" value="true"/>
-      <property name="show-handle" type="bool" value="true"/>
+      <property name="show-handle" type="bool" value="false"/>
       <property name="sort-order" type="uint" value="0"/>
     </property>
     <property name="plugin-6" type="string" value="xfce4-mixer-plugin"/>
@@ -75,17 +76,7 @@
     <property name="plugin-10" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
     </property>
-    <property name="plugin-11" type="string" value="clock">
-      <property name="mode" type="uint" value="2"/>
-      <property name="digital-format" type="string" value="%l:%M %p"/>
-      <property name="tooltip-format" type="string" value="%A %d %B %Y (UTC%z)"/>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="show-seconds" type="bool" value="false"/>
-      <property name="show-military" type="bool" value="true"/>
-      <property name="show-meridiem" type="bool" value="false"/>
-      <property name="flash-separators" type="bool" value="false"/>
-      <property name="true-binary" type="bool" value="false"/>
-    </property>
+    <property name="plugin-11" type="string" value="datetime"/>
     <property name="plugin-12" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
     </property>

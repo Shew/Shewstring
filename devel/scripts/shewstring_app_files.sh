@@ -33,8 +33,8 @@ nojailed_nox_programs='sudo'
 sh "-$-" devel/scripts/generate_app_files.sh "$folder"/nojailed_nox $nojailed_nox_programs
 
 mkdir -p "$folder"/nojailed_x
-nojailed_x_programs='abiword evince file-roller p7zip galculator keepassx xfce4-mixer mousepad ristretto
-sane-backends sane-frontends netpbm Terminal vlc wpa_gui xconsole xfburn xfce4 xlockmore xautolock'
+nojailed_x_programs='abiword evince file-roller p7zip galculator keepassx xfce4-mixer mousepad ristretto sane-backends
+sane-frontends netpbm Terminal vlc wpa_gui xconsole xfburn xfce4 xfce4-datetime-plugin xlockmore xautolock'
 sh "-$-" devel/scripts/generate_app_files.sh "$folder"/nojailed_x $nojailed_x_programs
 
 mkdir -p "$folder"/jailed_nox

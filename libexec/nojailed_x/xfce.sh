@@ -33,6 +33,8 @@ fi
 
 ports_pkgs_utils__configure_port xfce4 "$nojailed_x_xfce__apps_folder"
 ports_pkgs_utils__install_pkg xfce4
+ports_pkgs_utils__configure_port xfce4-datetime-plugin "$nojailed_x_xfce__apps_folder"
+ports_pkgs_utils__install_pkg xfce4-datetime-plugin
 
 rm -f /usr/local/share/applications/Thunar-folder-handler.desktop
 
