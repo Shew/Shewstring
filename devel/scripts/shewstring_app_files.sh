@@ -25,7 +25,7 @@ x_programs='xorg-minimal xorg-drivers xorg-fonts xrdb xterm xkill xdm'
 sh "-$-" devel/scripts/generate_app_files.sh "$folder"/x $x_programs
 
 mkdir -p "$folder"/darknets
-darknets_programs='tor wget diablo-jdk16 openjdk7 compat4x vidalia'
+darknets_programs='tor wget diablo-jdk16 openjdk7 compat6x vidalia'
 sh "-$-" devel/scripts/generate_app_files.sh "$folder"/darknets $darknets_programs
 
 mkdir -p "$folder"/nojailed_nox

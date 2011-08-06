@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# This script will generate lists of directories and files for the makefiles of
-# Firefox plugins.
+# This script will generate information needed for the makefiles of Firefox plugins.
 
 # Arguments:
   archive="$1"
@@ -10,6 +9,14 @@
 
 if [ -d /tmp/plugin ]; then
 	rm -Rf /tmp/plugin
+fi
+
+if !
+	echo "$archive" \
+		| grep '^/' \
+		> /dev/null
+then
+	archive="`pwd`/$archive"
 fi
 
 mkdir -p /tmp/plugin
@@ -40,4 +47,8 @@ $dirs
 
 Files:
 $files
+
+MD5: `md5 -q "$archive"`
+SHA256: `sha256 -q "$archive"`
+Size: `stat -f %z "$archive"`
 "

@@ -57,15 +57,14 @@ should be:
 		return 1
 	fi
 
-	# This is commented out because the wrapper does not work:
-	#if [ ! -L /usr/shew/jails/compile/usr/ports/packages/Latest/compat4x.tbz ]; then
-	#	ln -s compat4x.tbz /usr/shew/jails/compile/usr/ports/packages/Latest/"compat4x-${shew__architecture}.tbz"
-	#		# This is used because for some reason the compat4x port produces a differently
-	#		# named package (e.g. compat4x-i386.tbz).
-	#fi
-	#
-	#ports_pkgs_utils__configure_port compat4x "$darknets_i2p__apps_folder"
-	#ports_pkgs_utils__install_pkg compat4x /usr/shew/jails/nat_darknets
+	if [ ! -L /usr/shew/jails/compile/usr/ports/packages/Latest/compat6x.tbz ]; then
+		ln -s "compat6x-${shew__architecture}.tbz" /usr/shew/jails/compile/usr/ports/packages/Latest/compat6x.tbz
+			# This is used because for some reason the compat6x port produces a differently
+			# named package (e.g. compat6x-i386.tbz).
+	fi
+	
+	ports_pkgs_utils__configure_port compat6x "$darknets_i2p__apps_folder"
+	ports_pkgs_utils__install_pkg compat6x /usr/shew/jails/nat_darknets
 
 	user_maint_utils__add_jail_user nat_darknets i2p none home permanent sensitive
 	chroot /usr/shew/jails/nat_darknets \

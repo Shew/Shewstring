@@ -15,11 +15,6 @@ Non-Shewstring bugs:
   Pinentry (for GPG) has a 'feature' which prevents passwords from being pasted into it.
   Symbolic linking does not work properly with: GnuPG, Liferea, Pidgin, Sylpheed.
   XFCE sometimes makes duplicate desktop items (when only one file exists).
-  I2P:
-    I2CP does not work with everything if set to a non-default port or non 0.0.0.0 IP. It fails with this error:
-	PM ERROR [rtup tunnels] .i2ptunnel.I2PTunnelClientBase: Unable to connect to the router at 127.0.0.1:7654 and build tunnels for the cleint, retrying in 20 seconds
-    The wrapper requires legacy libraries (via compat4x).
-    The wrapper communicates via an undocumented TCP port?
   Freenet:
     Freenet requires /var/tmp to be mounted allowing execution.
     The FreeBSD wrapper for Freenet does not download correctly.

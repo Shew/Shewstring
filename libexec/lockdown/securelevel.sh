@@ -7,7 +7,7 @@
 							# This file is the default securelevel rc.d file.
 
 lockdown_securelevel__boot_raise_securelevel() {
-	# This function will set the securelevel to raise to 3 after booting.
+	# This function will set the securelevel to raise after booting.
 
 	if [ -f /usr/shew/install/done/lockdown_securelevel__boot_raise_securelevel ]; then
 		echo "lockdown_securelevel__boot_raise_securelevel was called but it has already been

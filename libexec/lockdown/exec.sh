@@ -51,7 +51,7 @@ Securing the suid and sgid binaries.'
 misc_utils__save_progress \
 	&& {
 		echo '
-Setting the securelevel to raise to 3 after booting.'
+Setting the securelevel to raise after booting.'
 		misc_utils__prompt_continue
 
 		echo

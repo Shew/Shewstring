@@ -184,9 +184,16 @@ notify 10 {
 	action "shutdown -p now";
 };
 	# This will shut down the computer if it has a lid, and the lid is closed. This
-	# may protect the encrytion of the hard drive if it is stolen.
+	# may protect the encryption of the hard drive if it is stolen.
 ' >> /etc/devd.conf
 			chmod 0400 /etc/devd.conf
+
+echo 'i2p_wrapper="32000"
+i2p_old_pop="7654"
+i2p_old_smtp="7659"
+i2p_old_irc="6668"
+freenet_old_http="8888"' >> /usr/shew/install/resources/ports
+	# This reserves these default ports.
 		}
 
 	misc_utils__save_progress \
