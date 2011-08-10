@@ -188,6 +188,7 @@ notify 10 {
 ' >> /etc/devd.conf
 			chmod 0400 /etc/devd.conf
 
+mkdir -p /usr/shew/install/resources
 echo 'i2p_wrapper="32000"
 i2p_old_pop="7654"
 i2p_old_smtp="7659"
