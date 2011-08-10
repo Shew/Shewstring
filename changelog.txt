@@ -1,4 +1,12 @@
 
+Shewstring v1.0.2
+	I2P has been fixed, and support has been dramatically improved (with more than an order of magnatude increase in efficiency; wrapper and jbigi work), thanks mostly to the I2P devs.
+	Fix a major bug where wireless did not work due to a problem with PF.
+	Misc. XFCE improvements.
+	Pidgin is now allowed to keep 'pounces.xml' across reboots.
+	Added new Shew GPG key.
+	Misc. bugfixes, tweaks and updates.
+
 Shewstring v1.0.1
 	Vidalia now works, thanks to the Tor community.
 	Fixed Tor hidden services.
