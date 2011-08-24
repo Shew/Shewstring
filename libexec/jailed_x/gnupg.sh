@@ -47,6 +47,15 @@ else
 	ports_pkgs_utils__configure_port pinentry "$jailed_x_gnupg__apps_folder"
 	ports_pkgs_utils__install_pkg pinentry /usr/shew/jails/"$jail_name"
 
+	mv /usr/shew/jails/"$jail_name"/usr/local/bin/gpg /usr/shew/jails/"$jail_name"/usr/local/bin/gpg-bin
+	echo '#!/bin/sh
+
+/usr/local/bin/gpg-bin --preserve-permissions "$@"
+
+' > /usr/shew/jails/"$jail_name"/usr/local/bin/gpg
+	chmod 0555 /usr/shew/jails/"$jail_name"/usr/local/bin/gpg
+		# gpg "fixes" the permissions in its home folder.
+
 	if [ ! -d /usr/shew/install/done/"$jail_name" ]; then
 		mkdir -p /usr/shew/install/done/"$jail_name"
 		chmod 0700 /usr/shew/install/done/"$jail_name"

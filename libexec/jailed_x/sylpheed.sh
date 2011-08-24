@@ -65,29 +65,12 @@ fi
 ports_pkgs_utils__configure_port sylpheed3 "$jailed_x_sylpheed__apps_folder"
 ports_pkgs_utils__install_pkg sylpheed3 /usr/shew/jails/"$jail_name"
 
-# This was added due to GnuPG not allowing group reads:
-if [ "$jailed_x_sylpheed__install_gpa" = YES ]; then
-	arg_1="$jail_name"
-	. /usr/shew/install/shewstring/libexec/jailed_x/gnupg.sh
+password="`
+		dd if=/dev/random count=2 \
+			| md5
+	`"
 
-	gnupg__install_gpa "$jail_name" "$user"
-		# This should really be installed as a separate user, however gnupg does not allow group
-		# access to its files. See the comments at the beginning of sylpheed.sh.
-
-	cat /usr/local/share/applications/"${jail_name}_${user}.desktop" \
-		| sed 's/Name=.*/& gpa/' \
-		> /usr/local/share/applications/"${jail_name}_${user}_gpa.desktop"
-	chmod 0444 /usr/local/share/applications/"${jail_name}_${user}_gpa.desktop"
-		# This is the desktop file installed by gnupg__install_gpa.
-fi
-
-# This was disabled due to GnuPG not allowing group reads:
-#password="`
-#		dd if=/dev/random count=2 \
-#			| md5
-#	`"
-#
-#user_maint_utils__add_jail_user "$jail_name" "$user" "$password" home sensitive gpa
+user_maint_utils__add_jail_user "$jail_name" "$user" "$password" home sensitive gpa
 
 chflags noschg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.profile
 echo '
@@ -97,10 +80,9 @@ export G_FILENAME_ENCODING="UTF-8"
 	# Sylpheed complains and prompts the user if this is not set.
 chflags schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.profile
 
-# This was disabled due to GnuPG not allowing group reads:
-#ln -s /home/gpa/.gnupg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
-#chmod -h 0444 /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
-#chflags -h schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
+ln -s /home/gpa/.gnupg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
+chmod -h 0444 /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
+chflags -h schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
 
 mkdir -p \
 	/usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/mail/draft \

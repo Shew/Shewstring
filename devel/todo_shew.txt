@@ -3,9 +3,6 @@
 
 Ask the user if they want to be able to burn disks, and if not raise the securelevel to 3 instead of 1.
 
-Make root scripts more secure:
-	Edit audit.sh so that it jails a subprocess to remove files.
-
 Create a script which runs at boot to scrub sensitive files of modification and access times.
 
 Consider removing Gnash completely in favor of HTML5.

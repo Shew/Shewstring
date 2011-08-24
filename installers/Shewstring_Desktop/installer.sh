@@ -681,12 +681,7 @@ Installing Sylpheed with GnuPG/GPA for nat_secure.'
 			arg_1='nat_secure'
 			. /usr/shew/install/shewstring/libexec/jailed_x/gnupg.sh
 
-			# This was disabled due to GnuPG not allowing group reads:
-			#gnupg__install_gpa nat_secure
-
-			export jailed_x_sylpheed__install_gpa='YES'
-				# GPA should really be installed by directly calling the gnupg__install_gpa function,
-				# but this doesn't work correctly. See the comments for gnupg__install_gpa and sylpheed.sh.
+			gnupg__install_gpa nat_secure
 
 			arg_1='nat_secure'
 			. /usr/shew/install/shewstring/libexec/jailed_x/sylpheed.sh
@@ -1049,12 +1044,7 @@ Installing Sylpheed with GnuPG/GPA for tor_pseudonym_1.'
 			arg_1='tor_pseudonym_1'
 			. /usr/shew/install/shewstring/libexec/jailed_x/gnupg.sh
 
-			# This was disabled due to GnuPG not allowing group reads:
-#			gnupg__install_gpa tor_pseudonym_1
-
-			export jailed_x_sylpheed__install_gpa='YES'
-				# GPA should really be installed by directly calling the gnupg__install_gpa function,
-				# but this doesn't work correctly. See the comments for gnupg__install_gpa and sylpheed.sh.
+			gnupg__install_gpa tor_pseudonym_1
 
 			arg_1='tor_pseudonym_1'
 			. /usr/shew/install/shewstring/libexec/jailed_x/sylpheed.sh
@@ -1184,12 +1174,7 @@ Installing Sylpheed with GnuPG/GPA for tor_pseudonym_2.'
 			arg_1='tor_pseudonym_2'
 			. /usr/shew/install/shewstring/libexec/jailed_x/gnupg.sh
 
-			# This was disabled due to GnuPG not allowing group reads:
-#			gnupg__install_gpa tor_pseudonym_2
-
-			export jailed_x_sylpheed__install_gpa='YES'
-				# GPA should really be installed by directly calling the gnupg__install_gpa function,
-				# but this doesn't work correctly. See the comments for gnupg__install_gpa and sylpheed.sh.
+			gnupg__install_gpa tor_pseudonym_2
 
 			arg_1='tor_pseudonym_2'
 			. /usr/shew/install/shewstring/libexec/jailed_x/sylpheed.sh
