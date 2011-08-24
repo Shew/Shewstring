@@ -1,6 +1,8 @@
 
 # This todo contains things that Shew would prefer to do himself, or would be more convenient for him to do himself.
 
+Finish scripts/maintenance.sh.
+
 Ask the user if they want to be able to burn disks, and if not raise the securelevel to 3 instead of 1.
 
 Create a script which runs at boot to scrub sensitive files of modification and access times.
@@ -8,8 +10,6 @@ Create a script which runs at boot to scrub sensitive files of modification and 
 Consider removing Gnash completely in favor of HTML5.
 
 Check out: http://wiki.FreeBSD.org/BSDInstall
-
-Create a script that will upgrade installed packages.
 
 Consider switching the default chat program(s) to Psi and Xchat:
   Offer OTR for both of them.

@@ -122,7 +122,7 @@ should be:
 	misc_utils__condense_output_end
 
 	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh \
-		/usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.old
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.bak
 	echo '#!/bin/sh
 echo "$0 has been replaced by a dummy script." >&2
 return 0
