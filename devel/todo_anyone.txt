@@ -44,8 +44,6 @@ Fix Freenet plugins: They seem to only work if Freenet can download them itself,
 
 Audit all apps files for lightening.
 
-Make Firefox properly recognize applications like Abiword, Evince, VLC, etc.
-
 Figure out some method of turning an installed system into a live CD/DVD:
 	This may require more room than the medium has for, e.g. Shewstring Desktop, but there could be a 'light' install.
 

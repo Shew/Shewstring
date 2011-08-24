@@ -1,0 +1,1703 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+  xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <RDF:Description RDF:about="urn:root"
+      NC:en-US_defaultHandlersVersion="3"
+    />
+  <RDF:Description RDF:about="urn:mimetypes">
+    <NC:MIME-types RDF:resource="urn:mimetypes:root"/>
+  </RDF:Description>
+
+  <RDF:Seq RDF:about="urn:mimetypes:root">
+    <RDF:li RDF:resource="urn:mimetype:application/x-abiword"/>
+    <RDF:li RDF:resource="urn:mimetype:text/x-abiword"/>
+    <RDF:li RDF:resource="urn:mimetype:text/x-xml-abiword"/>
+    <RDF:li RDF:resource="urn:mimetype:application/msword"/>
+    <RDF:li RDF:resource="urn:mimetype:application/rtf"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.plain"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-crossmark"/>
+    <RDF:li RDF:resource="urn:mimetype:application/docbook+xml"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-t602"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.oasis.opendocument.text"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.sun.xml.writer"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.stardivision.writer"/>
+    <RDF:li RDF:resource="urn:mimetype:text/vnd.wap.wml"/>
+    <RDF:li RDF:resource="urn:mimetype:application/wordperfect6"/>
+    <RDF:li RDF:resource="urn:mimetype:application/wordperfect5.1"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.wordperfect"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-abicollab"/>
+
+    <RDF:li RDF:resource="urn:mimetype:application/pdf"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-bzpdf"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-gzpdf"/>
+    <RDF:li RDF:resource="urn:mimetype:application/postscript"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-bzpostscript"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-gzpostscript"/>
+    <RDF:li RDF:resource="urn:mimetype:image/x-eps"/>
+    <RDF:li RDF:resource="urn:mimetype:image/x-bzeps"/>
+    <RDF:li RDF:resource="urn:mimetype:image/x-gzeps"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-cbr"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-cbz"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-cb7"/>
+
+    <RDF:li RDF:resource="urn:mimetype:video/dv"/>
+    <RDF:li RDF:resource="urn:mimetype:video/mpeg"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-mpeg"/>
+    <RDF:li RDF:resource="urn:mimetype:video/msvideo"/>
+    <RDF:li RDF:resource="urn:mimetype:video/quicktime"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-anim"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-avi"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-ms-asf"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-ms-wmv"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-msvideo"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-nsv"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-flc"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-fli"/>
+    <RDF:li RDF:resource="urn:mimetype:application/ogg"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-ogg"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-matroska"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-mp3"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-mpeg"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/mpeg"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-wav"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-mpegurl"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-scpls"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-m4a"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-ms-asf"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-ms-asx"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-ms-wax"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.rn-realmedia"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-real-audio"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-realaudio"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-flac"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-flac"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-shockwave-flash"/>
+    <RDF:li RDF:resource="urn:mimetype:misc/ultravox"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/vnd.rn-realaudio"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-aiff"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-au"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-wav"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-windows-acm"/>
+    <RDF:li RDF:resource="urn:mimetype:image/vnd.rn-realpix"/>
+    <RDF:li RDF:resource="urn:mimetype:video/vnd.rn-realvideo"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/x-pn-realaudio-plugin"/>
+    <RDF:li RDF:resource="urn:mimetype:application/x-extension-mp4"/>
+    <RDF:li RDF:resource="urn:mimetype:audio/mp4"/>
+    <RDF:li RDF:resource="urn:mimetype:video/mp4"/>
+    <RDF:li RDF:resource="urn:mimetype:video/mp4v-es"/>
+    <RDF:li RDF:resource="urn:mimetype:x-content/video-vcd"/>
+    <RDF:li RDF:resource="urn:mimetype:x-content/video-svcd"/>
+    <RDF:li RDF:resource="urn:mimetype:x-content/video-dvd"/>
+    <RDF:li RDF:resource="urn:mimetype:x-content/audio-cdda"/>
+    <RDF:li RDF:resource="urn:mimetype:x-content/audio-player"/>
+    <RDF:li RDF:resource="urn:mimetype:video/x-flv"/>
+  </RDF:Seq>
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-abiword"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/x-abiword"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-abiword"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-abiword"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:text/x-abiword"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="text/x-abiword"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:text/x-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:text/x-abiword"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:text/x-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:text/x-abiword"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:text/x-xml-abiword"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="text/x-xml-abiword"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:text/x-xml-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:text/x-xml-abiword"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:text/x-xml-abiword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:text/x-xml-abiword"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/msword"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/msword"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/msword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/msword"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/msword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/msword"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/rtf"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/rtf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/rtf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/rtf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/rtf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/rtf"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.plain"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/vnd.plain"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.plain"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.plain"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.plain"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.plain"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-crossmark"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/x-crossmark"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-crossmark"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-crossmark"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-crossmark"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-crossmark"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/docbook+xml"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/docbook+xml"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/docbook+xml"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/docbook+xml"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/docbook+xml"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/docbook+xml"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-t602"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/x-t602"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-t602"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-t602"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-t602"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-t602"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.oasis.opendocument.text"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/vnd.oasis.opendocument.text"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.oasis.opendocument.text"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.oasis.opendocument.text"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.text"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.text"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.sun.xml.writer"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/vnd.sun.xml.writer"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.sun.xml.writer"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.sun.xml.writer"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.sun.xml.writer"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.sun.xml.writer"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.stardivision.writer"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/vnd.stardivision.writer"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.stardivision.writer"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.stardivision.writer"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.stardivision.writer"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.stardivision.writer"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:text/vnd.wap.wml"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="text/vnd.wap.wml"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:text/vnd.wap.wml"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:text/vnd.wap.wml"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:text/vnd.wap.wml"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:text/vnd.wap.wml"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/wordperfect6"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/wordperfect6"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/wordperfect6"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/wordperfect6"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/wordperfect6"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/wordperfect6"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/wordperfect5.1"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/wordperfect5.1"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/wordperfect5.1"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/wordperfect5.1"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/wordperfect5.1"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/wordperfect5.1"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.wordperfect"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/vnd.wordperfect"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.wordperfect"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.wordperfect"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.wordperfect"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.wordperfect"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-abicollab"
+      NC:description="Abiword-openable Document"
+      NC:editable="true"
+      NC:value="application/x-abicollab"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-abicollab"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-abicollab"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-abicollab"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-abicollab"
+      NC:path="/usr/local/bin/abiword"
+      NC:prettyName="Abiword"
+    />
+
+
+
+
+  <RDF:Description RDF:about="urn:mimetype:application/pdf"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/pdf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/pdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/pdf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/pdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/pdf"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-bzpdf"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-bzpdf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-bzpdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-bzpdf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-bzpdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-bzpdf"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-gzpdf"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-gzpdf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-gzpdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-gzpdf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-gzpdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-gzpdf"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/postscript"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/postscript"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/postscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/postscript"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/postscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/postscript"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-bzpostscript"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-bzpostscript"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-bzpostscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-bzpostscript"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-bzpostscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-bzpostscript"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-gzpostscript"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-gzpostscript"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-gzpostscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-gzpostscript"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-gzpostscript"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-gzpostscript"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:image/x-eps"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="image/x-eps"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:image/x-eps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:image/x-eps"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:image/x-eps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:image/x-eps"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:image/x-bzeps"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="image/x-bzeps"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:image/x-bzeps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:image/x-bzeps"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:image/x-bzeps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:image/x-bzeps"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:image/x-gzeps"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="image/x-gzeps"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:image/x-gzeps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:image/x-gzeps"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:image/x-gzeps"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:image/x-gzeps"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-cbr"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-cbr"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-cbr"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-cbr"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-cbr"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-cbr"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-cbz"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-cbz"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-cbz"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-cbz"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-cbz"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-cbz"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-cb7"
+      NC:description="Evince-openable Document"
+      NC:editable="true"
+      NC:value="application/x-cb7"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-cb7"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-cb7"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-cb7"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-cb7"
+      NC:path="/usr/local/bin/evince"
+      NC:prettyName="Evince"
+    />
+
+
+
+
+  <RDF:Description RDF:about="urn:mimetype:video/dv"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/dv"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/dv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/dv"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/dv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/dv"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/mpeg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/mpeg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/mpeg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/mpeg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-mpeg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-mpeg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-mpeg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-mpeg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/msvideo"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/msvideo"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/msvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/msvideo"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/msvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/msvideo"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/quicktime"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/quicktime"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/quicktime"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/quicktime"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/quicktime"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/quicktime"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-anim"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-anim"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-anim"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-anim"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-anim"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-anim"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-avi"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-avi"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-avi"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-avi"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-avi"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-avi"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-ms-asf"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-ms-asf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-ms-asf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-ms-asf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-ms-asf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-ms-asf"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-ms-wmv"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-ms-wmv"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-ms-wmv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-ms-wmv"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-ms-wmv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-ms-wmv"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-msvideo"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-msvideo"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-msvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-msvideo"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-msvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-msvideo"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-nsv"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-nsv"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-nsv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-nsv"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-nsv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-nsv"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-flc"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-flc"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-flc"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-flc"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-flc"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-flc"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-fli"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-fli"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-fli"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-fli"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-fli"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-fli"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/ogg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/ogg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/ogg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/ogg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/ogg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/ogg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-ogg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/x-ogg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-ogg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-ogg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-ogg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-ogg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-matroska"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/x-matroska"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-matroska"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-matroska"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-matroska"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-matroska"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-mp3"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-mp3"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-mp3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-mp3"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-mp3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-mp3"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-mpeg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-mpeg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-mpeg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-mpeg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/mpeg"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/mpeg"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/mpeg"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/mpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/mpeg"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-wav"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-wav"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-wav"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-wav"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-wav"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-wav"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-mpegurl"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-mpegurl"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-mpegurl"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-mpegurl"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-mpegurl"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-mpegurl"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-scpls"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-scpls"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-scpls"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-scpls"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-scpls"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-scpls"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-m4a"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-m4a"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-m4a"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-m4a"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-m4a"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-m4a"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-ms-asf"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-ms-asf"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-ms-asf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-ms-asf"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-ms-asf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-ms-asf"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-ms-asx"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-ms-asx"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-ms-asx"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-ms-asx"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-ms-asx"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-ms-asx"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-ms-wax"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-ms-wax"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-ms-wax"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-ms-wax"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-ms-wax"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-ms-wax"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.rn-realmedia"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/vnd.rn-realmedia"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.rn-realmedia"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.rn-realmedia"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.rn-realmedia"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.rn-realmedia"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-real-audio"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-real-audio"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-real-audio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-real-audio"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-real-audio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-real-audio"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-realaudio"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-realaudio"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-realaudio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-realaudio"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-realaudio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-realaudio"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-flac"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/x-flac"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-flac"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-flac"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-flac"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-flac"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-flac"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-flac"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-flac"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-flac"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-flac"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-flac"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-shockwave-flash"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/x-shockwave-flash"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-shockwave-flash"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-shockwave-flash"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-shockwave-flash"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-shockwave-flash"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:misc/ultravox"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="misc/ultravox"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:misc/ultravox"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:misc/ultravox"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:misc/ultravox"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:misc/ultravox"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/vnd.rn-realaudio"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/vnd.rn-realaudio"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/vnd.rn-realaudio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/vnd.rn-realaudio"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/vnd.rn-realaudio"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/vnd.rn-realaudio"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-aiff"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-aiff"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-aiff"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-aiff"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-aiff"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-aiff"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-au"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-au"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-au"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-au"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-au"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-au"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-wav"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-wav"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-wav"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-wav"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-wav"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-wav"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-windows-acm"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-windows-acm"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-windows-acm"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-windows-acm"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-windows-acm"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-windows-acm"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:image/vnd.rn-realpix"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="image/vnd.rn-realpix"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:image/vnd.rn-realpix"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:image/vnd.rn-realpix"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:image/vnd.rn-realpix"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:image/vnd.rn-realpix"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/vnd.rn-realvideo"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/vnd.rn-realvideo"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/vnd.rn-realvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/vnd.rn-realvideo"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/vnd.rn-realvideo"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/vnd.rn-realvideo"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/x-pn-realaudio-plugin"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/x-pn-realaudio-plugin"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/x-pn-realaudio-plugin"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/x-pn-realaudio-plugin"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/x-pn-realaudio-plugin"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/x-pn-realaudio-plugin"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:application/x-extension-mp4"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="application/x-extension-mp4"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-extension-mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-extension-mp4"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-extension-mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-extension-mp4"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:audio/mp4"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="audio/mp4"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:audio/mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:audio/mp4"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:audio/mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:audio/mp4"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/mp4"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/mp4"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/mp4"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/mp4"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/mp4"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/mp4v-es"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/mp4v-es"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/mp4v-es"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/mp4v-es"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/mp4v-es"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/mp4v-es"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:x-content/video-vcd"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="x-content/video-vcd"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:x-content/video-vcd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:x-content/video-vcd"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:x-content/video-vcd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:x-content/video-vcd"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:x-content/video-svcd"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="x-content/video-svcd"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:x-content/video-svcd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:x-content/video-svcd"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:x-content/video-svcd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:x-content/video-svcd"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:x-content/video-dvd"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="x-content/video-dvd"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:x-content/video-dvd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:x-content/video-dvd"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:x-content/video-dvd"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:x-content/video-dvd"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:x-content/audio-cdda"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="x-content/audio-cdda"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:x-content/audio-cdda"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:x-content/audio-cdda"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:x-content/audio-cdda"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:x-content/audio-cdda"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:x-content/audio-player"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="x-content/audio-player"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:x-content/audio-player"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:x-content/audio-player"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:x-content/audio-player"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:x-content/audio-player"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+  <RDF:Description RDF:about="urn:mimetype:video/x-flv"
+      NC:description="Video or Audio file"
+      NC:editable="true"
+      NC:value="video/x-flv"
+    >
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:video/x-flv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:video/x-flv"
+      NC:alwaysAsk="true"
+      NC:handleInternal="false"
+      NC:saveToDisk="false"
+      NC:useSystemDefault="false"
+    >
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:video/x-flv"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:video/x-flv"
+      NC:path="/usr/local/bin/vlc"
+      NC:prettyName="VLC"
+    />
+
+</RDF:RDF>
