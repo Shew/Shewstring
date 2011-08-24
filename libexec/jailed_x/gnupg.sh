@@ -113,27 +113,25 @@ exist."
 
 	user_maint_utils__add_jail_user "$jail_name" "$user" "$password" home sensitive
 
-	mkdir -p /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gnupg
-	cp -f "$jailed_x_gpa__gpa_configs"/gpg.conf /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gnupg/gpg.conf
-	touch /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gnupg/pubring.kbx
+	cp -f "$jailed_x_gpa__gpa_configs"/gpg.conf /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gpg.conf
+	touch /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/pubring.kbx
 		# For some reason, entries for certificate authorities show up in GPA if this
 		# is not touched.
 	chroot /usr/shew/jails/"$jail_name" \
-		chown -R "${user}:$user" /usr/shew/sensitive/"$user"/gnupg
-	chflags schg /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gnupg/gpg.conf
+		chown -R "${user}:$user" /usr/shew/sensitive/"$user"
+	chflags schg /usr/shew/jails/"$jail_name"/usr/shew/sensitive/"$user"/gpg.conf
 
-	ln -s /usr/shew/sensitive/"$user"/gnupg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
+	ln -s /usr/shew/sensitive/"$user" /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
 	chmod -h 0444 /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
 	chflags -h schg /usr/shew/jails/"$jail_name"/usr/shew/copy_to_mfs/home/"$user"/.gnupg
 
 	chflags noschg /usr/shew/sensitive/"$jail_name"/"${user}.allow"
-	echo 'gnupg
-gnupg/gpg.conf
-gnupg/pubring\.gpg
-gnupg/pubring\.kbx
-gnupg/random_seed
-gnupg/secring\.gpg
-gnupg/trustdb\.gpg' \
+	echo 'gpg\.conf
+pubring\.gpg
+pubring\.kbx
+random_seed
+secring\.gpg
+trustdb\.gpg' \
 		>> /usr/shew/sensitive/"$jail_name"/"${user}.allow"
 	chflags schg /usr/shew/sensitive/"$jail_name"/"${user}.allow"
 

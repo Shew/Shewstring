@@ -132,6 +132,18 @@ for val in sensitive data; do
 	done
 done
 
+if
+	ls /usr/shew/data/host/root/"backup_$date"/sensitive/*/sylpheed/gnupg \
+		> /dev/null \
+		2> /dev/null
+	# This protects the following for loop from invalid input if there are no
+	# files.
+then
+	for val in /usr/shew/data/host/root/"backup_$date"/sensitive/*/sylpheed/gnupg; do
+		mv "$val" "$val"/../../gpa
+	done
+fi
+
 if [ -d /etc/keys ]; then
 	cp -Rf /etc/keys /usr/shew/data/host/root/"backup_$date"/keys
 fi

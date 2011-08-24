@@ -50,6 +50,18 @@ cd /usr/shew/data/host/root
 7z x "$path"
 cd ./backup_*/
 
+if
+	ls sensitive/*/sylpheed/gnupg \
+		> /dev/null \
+		2> /dev/null
+	# This protects the following for loop from invalid input if there are no
+	# files.
+then
+	for val in sensitive/*/sylpheed/gnupg; do
+		mv "$val" "$val"/../../gpa
+	done
+fi
+
 echo '
 Restoring files.
 (NOTE: You may see "Operation Not Permitted" errors; this is normal due to chflagged files.)'
