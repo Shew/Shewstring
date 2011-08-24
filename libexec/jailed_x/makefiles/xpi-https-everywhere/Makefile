@@ -3,7 +3,7 @@
 # Whom:                 Shew <shew09642@rambler.ru>
 
 PORTNAME=       https-everywhere
-PORTVERSION=    1.0.0
+PORTVERSION=    1.0.1
 CATEGORIES=     www
 MASTER_SITES=   http://www.eff.org/files/
 

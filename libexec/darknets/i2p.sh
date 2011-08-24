@@ -19,8 +19,8 @@
   : ${darknets_i2p__apps_folder='/usr/shew/install/shewstring/libexec/darknets/apps'}
 								# The default darknets apps folder.
   : ${darknets_i2p__i2p_websites='http://mirror.i2p2.de/'}	# The website(s) hosting the i2p installer.
-  : ${darknets_i2p__i2p_file='i2pinstall_0.8.7.exe'}		# The filename of the i2p installer.
-  : ${darknets_i2p__i2p_sha256='9f0b1d565e0250cefe3998e1ccabda062d057f794ccb976c147608f005a022c4'}
+  : ${darknets_i2p__i2p_file='i2pinstall_0.8.8.exe'}		# The filename of the i2p installer.
+  : ${darknets_i2p__i2p_sha256='32f37cd5045040da2b162b7ffa8eccd096ea2101a963590d5c1d8a7b9be3f4cc'}
 								# The sha256 hash of the i2p installer.
   : ${darknets_i2p__i2p_configs='/usr/shew/install/shewstring/libexec/darknets/misc/i2p'}
 								# This file is the default i2p folder for config files.
