@@ -2,6 +2,6 @@
 a:	512M	*	4.2BSD	0	0	0	# /
 b:	1G	*	unused	0	0	0
 c:	*	0	unused	0	0
-d:	16G	*	4.2BSD	0	0	0	# /usr
+d:	20G	*	4.2BSD	0	0	0	# /usr
 e:	512M	*	4.2BSD	0	0	0	# /usr/shew/sensitive
 f:	*	*	4.2BSD	0	0	0	# /usr/shew/data

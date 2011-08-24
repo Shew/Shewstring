@@ -57,6 +57,8 @@ echo "<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <DT><A HREF=\"http://${ip}:${i2p_port}/\" ADD_DATE=\"0000000001\" LAST_MODIFIED=\"0000000001\">I2P Web Interface</A>
 </DL><p>
 " > /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/firefox_i2p/.mozilla/firefox/default/bookmarks.html
+chroot /usr/shew/jails/nat_darknets \
+	chown firefox_i2p:firefox_i2p /usr/shew/copy_to_mfs/home/firefox_i2p/.mozilla/firefox/default/bookmarks.html
 
 chflags -h noschg \
 	/usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/firefox_i2p/.mozilla/firefox/default/bookmarkbackups \
@@ -167,6 +169,8 @@ echo "<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <DT><A HREF=\"http://${ip}:${freenet_port}/\" ADD_DATE=\"0000000001\" LAST_MODIFIED=\"0000000001\">Freenet Web Interface</A>
 </DL><p>
 " > /usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/firefox_freenet/.mozilla/firefox/default/bookmarks.html
+chroot /usr/shew/jails/nat_darknets \
+  chown firefox_freenet:firefox_freenet /usr/shew/copy_to_mfs/home/firefox_freenet/.mozilla/firefox/default/bookmarks.html
 
 chflags -h noschg \
 	/usr/shew/jails/nat_darknets/usr/shew/copy_to_mfs/home/firefox_freenet/.mozilla/firefox/default/bookmarkbackups \

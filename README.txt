@@ -25,7 +25,7 @@ Shewstring_Desktop
 Make sure you have the following resources available:
  * Writable DVD for the FreeBSD install DVD.
  * Computer with at least:
-	20 GiB space for Shewstring_Desktop
+	24 GiB space for Shewstring_Desktop
    (NOTE: disk space requirements are high because most system files are
    duplicated for each jail, sorry!)
  * Removable medium to hold install files, (USB thumb drive recommended).

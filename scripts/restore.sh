@@ -50,6 +50,10 @@ cd /usr/shew/data/host/root
 7z x "$path"
 cd ./backup_*/
 
+echo '
+Restoring files.
+(NOTE: You may see "Operation Not Permitted" errors; this is normal due to chflagged files.)'
+
 for val in */*/*; do
 	uid="`stat -f %u /usr/shew/"$val"`"
 	gid="`stat -f %g /usr/shew/"$val"`"
@@ -58,5 +62,8 @@ for val in */*/*; do
 
 	cp -af ./"$val"/* /usr/shew/"$val"
 done
+
+echo '
+Removing temporary files.'
 
 rm -RPf "`pwd`"
