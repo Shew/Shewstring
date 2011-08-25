@@ -24,16 +24,17 @@ fi
 for val in \
 	`
 		ls -F /usr/shew/sensitive \
-			| grep '/$'
+			| grep '/$' \
+			| sed 's|/$||'
 	`
 do
 	if
 		jls -n -h path \
-			| grep "path=/usr/shew/jails/$jail_name" \
+			| grep "path=/usr/shew/jails/$val" \
 			> /dev/null
 		# This is modified code from jail_maint_utils__return_jail_jid.
 	then
-		jid="`cat /var/run/"jail_${jail_name}.id"`"
+		jid="`cat /var/run/"jail_${val}.id"`"
 	else
 		continue
 	fi

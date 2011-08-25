@@ -14,5 +14,5 @@
 # GVFS=on (default) "Add support for remote access"
 
 with="PLUG_APR_EXIF"
-without="DBUS NOTIFY PLUG_UCA GVFS"
+without="DBUS NOTIFY PLUG_UCA"
 

@@ -17,6 +17,11 @@
   fi
 
 # Execute:
+if [ ! -d /usr/shew/jails/compile ]; then
+	echo 'This script cannot be run before the compile jail is created.'
+	exit 1
+fi
+
 mkdir -p /tmp/old_apps
 cp -f \
 	"$directory"/lib/apps/* \

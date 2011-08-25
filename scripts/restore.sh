@@ -79,3 +79,6 @@ echo '
 Removing temporary files.'
 
 rm -RPf "`pwd`"
+
+echo '
+Finished!'

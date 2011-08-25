@@ -3,7 +3,9 @@
 # This script is meant to upgrade and do maintenance for Shewstring.
 # WARNING: This script is not yet well tested!
 #
-# To use this script, reboot into single user mode, run 'mount -a', and run it using 'sh'.
+# To use this script, reboot into single user mode (You will get an option
+# screen during boot; press 4 to select single user mode.), run 'mount -a', and
+# run it using 'sh'.
 
 # Libraries:
   . /usr/shew/install/shewstring/lib/misc_utils.sh
@@ -35,20 +37,24 @@ done
 mount -u -o rw /
 mount -u -o rw /usr
 
+echo '
+Starting up networking.
+'
+
 /etc/rc.d/shew_mfs start
-/etc/rc.d/mac_changer start
+/etc/rc.d/shew_mac_changer start
 /etc/rc.d/netif start
 /etc/rc.d/shew_named start
 
-freebsd-update fetch install \
-	>> /usr/shew/install/log/update_host \
-	2>> /usr/shew/install/log/update_host
+echo '
+Updating the operating system.
+'
+
+freebsd-update fetch install
 
 cd /usr/shew/jails
 for val in *; do
-	freebsd-update -b /usr/shew/jails/"$val" fetch install \
-		>> /usr/shew/install/log/"update_$val" \
-		2>> /usr/shew/install/log/"update_$val"
+	freebsd-update -b /usr/shew/jails/"$val" fetch install
 done
 
 # Ports code is unfinished:
@@ -77,7 +83,11 @@ done
 # Get a list of all ports on host and in each jail.
 # If the version is different than the new one from the compile jail, install the new package.
 
-# ExcludeExitNodes upgrade code disabled for now:
+# ExcludeExitNodes upgrade code disabled for now.
+# TODO:
+# Test for the date last updated.
+# Update the date last updated.
+#
 #excludenodes=''
 #
 #if
@@ -101,6 +111,10 @@ jid="`jail_maint_utils__return_jail_jid nat_darknets`"
 # TODO:
 # Upgrade I2P.
 
+echo '
+Updating Freenet.
+'
+
 jexec "$jid" \
 	sh "-$-" -c '
 		cd /usr/shew/permanent/freenet
@@ -108,10 +122,15 @@ jexec "$jid" \
 			/usr/shew/permanent/freenet/update.sh.bak
 		# The script is named update.sh.bak because update.sh has been replaced by a
 		# dummy script.
-	' \
->> /usr/shew/install/log/freenet_upgrade \
-2>> /usr/shew/install/log/freenet_upgrade
+	'
+
+echo '
+Wiping file traces from sensitive partition.
+'
 
 cat /dev/random > /usr/shew/sensitive/random
-rm /usr/shew/sensitive/random
+rm -f /usr/shew/sensitive/random
 	# This may remove any file traces that remain on the sensitive partition.
+
+echo '
+Finished!'

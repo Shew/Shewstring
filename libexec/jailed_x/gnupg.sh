@@ -52,6 +52,8 @@ else
 
 /usr/local/bin/gpg-bin --preserve-permissions "$@"
 
+chmod -f 0770 ~/.gnupg
+chmod -Rf 0750 ~/.gnupg/*
 ' > /usr/shew/jails/"$jail_name"/usr/local/bin/gpg
 	chmod 0555 /usr/shew/jails/"$jail_name"/usr/local/bin/gpg
 		# gpg "fixes" the permissions in its home folder.
