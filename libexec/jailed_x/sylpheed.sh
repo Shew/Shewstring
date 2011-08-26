@@ -54,16 +54,10 @@ if [ ! -d "$jailed_x_sylpheed__sylpheed_configs" ]; then
 	return 1
 fi
 
-cp -f "$jailed_x_sylpheed__sylpheed_configs"/patch-headers /usr/shew/jails/compile/usr/ports/mail/sylpheed3/files
+cp -f "$jailed_x_sylpheed__sylpheed_configs"/patch-headers /usr/shew/jails/compile/usr/ports/mail/sylpheed/files
 
-if [ ! -L /usr/shew/jails/compile/usr/ports/packages/Latest/sylpheed.tbz ]; then
-	ln -s sylpheed.tbz /usr/shew/jails/compile/usr/ports/packages/Latest/sylpheed3.tbz
-		# This is used because for some reason the sylpheed3 port produces a differently
-		# named package (sylpheed.tbz).
-fi
-
-ports_pkgs_utils__configure_port sylpheed3 "$jailed_x_sylpheed__apps_folder"
-ports_pkgs_utils__install_pkg sylpheed3 /usr/shew/jails/"$jail_name"
+ports_pkgs_utils__configure_port sylpheed "$jailed_x_sylpheed__apps_folder"
+ports_pkgs_utils__install_pkg sylpheed /usr/shew/jails/"$jail_name"
 
 password="`
 		dd if=/dev/random count=2 \

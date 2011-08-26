@@ -1,7 +1,6 @@
 
 Things to do before each release:
 	Use devel/scripts/script_check.sh
-	Update ports.tar.gz.
 	Update libexec/*/makefiles.
 	Update apps files.
 	Update I2P.

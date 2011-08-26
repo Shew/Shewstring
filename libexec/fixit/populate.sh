@@ -12,20 +12,20 @@
 fixit_populate__base_man_ports() {
 	# This function will install the kernel, base system, man pages, and ports.
 
-	if [ -f "`cat /tmp/thumbdrive_path`"/../ports.tar.gz ]; then
-		latest_ports="`cat /tmp/thumbdrive_path`/../ports.tar.gz"
-	else
-		for val in "`cat /tmp/thumbdrive_path`"/../ports-*.tar.gz; do
-			latest_ports="$val"
-		done
-	fi
-
-	if [ ! -f "$latest_ports" ]; then
-		echo "fixit_populate__base_man_ports could not find a critical install file. It
-should be:
-	`cat /tmp/thumbdrive_path`/../ports*.tar.gz"
-		return 1
-	fi
+#	if [ -f "`cat /tmp/thumbdrive_path`"/../ports.tar.gz ]; then
+#		latest_ports="`cat /tmp/thumbdrive_path`/../ports.tar.gz"
+#	else
+#		for val in "`cat /tmp/thumbdrive_path`"/../ports-*.tar.gz; do
+#			latest_ports="$val"
+#		done
+#	fi
+#
+#	if [ ! -f "$latest_ports" ]; then
+#		echo "fixit_populate__base_man_ports could not find a critical install file. It
+#should be:
+#	`cat /tmp/thumbdrive_path`/../ports*.tar.gz"
+#		return 1
+#	fi
 
 	export DESTDIR='/encrypted'
 
@@ -47,12 +47,12 @@ should be:
 	mkdir -p /encrypted/usr/shew/install/base_system
 	cp -f /dist/"$shew__freebsd_version"/base/* /encrypted/usr/shew/install/base_system
 
-	mkdir -p /encrypted/usr/shew/install
-
-	cp -f "$latest_ports" /encrypted/usr/shew/install/ports.tar.gz
-
-	chmod 0700 /encrypted/usr/shew/install
-	chmod 0400 /encrypted/usr/shew/install/ports.tar.gz
+#	mkdir -p /encrypted/usr/shew/install
+#
+#	cp -f "$latest_ports" /encrypted/usr/shew/install/ports.tar.gz
+#
+#	chmod 0700 /encrypted/usr/shew/install
+#	chmod 0400 /encrypted/usr/shew/install/ports.tar.gz
 }
 
 fixit_populate__misc_files() {

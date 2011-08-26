@@ -41,10 +41,10 @@ skipping."
 		return 0
 	fi
 
-	if [ ! -f /usr/shew/install/ports.tar.gz ]; then
-		echo 'Ports tarball missing.'
-		return 1
-	fi
+#	if [ ! -f /usr/shew/install/ports.tar.gz ]; then
+#		echo 'Ports tarball missing.'
+#		return 1
+#	fi
 
 	jail_maint_utils__create_jail compile
 
@@ -57,8 +57,8 @@ skipping."
 
 	mkdir -p /usr/shew/jails/compile/var/db/ports
 
-	cd /usr/shew/jails/compile/usr
-	tar -x -f /usr/shew/install/ports.tar.gz
+#	cd /usr/shew/jails/compile/usr
+#	tar -x -f /usr/shew/install/ports.tar.gz
 
 	. /usr/shew/install/shewstring/libexec/host/dns.sh
 	host_dns__add_jail_dns_rules compile
@@ -67,6 +67,15 @@ skipping."
 	host_network__add_jail_nat_rules compile
 
 	jid="`jail_maint_utils__return_jail_jid compile`"
+
+	mkdir -p /usr/shew/jails/compile/usr/portsnap
+	echo 'Downloading ports skeleton with portsnap (Log is named portsnap):'
+	misc_utils__condense_output_start /usr/shew/install/log/portsnap
+	jexec "$jid" \
+		portsnap -d /usr/portsnap fetch extract \
+		>> /usr/shew/install/log/portsnap \
+		2>> /usr/shew/install/log/portsnap
+	misc_utils__condense_output_end
 
 	echo 'Configuring portmaster (Log is named make_config_portmaster):'
 	misc_utils__condense_output_start /usr/shew/install/log/make_config_portmaster

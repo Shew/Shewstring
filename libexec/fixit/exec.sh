@@ -46,7 +46,7 @@ Attaching and mounting encrypted partitions.'
 misc_utils__save_progress \
 	&& {
 		echo '
-Installing FreeBSD kernel, base system, manual pages, and ports system.'
+Installing FreeBSD kernel, base system, and manual pages.'
 		misc_utils__prompt_continue
 
 		echo

@@ -60,18 +60,6 @@ SHA256 of FreeBSD-8.2-RELEASE-amd64-dvd1.iso =
   installer. 'bootonly' and 'disk1' will not work. 'livefs' may be supported in
   the future, but does not yet work. 'memstick' may work but is untested.)
 
-Download the ports tarball (ports.tar.gz) either (for a tested tarball) from:
-  http://xqz3u5drneuzhaeo.onion/users/shew2/shewstring/index.html
-or as shipped with the latest Shewstring version (for the latest tarball):
-  ftp://ftp.freebsd.org/pub/FreeBSD/ports/ports/ports.tar.gz
-Unfortunately there is no way to authenticate the latter; the former can be
-authenticated by GnuPG with Shew's public key.
-
-Place the ports tarball with Shewstring on your install files removable
-medium. When copying the ports tarball, place it in the folder that the
-Shewstring folder is in (e.g. 'ls' should show something like 'ports.tar.gz
-shewstringv1.0.0').
-
 # Install instructions:
 
 If you are not using a separate boot files medium, then you need to partition

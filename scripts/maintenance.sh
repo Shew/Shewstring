@@ -43,7 +43,29 @@ Starting up networking.
 
 /etc/rc.d/shew_mfs start
 /etc/rc.d/shew_mac_changer start
+/etc/rc.d/netoptions start
 /etc/rc.d/netif start
+
+for val in \
+	`
+		ifconfig -l
+	`
+do
+	if
+		echo "$val" \
+			| grep \
+				`
+					cat /usr/shew/permanent/root/mac_changer/interface_wired \
+						| sed 's/^/ -e ^/' \
+						| sed 's/$/\[0-9\]\*$/'
+				` \
+			> /dev/null
+	then
+		dhclient "$val"
+		break
+	fi
+done
+
 /etc/rc.d/shew_named start
 
 echo '
