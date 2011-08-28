@@ -108,6 +108,17 @@ exist."
 	ports_pkgs_utils__configure_port gpa "$jailed_x_gnupg__apps_folder"
 	ports_pkgs_utils__install_pkg gpa /usr/shew/jails/"$jail_name"
 
+	mv /usr/shew/jails/"$jail_name"/usr/local/bin/gpa /usr/shew/jails/"$jail_name"/usr/local/bin/gpa-bin
+	echo '#!/bin/sh
+
+/usr/local/bin/gpa-bin "$@"
+
+chmod -f 0770 ~/.gnupg
+chmod -Rf 0750 ~/.gnupg/*
+' > /usr/shew/jails/"$jail_name"/usr/local/bin/gpa
+	chmod 0555 /usr/shew/jails/"$jail_name"/usr/local/bin/gpa
+		# This allows other users in the 'gpa' group to access the files gpa creates.
+
 	password="`
 			dd if=/dev/random count=2 \
 				| md5

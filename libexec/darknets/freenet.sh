@@ -11,6 +11,8 @@
 #		darknets_freenet__add_jail_freenet_http_rules
 
 # Variable defaults:
+  : ${darknets_freenet__apps_folder='/usr/shew/install/shewstring/libexec/darknets/apps'}
+								# The default darknets apps folder.
   : ${darknets_freenet__freenet_websites='http://downloads.freenetproject.org/alpha/installer/'}
 								# The website(s) hosting the freenet installer.
   : ${darknets_freenet__freenet_file='freenet07.tar.gz'}	# The filename of the freenet installer.
@@ -34,6 +36,13 @@ skipping."
 		return 0
 	fi
 
+	if [ ! -d "$darknets_freenet__apps_folder" ]; then
+		echo "darknets_freenet__install_freenet could not find a critical install file. It
+should be:
+	$darknets_freenet__apps_folder"
+		return 1
+	fi
+
 	if [ ! -d "$darknets_freenet__freenet_configs" ]; then
 		echo "darknets_freenet__install_freenet could not find a critical install file. It
 should be:
@@ -47,6 +56,10 @@ should be:
 	$darknets_freenet__rcd_freenet"
 		return 1
 	fi
+
+	ports_pkgs_utils__configure_port wget "$darknets_freenet__apps_folder"
+	ports_pkgs_utils__compile_port wget
+		# wget is used by Freenet's update.sh, and therefore by scripts/maintenance.sh.
 
 	cp -f /etc/fstab \
 		/etc/fstab.tmp
@@ -122,16 +135,17 @@ should be:
 	misc_utils__condense_output_end
 
 	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh \
-		/usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.bak
-	echo '#!/bin/sh
-echo "$0 has been replaced by a dummy script." >&2
-return 0
-' > /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh
-	chmod 0555 /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp \
+		| sed 's|\./run.sh|#&|' \
+		| sed 's/echo Restarting node/#&/' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp
 
 	jexec "$jid" \
 		sh "-$-" -c '
-			chmod 0550 /usr/shew/permanent/freenet
+			chmod 0750 /usr/shew/permanent/freenet
+			chown -R freenet:freenet /usr/shew/permanent/freenet
 
 			mkdir -p \
 				/usr/shew/copy_to_mfs/home/freenet/downloads \

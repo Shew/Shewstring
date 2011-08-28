@@ -7,11 +7,6 @@
 # screen during boot; press 4 to select single user mode.), run 'mount -a', and
 # run it using 'sh'.
 
-# Libraries:
-  . /usr/shew/install/shewstring/lib/misc_utils.sh
-  . /usr/shew/install/shewstring/lib/user_maint_utils.sh
-  . /usr/shew/install/shewstring/lib/jail_maint_utils.sh
-
 # Execute:
 
 if [ `id -u` -ne 0 ]; then
@@ -25,14 +20,6 @@ while [ "$answer" != ok ]; do
 	echo 'Please type "ok" when ready.'
 	read answer
 done
-
-# Ports code is unfinished:
-#echo 'Please provide the path to the new ports tarball:'
-#read path
-#while [ ! -f "$path" ]; do
-#	echo 'That file was not found, or was not a normal file.'
-#	read path
-#done
 
 mount -u -o rw /
 mount -u -o rw /usr
@@ -74,15 +61,57 @@ Updating the operating system.
 
 freebsd-update fetch install
 
-cd /usr/shew/jails
-for val in *; do
-	freebsd-update -b /usr/shew/jails/"$val" fetch install
+for val in /usr/shew/jails/*; do
+	dummy_script_list="`
+		find "$val"/bin "$val"/sbin "$val"/rescue "$val"/usr/bin "$val"/usr/sbin \
+			| while read line; do
+				if [ -f "$line" ]; then
+					if
+						ls -lo "$line" \
+							| grep 'schg' \
+							> /dev/null \
+							2> /dev/null
+					then
+						if
+							head "$line" \
+								| grep 'replaced by a dummy script' \
+								> /dev/null \
+								2> /dev/null
+						then
+							echo "$line"
+						fi
+					fi
+				fi
+			done
+	`"
+
+	freebsd-update -b "$val" fetch install
+		# If left on its own, freebsd-update will replace dummy scripts with real executables.
+
+	for val2 in ${dummy_script_list}; do
+		if !
+			head "$val2" \
+				| grep 'replaced by a dummy script' \
+				> /dev/null \
+				2> /dev/null
+		then
+			chflags noschg "$val2"
+			rm -f "$val2"
+
+			echo '#!/bin/sh
+echo "$0 has been replaced by a dummy script." >&2
+return 0
+' > "$val2"
+
+			chmod 0555 "$val2"
+			chflags schg "$val2"
+		fi
+	done
 done
 
 # Ports code is unfinished:
-#rm -Rf /usr/shew/jails/compile/usr/ports
-#cd /usr/shew/jails/compile/usr
-#tar -x -f "$path"
+#chroot /usr/shew/jails/compile \
+#	portsnap -d /usr/portsnap fetch update
 #
 #mkdir /tmp/makefiles
 #cd /tmp/makefiles
@@ -128,8 +157,6 @@ done
 #	done
 #fi
 
-jid="`jail_maint_utils__return_jail_jid nat_darknets`"
-
 # TODO:
 # Upgrade I2P.
 
@@ -137,14 +164,25 @@ echo '
 Updating Freenet.
 '
 
-jexec "$jid" \
-	sh "-$-" -c '
+freenet_update_md5="`md5 -q /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh`"
+
+chroot /usr/shew/jails/nat_darknets \
+	su -m freenet -c '
 		cd /usr/shew/permanent/freenet
-		su -m freenet -c \
-			/usr/shew/permanent/freenet/update.sh.bak
-		# The script is named update.sh.bak because update.sh has been replaced by a
-		# dummy script.
+		/usr/shew/permanent/freenet/update.sh
 	'
+
+if [ "$freenet_update_md5" != "`md5 -q /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh`" ]; then
+	cp -f /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh \
+		/usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp
+	cat /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp \
+		| sed 's|\./run.sh|#&|' \
+		| sed 's/echo Restarting node/#&/' \
+		> /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh
+	rm -f /usr/shew/jails/nat_darknets/usr/shew/permanent/freenet/update.sh.tmp
+		# This is to prevent updates to update.sh from overwriting the comments that
+		# disable autostarting the FreeNet node.
+fi
 
 echo '
 Wiping file traces from sensitive partition.

@@ -27,6 +27,13 @@ darknets_java__download_sun_jdk() {
 		return 0
 	fi
 
+	if [ ! -d "$darknets_java__apps_folder" ]; then
+		echo "darknets_java__download_sun_jdk could not find a critical install file. It
+should be:
+	$darknets_java__apps_folder"
+		return 1
+	fi
+
 	ports_pkgs_utils__configure_port wget "$darknets_java__apps_folder"
 	ports_pkgs_utils__compile_port wget
 
