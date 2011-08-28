@@ -24,28 +24,11 @@ fi
 for val in \
 	`
 		ls -F /usr/shew/sensitive \
-			| grep '/$' \
-			| sed 's|/$||'
+			| grep '/$'
 	`
 do
-	if
-		jls -n -h path \
-			| grep "path=/usr/shew/jails/$val" \
-			> /dev/null
-		# This is modified code from jail_maint_utils__return_jail_jid.
-	then
-		jid="`cat /var/run/"jail_${val}.id"`"
-	else
-		continue
-	fi
-
-	echo "Auditing ${val}:"
-
-jexec "$jid" \
-	sh -c '
-
 	if !
-		ls /usr/shew/sensitive/*.allow \
+		ls /usr/shew/sensitive/"$val"/*.allow \
 			> /dev/null \
 			2> /dev/null
 		# This protects the following for loop from invalid input if there are no
@@ -54,52 +37,50 @@ jexec "$jid" \
 		continue
 	fi
 
-	cd /usr/shew/sensitive
+	cd /usr/shew/sensitive/"$val"
 
 	for val2 in *.allow; do
 		username="`
 			echo "$val2" \
-				| sed "s/\\.allow$//"
+				| sed 's/\.allow$//'
 		`"
 
-		cd /usr/shew/sensitive/"$username"
+		echo "Auditing ${val}$username"
+
+		cd /usr/shew/sensitive/"$val"/"$username"
 
 		find ./ \
-			| sed "s|^\\./||" \
+			| sed 's|^./||' \
 			| while read line; do
 				if [ -z "$line" ]; then
 					continue
 				fi
 
-				if [ ! -e /usr/shew/sensitive/"$username"/"$line" ]; then
+				if [ ! -e /usr/shew/sensitive/"$val"/"$username"/"$line" ]; then
 					# If a folder has been removed by an earlier iteration of this loop, the file
-					# listing from "find" will still contain entries for files that no longer exist,
+					# listing from 'find' will still contain entries for files that no longer exist,
 					# which would create errors with the following lines.
-
 					continue
 				fi
 
 				if \
-[ "`stat -f %i /usr/shew/sensitive/"$username"`" \
--eq "`stat -f %i /usr/shew/sensitive/"$username"/"$line"`" ]; then
-					# This check is to make sure that the whole sensitive folder isnt removed.
-
+[ "`stat -f %i /usr/shew/sensitive/"$val"/"$username"`" \
+-eq "`stat -f %i /usr/shew/sensitive/"$val"/"$username"/"$line"`" ]; then
+					# This check is to make sure that the whole sensitive folder isn't removed.
 					continue
 				fi
 
 				if !
 					echo "$line" \
-						| grep -x -f /usr/shew/sensitive/"$val2" \
+						| grep -x -f /usr/shew/sensitive/"$val"/"$val2" \
 						> /dev/null
 				then
 					echo "	Removing: $line"
 
-					rm -RPf /usr/shew/sensitive/"$username"/"$line"
+					rm -RPf /usr/shew/sensitive/"$val"/"$username"/"$line"
 				fi
 			done
 	done
-	'
-
 done
 
 rm -RPf /usr/shew/data/.Trash-*
