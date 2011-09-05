@@ -1,4 +1,12 @@
 
+Shewstring v1.0.3
+	Increased partition sizes, because they were pretty close to the maximum.
+	GnuPG/GPA has been moved to its own user. Before it used the same user as Sylpheed, but now the permissions problem has been fixed.
+	Firefox should now recognize MIMEtypes that are openable by Abiword, Evince, and VLC.
+	Added a new user script scripts/maintenance.sh, which will maintain and update the installation. It is only partially completed, however (does not yet update ports, ExcludeExitNodes, or I2P). This fixed a nasty problem where Freenet would eventually stop working, due to their policy of blocking nodes with old versions from accessing the network.
+	Use portsnap instead of ports tarballs. Advantages: nobody has to deal with ports tarballs anymore; more secure method of getting ports skeleton than tarballs. Disadvantages: devs can no longer ensure that users are getting a specific tested version of software, which can lead to problems with broken ports and software behavior changes.
+	Misc. bugfixes, tweaks and updates.
+
 Shewstring v1.0.2
 	I2P has been fixed, and support has been dramatically improved (with more than an order of magnatude increase in efficiency; wrapper and jbigi work), thanks mostly to the I2P devs.
 	Fix a major bug where wireless did not work due to a problem with PF.
